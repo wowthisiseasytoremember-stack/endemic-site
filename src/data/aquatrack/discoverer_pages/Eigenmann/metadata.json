@@ -1,0 +1,57 @@
+{
+  "title": "Rosa Smith Eigenmann",
+  "description": "American ichthyologist",
+  "extract": "Rosa Smith Eigenmann was an American ichthyologist, as well as a writer, editor, former curator at the California Academy of Sciences, and the first librarian of the San Diego Society of Natural History. She \"is considered the first woman ichthyologist in the United States.\" Eigenmann was also the first woman to become president of Indiana University's chapter of Sigma Xi, an honorary science society. She authored twelve published papers of her own between 1880 and 1893, and collaborated with her husband, Carl H. Eigenmann, as \"Eigenmann & Eigenmann\" on twenty-five additional works between 1888 and 1893. Together, they are credited with describing about 150 species of fishes.",
+  "page_url": "https://en.wikipedia.org/wiki/Rosa_Smith_Eigenmann",
+  "coordinates": null,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/9/94/Rosa_Smith_Eigenmann%2C_1889.png",
+    "width": 260,
+    "height": 384
+  },
+  "original_image": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/9/94/Rosa_Smith_Eigenmann%2C_1889.png",
+    "width": 260,
+    "height": 384
+  },
+  "images": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/9/94/Rosa_Smith_Eigenmann%2C_1889.png",
+      "alt": "Infobox image for Rosa Smith Eigenmann",
+      "width": 260,
+      "height": 384,
+      "is_infobox": true
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Rosa_Smith_Eigenmann%2C_1889.png/250px-Rosa_Smith_Eigenmann%2C_1889.png",
+      "alt": "",
+      "width": 250,
+      "height": 369
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Atwater_Avenue_East%2C_630%2C_Carl_Eigenmann_House%2C_Elm_Heights_HD.jpg/250px-Atwater_Avenue_East%2C_630%2C_Carl_Eigenmann_House%2C_Elm_Heights_HD.jpg",
+      "alt": "",
+      "width": 210,
+      "height": 158
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Portrait_photograph_of_Carl_H._Eigenmann_and_Rosa_Smith_Eigenmann%2C_1889_%28cropped%29.jpg/250px-Portrait_photograph_of_Carl_H._Eigenmann_and_Rosa_Smith_Eigenmann%2C_1889_%28cropped%29.jpg",
+      "alt": "Sepia photograph of a man and woman in profile.",
+      "width": 250,
+      "height": 185
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/40px-Commons-logo.svg.png",
+      "alt": "Wikimedia Commons logo",
+      "width": 30,
+      "height": 40
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png",
+      "alt": "Edit this at Wikidata",
+      "width": 10,
+      "height": 10
+    }
+  ],
+  "image_count": 6
+}

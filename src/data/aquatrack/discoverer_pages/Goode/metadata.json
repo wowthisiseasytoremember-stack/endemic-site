@@ -1,0 +1,75 @@
+{
+  "title": "George Brown Goode",
+  "description": "American ichthyologist and museum administrator",
+  "extract": "George Brown Goode, was an American ichthyologist and museum administrator.",
+  "page_url": "https://en.wikipedia.org/wiki/George_Brown_Goode",
+  "coordinates": null,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Goode_G_Brown_1851-1896.jpg/330px-Goode_G_Brown_1851-1896.jpg",
+    "width": 330,
+    "height": 345
+  },
+  "original_image": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Goode_G_Brown_1851-1896.jpg",
+    "width": 961,
+    "height": 1006
+  },
+  "images": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Goode_G_Brown_1851-1896.jpg/330px-Goode_G_Brown_1851-1896.jpg",
+      "alt": "Infobox image for George Brown Goode",
+      "width": 330,
+      "height": 345,
+      "is_infobox": true
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Goode_G_Brown_1851-1896.jpg/250px-Goode_G_Brown_1851-1896.jpg",
+      "alt": "",
+      "width": 250,
+      "height": 262
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/5/53/Signature_of_George_Brown_Goode.png",
+      "alt": "",
+      "width": 150,
+      "height": 70
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Grave_of_Dr._George_Brown_Goode_%281851-1896%29.jpg/250px-Grave_of_Dr._George_Brown_Goode_%281851-1896%29.jpg",
+      "alt": "",
+      "width": 250,
+      "height": 167
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Wikiquote-logo.svg/40px-Wikiquote-logo.svg.png",
+      "alt": "",
+      "width": 34,
+      "height": 40
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/20px-Commons-logo.svg.png",
+      "alt": "Wikimedia Commons logo",
+      "width": 12,
+      "height": 16
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/20px-Speaker_Icon.svg.png",
+      "alt": "",
+      "width": 15,
+      "height": 15
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Wikisource-logo.svg/20px-Wikisource-logo.svg.png",
+      "alt": "Wikisource logo",
+      "width": 12,
+      "height": 13
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png",
+      "alt": "Edit this at Wikidata",
+      "width": 10,
+      "height": 10
+    }
+  ],
+  "image_count": 9
+}

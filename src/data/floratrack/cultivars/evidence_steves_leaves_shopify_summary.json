@@ -1,0 +1,17 @@
+{
+  "source": "Steve's Leaves",
+  "total_products": 250,
+  "records_with_signals": 173,
+  "records_without_signals": 77,
+  "signal_counts": {
+    "parentage": 140,
+    "trade_name": 12,
+    "origin_story": 8,
+    "originator": 51
+  },
+  "genera_found": {
+    "Anthurium": 127,
+    "Begonia": 84,
+    "Alocasia": 4
+  }
+}

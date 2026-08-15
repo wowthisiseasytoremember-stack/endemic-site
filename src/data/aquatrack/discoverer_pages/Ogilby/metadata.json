@@ -1,0 +1,57 @@
+{
+  "title": "James Douglas Ogilby",
+  "description": "Australian ichthyologist and herpetologist",
+  "extract": "James Douglas Ogilby was an Australian ichthyologist and herpetologist.",
+  "page_url": "https://en.wikipedia.org/wiki/James_Douglas_Ogilby",
+  "coordinates": null,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/James_Douglas_Ogilby_1853%E2%80%941925.jpg/330px-James_Douglas_Ogilby_1853%E2%80%941925.jpg",
+    "width": 330,
+    "height": 441
+  },
+  "original_image": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/d/d2/James_Douglas_Ogilby_1853%E2%80%941925.jpg",
+    "width": 444,
+    "height": 593
+  },
+  "images": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/James_Douglas_Ogilby_1853%E2%80%941925.jpg/330px-James_Douglas_Ogilby_1853%E2%80%941925.jpg",
+      "alt": "Infobox image for James Douglas Ogilby",
+      "width": 330,
+      "height": 441,
+      "is_infobox": true
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/James_Douglas_Ogilby_1853%E2%80%941925.jpg/250px-James_Douglas_Ogilby_1853%E2%80%941925.jpg",
+      "alt": "",
+      "width": 250,
+      "height": 334
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/20px-Commons-logo.svg.png",
+      "alt": "Wikimedia Commons logo",
+      "width": 12,
+      "height": 16
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png",
+      "alt": "Edit this at Wikidata",
+      "width": 10,
+      "height": 10
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Scientist.svg/40px-Scientist.svg.png",
+      "alt": "Scientist icon",
+      "width": 30,
+      "height": 30
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Science-symbol-2.svg/40px-Science-symbol-2.svg.png",
+      "alt": "Stub icon",
+      "width": 30,
+      "height": 30
+    }
+  ],
+  "image_count": 6
+}

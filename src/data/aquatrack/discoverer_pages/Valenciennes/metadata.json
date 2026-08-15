@@ -1,0 +1,51 @@
+{
+  "title": "Achille Valenciennes",
+  "description": "French zoologist, ichthyologist, and malacologist",
+  "extract": "Achille Valenciennes was a French zoologist.",
+  "page_url": "https://en.wikipedia.org/wiki/Achille_Valenciennes",
+  "coordinates": null,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Achille_Valenciennes01.jpg/330px-Achille_Valenciennes01.jpg",
+    "width": 330,
+    "height": 467
+  },
+  "original_image": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Achille_Valenciennes01.jpg",
+    "width": 500,
+    "height": 708
+  },
+  "images": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Achille_Valenciennes01.jpg/330px-Achille_Valenciennes01.jpg",
+      "alt": "Infobox image for Achille Valenciennes",
+      "width": 330,
+      "height": 467,
+      "is_infobox": true
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Achille_Valenciennes01.jpg/250px-Achille_Valenciennes01.jpg",
+      "alt": "",
+      "width": 250,
+      "height": 354
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png",
+      "alt": "Edit this at Wikidata",
+      "width": 10,
+      "height": 10
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Scientist.svg/40px-Scientist.svg.png",
+      "alt": "Scientist icon",
+      "width": 30,
+      "height": 30
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/D%C3%BCrer_-_Rhinoceros.jpg/40px-D%C3%BCrer_-_Rhinoceros.jpg",
+      "alt": "Stub icon",
+      "width": 30,
+      "height": 21
+    }
+  ],
+  "image_count": 5
+}

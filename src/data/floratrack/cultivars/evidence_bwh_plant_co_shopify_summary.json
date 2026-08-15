@@ -1,0 +1,25 @@
+{
+  "source": "BWH Plant Co",
+  "total_products": 250,
+  "records_with_signals": 50,
+  "records_without_signals": 200,
+  "signal_counts": {
+    "origin_story": 26,
+    "parentage": 16,
+    "trade_name": 13,
+    "originator": 3
+  },
+  "genera_found": {
+    "Alocasia": 49,
+    "Calathea": 29,
+    "Anthurium": 24,
+    "Begonia": 21,
+    "Philodendron": 19,
+    "Aglaonema": 12,
+    "Epipremnum": 9,
+    "Ficus": 9,
+    "Monstera": 5,
+    "Syngonium": 5,
+    "Hoya": 2
+  }
+}

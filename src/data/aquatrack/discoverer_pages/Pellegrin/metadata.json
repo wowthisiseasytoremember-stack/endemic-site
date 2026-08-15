@@ -1,0 +1,24 @@
+{
+  "title": "Jacques Pellegrin",
+  "description": "French zoologist (1873–1944)",
+  "extract": "Jacques Pellegrin was a French zoologist.",
+  "page_url": "https://en.wikipedia.org/wiki/Jacques_Pellegrin",
+  "coordinates": null,
+  "thumbnail": null,
+  "original_image": null,
+  "images": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/60px-Question_book-new.svg.png",
+      "alt": "icon",
+      "width": 50,
+      "height": 39
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png",
+      "alt": "Edit this at Wikidata",
+      "width": 10,
+      "height": 10
+    }
+  ],
+  "image_count": 2
+}

@@ -1,0 +1,22 @@
+{
+  "source": "Predatory Plants",
+  "total_products": 250,
+  "records_with_signals": 104,
+  "records_without_signals": 146,
+  "signal_counts": {
+    "parentage": 72,
+    "trade_name": 25,
+    "origin_story": 12,
+    "originator": 2
+  },
+  "genera_found": {
+    "Nepenthes": 110,
+    "Drosera": 68,
+    "Cephalotus": 7,
+    "Heliamphora": 5,
+    "Sarracenia": 4,
+    "Pinguicula": 3,
+    "Darlingtonia": 3,
+    "Dionaea": 1
+  }
+}

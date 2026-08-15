@@ -1,0 +1,644 @@
+[
+  {
+    "family": "Cichlidae",
+    "urls": [
+      "https://etyfish.org/cichlidae1/",
+      "https://etyfish.org/cichlidae2/",
+      "https://etyfish.org/cichlidae3/",
+      "https://etyfish.org/cichlidae4/",
+      "https://etyfish.org/cichlidae/",
+      "http://etyfish.org/cichlidae/"
+    ],
+    "format": "html",
+    "species_wanted": 198,
+    "species_total": 260,
+    "species_have": 62,
+    "coverage_pct": 23.8,
+    "status": "verified",
+    "page_count": 6
+  },
+  {
+    "family": "Cyprinidae",
+    "urls": [
+      "https://etyfish.org/cyprininae/",
+      "https://etyfish.org/smiliogastrinae/",
+      "https://etyfish.org/torinae/",
+      "https://etyfish.org/barbinae/",
+      "https://etyfish.org/schizopygopsinae/",
+      "https://etyfish.org/labeoninae/",
+      "https://etyfish.org/acrossocheilinae/"
+    ],
+    "format": "html",
+    "species_wanted": 153,
+    "species_total": 176,
+    "species_have": 23,
+    "coverage_pct": 13.1,
+    "status": "verified",
+    "page_count": 7
+  },
+  {
+    "family": "Danionidae",
+    "urls": [
+      "https://etyfish.org/danionidae/",
+      "http://etyfish.org/danionidae/"
+    ],
+    "format": "html",
+    "species_wanted": 87,
+    "species_total": 103,
+    "species_have": 16,
+    "coverage_pct": 15.5,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Callichthyidae",
+    "urls": [
+      "https://etyfish.org/callichthyidae/",
+      "http://etyfish.org/callichthyidae/"
+    ],
+    "format": "html",
+    "species_wanted": 87,
+    "species_total": 101,
+    "species_have": 14,
+    "coverage_pct": 13.9,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Osphronemidae",
+    "urls": [
+      "https://etyfish.org/anabantiformes/"
+    ],
+    "format": "html",
+    "species_wanted": 78,
+    "species_total": 103,
+    "species_have": 25,
+    "coverage_pct": 24.3,
+    "status": "verified",
+    "page_count": 1
+  },
+  {
+    "family": "Acestrorhamphidae",
+    "urls": [
+      "https://etyfish.org/acestrorhamphidae/",
+      "http://etyfish.org/acestrorhamphidae/"
+    ],
+    "format": "html",
+    "species_wanted": 55,
+    "species_total": 70,
+    "species_have": 15,
+    "coverage_pct": 21.4,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Oxudercidae",
+    "urls": [
+      "https://etyfish.org/oxudercidae/",
+      "http://etyfish.org/oxudercidae/"
+    ],
+    "format": "html",
+    "species_wanted": 39,
+    "species_total": 45,
+    "species_have": 6,
+    "coverage_pct": 13.3,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Cobitidae",
+    "urls": [
+      "https://etyfish.org/cobitidae/",
+      "http://etyfish.org/cobitidae/"
+    ],
+    "format": "html",
+    "species_wanted": 36,
+    "species_total": 39,
+    "species_have": 3,
+    "coverage_pct": 7.7,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Nemacheilidae",
+    "urls": [
+      "https://etyfish.org/nemacheilidae/",
+      "http://etyfish.org/nemacheilidae/"
+    ],
+    "format": "html",
+    "species_wanted": 32,
+    "species_total": 51,
+    "species_have": 19,
+    "coverage_pct": 37.3,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Loricariidae",
+    "urls": [
+      "https://etyfish.org/loricariinae/",
+      "https://etyfish.org/hypoptopomatinae/",
+      "https://etyfish.org/hypostominae/"
+    ],
+    "format": "html",
+    "species_wanted": 32,
+    "species_total": 42,
+    "species_have": 10,
+    "coverage_pct": 23.8,
+    "status": "verified",
+    "page_count": 3
+  },
+  {
+    "family": "Botiidae",
+    "urls": [
+      "https://etyfish.org/botiidae/",
+      "http://etyfish.org/botiidae/"
+    ],
+    "format": "html",
+    "species_wanted": 29,
+    "species_total": 33,
+    "species_have": 4,
+    "coverage_pct": 12.1,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Gastromyzontidae",
+    "urls": [
+      "https://etyfish.org/gastromyzontidae/",
+      "http://etyfish.org/gastromyzontidae/"
+    ],
+    "format": "html",
+    "species_wanted": 28,
+    "species_total": 30,
+    "species_have": 2,
+    "coverage_pct": 6.7,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Nothobranchiidae",
+    "urls": [
+      "https://etyfish.org/cyprinodontiformes1/"
+    ],
+    "format": "html",
+    "species_wanted": 28,
+    "species_total": 34,
+    "species_have": 6,
+    "coverage_pct": 17.6,
+    "status": "verified",
+    "page_count": 1
+  },
+  {
+    "family": "Bagridae",
+    "urls": [
+      "https://etyfish.org/bagridae/",
+      "http://etyfish.org/bagridae/"
+    ],
+    "format": "html",
+    "species_wanted": 23,
+    "species_total": 24,
+    "species_have": 1,
+    "coverage_pct": 4.2,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Balitoridae",
+    "urls": [
+      "https://etyfish.org/balitoridae/",
+      "http://etyfish.org/balitoridae/"
+    ],
+    "format": "html",
+    "species_wanted": 21,
+    "species_total": 24,
+    "species_have": 3,
+    "coverage_pct": 12.5,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Channidae",
+    "urls": [
+      "https://etyfish.org/anabantiformes/"
+    ],
+    "format": "html",
+    "species_wanted": 18,
+    "species_total": 21,
+    "species_have": 3,
+    "coverage_pct": 14.3,
+    "status": "verified",
+    "page_count": 1
+  },
+  {
+    "family": "Badidae",
+    "urls": [
+      "https://etyfish.org/anabantiformes/"
+    ],
+    "format": "html",
+    "species_wanted": 17,
+    "species_total": 17,
+    "species_have": 0,
+    "coverage_pct": 0.0,
+    "status": "verified",
+    "page_count": 1
+  },
+  {
+    "family": "Mochokidae",
+    "urls": [
+      "https://etyfish.org/mochokidae/",
+      "http://etyfish.org/mochokidae/"
+    ],
+    "format": "html",
+    "species_wanted": 17,
+    "species_total": 27,
+    "species_have": 10,
+    "coverage_pct": 37.0,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Poeciliidae",
+    "urls": [
+      "https://etyfish.org/cyprinodontiformes1/"
+    ],
+    "format": "html",
+    "species_wanted": 14,
+    "species_total": 16,
+    "species_have": 2,
+    "coverage_pct": 12.5,
+    "status": "verified",
+    "page_count": 1
+  },
+  {
+    "family": "Aphaniidae",
+    "urls": [
+      "https://etyfish.org/cyprinodontiformes1/"
+    ],
+    "format": "html",
+    "species_wanted": 14,
+    "species_total": 16,
+    "species_have": 2,
+    "coverage_pct": 12.5,
+    "status": "verified",
+    "page_count": 1
+  },
+  {
+    "family": "Serrasalmidae",
+    "urls": [
+      "https://etyfish.org/serrasalmidae/",
+      "http://etyfish.org/serrasalmidae/"
+    ],
+    "format": "html",
+    "species_wanted": 13,
+    "species_total": 23,
+    "species_have": 10,
+    "coverage_pct": 43.5,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Tetraodontidae",
+    "urls": [
+      "https://etyfish.org/tetraodontiformes/"
+    ],
+    "format": "html",
+    "species_wanted": 13,
+    "species_total": 14,
+    "species_have": 1,
+    "coverage_pct": 7.1,
+    "status": "verified",
+    "page_count": 1
+  },
+  {
+    "family": "Melanotaeniidae",
+    "urls": [
+      "https://etyfish.org/atheriniformes/"
+    ],
+    "format": "html",
+    "species_wanted": 13,
+    "species_total": 16,
+    "species_have": 3,
+    "coverage_pct": 18.8,
+    "status": "verified",
+    "page_count": 1
+  },
+  {
+    "family": "Doradidae",
+    "urls": [
+      "https://etyfish.org/doradidae/",
+      "http://etyfish.org/doradidae/"
+    ],
+    "format": "html",
+    "species_wanted": 12,
+    "species_total": 13,
+    "species_have": 1,
+    "coverage_pct": 7.7,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Pimelodidae",
+    "urls": [
+      "https://etyfish.org/pimelodidae/",
+      "http://etyfish.org/pimelodidae/"
+    ],
+    "format": "html",
+    "species_wanted": 12,
+    "species_total": 17,
+    "species_have": 5,
+    "coverage_pct": 29.4,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Adrianichthyidae",
+    "urls": [
+      "https://etyfish.org/beloniformes/"
+    ],
+    "format": "html",
+    "species_wanted": 12,
+    "species_total": 12,
+    "species_have": 0,
+    "coverage_pct": 0.0,
+    "status": "verified",
+    "page_count": 1
+  },
+  {
+    "family": "Anostomidae",
+    "urls": [
+      "https://etyfish.org/anostomidae/",
+      "http://etyfish.org/anostomidae/"
+    ],
+    "format": "html",
+    "species_wanted": 11,
+    "species_total": 13,
+    "species_have": 2,
+    "coverage_pct": 15.4,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Akysidae",
+    "urls": [
+      "https://etyfish.org/akysidae/",
+      "http://etyfish.org/akysidae/"
+    ],
+    "format": "html",
+    "species_wanted": 11,
+    "species_total": 12,
+    "species_have": 1,
+    "coverage_pct": 8.3,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Lebiasinidae",
+    "urls": [
+      "https://etyfish.org/lebiasinidae/",
+      "http://etyfish.org/lebiasinidae/"
+    ],
+    "format": "html",
+    "species_wanted": 11,
+    "species_total": 21,
+    "species_have": 10,
+    "coverage_pct": 47.6,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Siluridae",
+    "urls": [
+      "https://etyfish.org/siluridae/",
+      "http://etyfish.org/siluridae/"
+    ],
+    "format": "html",
+    "species_wanted": 11,
+    "species_total": 12,
+    "species_have": 1,
+    "coverage_pct": 8.3,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Auchenipteridae",
+    "urls": [
+      "https://etyfish.org/auchenipteridae/",
+      "http://etyfish.org/auchenipteridae/"
+    ],
+    "format": "html",
+    "species_wanted": 10,
+    "species_total": 11,
+    "species_have": 1,
+    "coverage_pct": 9.1,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Anabantidae",
+    "urls": [
+      "https://etyfish.org/anabantiformes/"
+    ],
+    "format": "html",
+    "species_wanted": 8,
+    "species_total": 9,
+    "species_have": 1,
+    "coverage_pct": 11.1,
+    "status": "verified",
+    "page_count": 1
+  },
+  {
+    "family": "Alestidae",
+    "urls": [
+      "https://etyfish.org/alestidae/",
+      "http://etyfish.org/alestidae/"
+    ],
+    "format": "html",
+    "species_wanted": 7,
+    "species_total": 10,
+    "species_have": 3,
+    "coverage_pct": 30.0,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Notopteridae",
+    "urls": [
+      "https://etyfish.org/notopteridae/",
+      "http://etyfish.org/notopteridae/"
+    ],
+    "format": "html",
+    "species_wanted": 7,
+    "species_total": 7,
+    "species_have": 0,
+    "coverage_pct": 0.0,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Distichodontidae",
+    "urls": [
+      "https://etyfish.org/distichodontidae/",
+      "http://etyfish.org/distichodontidae/"
+    ],
+    "format": "html",
+    "species_wanted": 7,
+    "species_total": 7,
+    "species_have": 0,
+    "coverage_pct": 0.0,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Sisoridae",
+    "urls": [
+      "https://etyfish.org/sisoridae/",
+      "http://etyfish.org/sisoridae/"
+    ],
+    "format": "html",
+    "species_wanted": 6,
+    "species_total": 6,
+    "species_have": 0,
+    "coverage_pct": 0.0,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Gasteropelecidae",
+    "urls": [
+      "https://etyfish.org/gasteropelecidae/",
+      "http://etyfish.org/gasteropelecidae/"
+    ],
+    "format": "html",
+    "species_wanted": 6,
+    "species_total": 6,
+    "species_have": 0,
+    "coverage_pct": 0.0,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Polypteridae",
+    "urls": [
+      "https://etyfish.org/polypteridae/",
+      "http://etyfish.org/polypteridae/"
+    ],
+    "format": "html",
+    "species_wanted": 6,
+    "species_total": 10,
+    "species_have": 4,
+    "coverage_pct": 40.0,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Hemiodontidae",
+    "urls": [
+      "https://etyfish.org/hemiodontidae/",
+      "http://etyfish.org/hemiodontidae/"
+    ],
+    "format": "html",
+    "species_wanted": 6,
+    "species_total": 6,
+    "species_have": 0,
+    "coverage_pct": 0.0,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Mastacembelidae",
+    "urls": [
+      "https://etyfish.org/synbranchiformes/"
+    ],
+    "format": "html",
+    "species_wanted": 6,
+    "species_total": 6,
+    "species_have": 0,
+    "coverage_pct": 0.0,
+    "status": "verified",
+    "page_count": 1
+  },
+  {
+    "family": "Potamotrygonidae",
+    "urls": [
+      "https://etyfish.org/potamotrygonidae/",
+      "http://etyfish.org/potamotrygonidae/"
+    ],
+    "format": "html",
+    "species_wanted": 6,
+    "species_total": 8,
+    "species_have": 2,
+    "coverage_pct": 25.0,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Acestrorhynchidae",
+    "urls": [
+      "https://etyfish.org/acestrorhynchidae/",
+      "http://etyfish.org/acestrorhynchidae/"
+    ],
+    "format": "html",
+    "species_wanted": 5,
+    "species_total": 6,
+    "species_have": 1,
+    "coverage_pct": 16.7,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Xenocyprididae",
+    "urls": [
+      "https://etyfish.org/xenocyprididae/",
+      "http://etyfish.org/xenocyprididae/"
+    ],
+    "format": "html",
+    "species_wanted": 5,
+    "species_total": 6,
+    "species_have": 1,
+    "coverage_pct": 16.7,
+    "status": "verified",
+    "page_count": 2
+  },
+  {
+    "family": "Cyprinodontidae",
+    "urls": [
+      "https://etyfish.org/cyprinodontiformes1/"
+    ],
+    "format": "html",
+    "species_wanted": 5,
+    "species_total": 9,
+    "species_have": 4,
+    "coverage_pct": 44.4,
+    "status": "verified",
+    "page_count": 1
+  },
+  {
+    "family": "Eleotridae",
+    "urls": [
+      "https://etyfish.org/gobiiformes/",
+      "https://etyfish.org/eleotridae/",
+      "http://etyfish.org/eleotridae/"
+    ],
+    "format": "html",
+    "species_wanted": 5,
+    "species_total": 5,
+    "species_have": 0,
+    "coverage_pct": 0.0,
+    "status": "verified",
+    "page_count": 3
+  },
+  {
+    "family": "Pseudomugilidae",
+    "urls": [
+      "https://etyfish.org/atheriniformes/"
+    ],
+    "format": "html",
+    "species_wanted": 5,
+    "species_total": 5,
+    "species_have": 0,
+    "coverage_pct": 0.0,
+    "status": "verified",
+    "page_count": 1
+  }
+]

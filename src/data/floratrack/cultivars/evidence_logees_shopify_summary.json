@@ -1,0 +1,20 @@
+{
+  "source": "Logee's Tropical Plants",
+  "total_products": 250,
+  "records_with_signals": 83,
+  "records_without_signals": 167,
+  "signal_counts": {
+    "originator": 6,
+    "parentage": 53,
+    "trade_name": 13,
+    "origin_story": 18,
+    "patent_ref": 1
+  },
+  "genera_found": {
+    "Begonia": 48,
+    "Anthurium": 8,
+    "Citrus": 3,
+    "Passiflora": 1,
+    "Jasminum": 1
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "source": "Plant Delights Nursery",
+  "total_products": 250,
+  "records_with_signals": 141,
+  "records_without_signals": 109,
+  "signal_counts": {
+    "parentage": 121,
+    "introduced_year": 14,
+    "origin_story": 28,
+    "originator": 9,
+    "patent_ref": 4
+  },
+  "genera_found": {}
+}

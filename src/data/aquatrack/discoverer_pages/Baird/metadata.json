@@ -1,0 +1,75 @@
+{
+  "title": "Spencer Fullerton Baird",
+  "description": "American scientist (1823 – 1887)",
+  "extract": "Spencer Fullerton Baird was an American naturalist, ornithologist, ichthyologist, herpetologist, and museum curator. Baird was the first curator to be named at the Smithsonian Institution. He eventually served as assistant Secretary of the Smithsonian from 1850 to 1878, and as Secretary from 1878 until 1887. He was dedicated to expanding the natural history collections of the Smithsonian which he increased from 6,000 specimens in 1850 to over 2 million by the time of his death. He also served as the U.S. Commissioner of Fish and Fisheries from 1871 to 1887 and published over 1,000 works during his lifetime.",
+  "page_url": "https://en.wikipedia.org/wiki/Spencer_Fullerton_Baird",
+  "coordinates": null,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Portrait_of_Spencer_Fullerton_Baird_-_1867.jpg/330px-Portrait_of_Spencer_Fullerton_Baird_-_1867.jpg",
+    "width": 330,
+    "height": 422
+  },
+  "original_image": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/6/67/Portrait_of_Spencer_Fullerton_Baird_-_1867.jpg",
+    "width": 600,
+    "height": 768
+  },
+  "images": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Portrait_of_Spencer_Fullerton_Baird_-_1867.jpg/330px-Portrait_of_Spencer_Fullerton_Baird_-_1867.jpg",
+      "alt": "Infobox image for Spencer Fullerton Baird",
+      "width": 330,
+      "height": 422,
+      "is_infobox": true
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Portrait_of_Spencer_Fullerton_Baird_-_1867.jpg/250px-Portrait_of_Spencer_Fullerton_Baird_-_1867.jpg",
+      "alt": "",
+      "width": 200,
+      "height": 256
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Signature_of_Spencer_Fullerton_Baird_%281823%E2%80%931887%29.png/250px-Signature_of_Spencer_Fullerton_Baird_%281823%E2%80%931887%29.png",
+      "alt": "",
+      "width": 128,
+      "height": 23
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Spencer_Fullerton_Baird.png/250px-Spencer_Fullerton_Baird.png",
+      "alt": "",
+      "width": 250,
+      "height": 369
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/The_Baird_Family_at_Wood%27s_Hole.jpg/250px-The_Baird_Family_at_Wood%27s_Hole.jpg",
+      "alt": "",
+      "width": 250,
+      "height": 316
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Churchill-Baird_Mausoleum_-_Oak_Hill_Cemetery_-_2013-09-04.jpg/250px-Churchill-Baird_Mausoleum_-_Oak_Hill_Cemetery_-_2013-09-04.jpg",
+      "alt": "",
+      "width": 250,
+      "height": 375
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/40px-Commons-logo.svg.png",
+      "alt": "Wikimedia Commons logo",
+      "width": 30,
+      "height": 40
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Wikisource-logo.svg/20px-Wikisource-logo.svg.png",
+      "alt": "Wikisource logo",
+      "width": 12,
+      "height": 13
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png",
+      "alt": "Edit this at Wikidata",
+      "width": 10,
+      "height": 10
+    }
+  ],
+  "image_count": 9
+}

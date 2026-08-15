@@ -1,0 +1,33 @@
+{
+  "title": "Ian A. M. Fuller",
+  "description": "English aquarist",
+  "extract": "Ian Alexander McDonald Fuller is an English aquarist and ichthyologist.",
+  "page_url": "https://en.wikipedia.org/wiki/Ian_A._M._Fuller",
+  "coordinates": null,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/2/2d/IF_2009.jpg",
+    "width": 300,
+    "height": 375
+  },
+  "original_image": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/2/2d/IF_2009.jpg",
+    "width": 300,
+    "height": 375
+  },
+  "images": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/2/2d/IF_2009.jpg",
+      "alt": "Infobox image for Ian A. M. Fuller",
+      "width": 300,
+      "height": 375,
+      "is_infobox": true
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/IF_2009.jpg/250px-IF_2009.jpg",
+      "alt": "",
+      "width": 250,
+      "height": 313
+    }
+  ],
+  "image_count": 2
+}

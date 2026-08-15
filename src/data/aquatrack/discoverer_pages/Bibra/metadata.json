@@ -1,0 +1,63 @@
+{
+  "title": "Ernst von Bibra",
+  "description": "German naturalist and author",
+  "extract": "Ernst von Bibra was a German Naturalist and author. Ernst was a botanist, zoologist, metallurgist, chemist, geographer, travel writer, novelist, duellist, art collector and trailblazer in ethnopsychopharmacology.",
+  "page_url": "https://en.wikipedia.org/wiki/Ernst_von_Bibra",
+  "coordinates": null,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/ErnstvonBibra-492x478.png/330px-ErnstvonBibra-492x478.png",
+    "width": 330,
+    "height": 426
+  },
+  "original_image": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/c/ca/ErnstvonBibra-492x478.png",
+    "width": 2500,
+    "height": 3225
+  },
+  "images": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/ErnstvonBibra-492x478.png/330px-ErnstvonBibra-492x478.png",
+      "alt": "Infobox image for Ernst von Bibra",
+      "width": 330,
+      "height": 426,
+      "is_infobox": true
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/ErnstvonBibra-492x478.png/250px-ErnstvonBibra-492x478.png",
+      "alt": "",
+      "width": 250,
+      "height": 323
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/ErnstPrintInterior0003sm.jpg/250px-ErnstPrintInterior0003sm.jpg",
+      "alt": "",
+      "width": 250,
+      "height": 311
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/ErnstvBFrankLeslieMag.jpg/250px-ErnstvBFrankLeslieMag.jpg",
+      "alt": "",
+      "width": 250,
+      "height": 332
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Zelfportret_van_Ernst_Freiherr_von_Bibra%2C_RP-P-1914-1924.jpg/250px-Zelfportret_van_Ernst_Freiherr_von_Bibra%2C_RP-P-1914-1924.jpg",
+      "alt": "",
+      "width": 250,
+      "height": 327
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Schwebheimsmall.jpg/330px-Schwebheimsmall.jpg",
+      "alt": "",
+      "width": 300,
+      "height": 178
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png",
+      "alt": "Edit this at Wikidata",
+      "width": 10,
+      "height": 10
+    }
+  ],
+  "image_count": 7
+}

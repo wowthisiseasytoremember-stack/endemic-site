@@ -1,0 +1,45 @@
+{
+  "title": "Stevan J. Arnold",
+  "description": "American evolutionary biologist",
+  "extract": "Stevan James Arnold is an American evolutionary biologist. He is Professor Emeritus of Integrative Biology and was Curator of Amphibians and Reptiles at Oregon State University, Corvallis until his retirement. He has served as president of the Society for the Study of Evolution and the American Society of Naturalists.",
+  "page_url": "https://en.wikipedia.org/wiki/Stevan_J._Arnold",
+  "coordinates": null,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Stevan_Arnold.jpg",
+    "width": 218,
+    "height": 298
+  },
+  "original_image": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Stevan_Arnold.jpg",
+    "width": 218,
+    "height": 298
+  },
+  "images": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Stevan_Arnold.jpg",
+      "alt": "Infobox image for Stevan J. Arnold",
+      "width": 218,
+      "height": 298,
+      "is_infobox": true
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Stevan_Arnold.jpg",
+      "alt": "",
+      "width": 218,
+      "height": 298
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Evolutionary_Quantitative_Genetics.jpg/250px-Evolutionary_Quantitative_Genetics.jpg",
+      "alt": "",
+      "width": 250,
+      "height": 326
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png",
+      "alt": "Edit this at Wikidata",
+      "width": 10,
+      "height": 10
+    }
+  ],
+  "image_count": 4
+}

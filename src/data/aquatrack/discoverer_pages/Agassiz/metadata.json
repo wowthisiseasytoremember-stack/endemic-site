@@ -1,0 +1,237 @@
+{
+  "title": "Louis Agassiz",
+  "description": "Swiss-American naturalist (1807–1873)",
+  "extract": "Jean Louis Rodolphe Agassiz was a Swiss-born American biologist and geologist who is recognized as a scholar of Earth's natural history.",
+  "page_url": "https://en.wikipedia.org/wiki/Louis_Agassiz",
+  "coordinates": null,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Louis_Agassiz_H6.jpg/330px-Louis_Agassiz_H6.jpg",
+    "width": 330,
+    "height": 424
+  },
+  "original_image": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Louis_Agassiz_H6.jpg/3840px-Louis_Agassiz_H6.jpg",
+    "width": 3952,
+    "height": 5080
+  },
+  "images": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Louis_Agassiz_H6.jpg/330px-Louis_Agassiz_H6.jpg",
+      "alt": "Infobox image for Louis Agassiz",
+      "width": 330,
+      "height": 424,
+      "is_infobox": true
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Louis_Agassiz_H6.jpg/250px-Louis_Agassiz_H6.jpg",
+      "alt": "",
+      "width": 250,
+      "height": 321
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Appletons%27_Agassiz_Jean_Louis_Rudolphe_signature.svg/250px-Appletons%27_Agassiz_Jean_Louis_Rudolphe_signature.svg.png",
+      "alt": "",
+      "width": 150,
+      "height": 52
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Fritz_Z%C3%BCber-B%C3%BChler_-_Jean_Louis_Rodolphe_Agassiz_%281807-1873%29_-_H175_-_Harvard_Art_Museums.jpg/250px-Fritz_Z%C3%BCber-B%C3%BChler_-_Jean_Louis_Rodolphe_Agassiz_%281807-1873%29_-_H175_-_Harvard_Art_Museums.jpg",
+      "alt": "",
+      "width": 250,
+      "height": 346
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Louis_Aggasiz_and_Benjamin_Peirce.jpg/330px-Louis_Aggasiz_and_Benjamin_Peirce.jpg",
+      "alt": "",
+      "width": 300,
+      "height": 366
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Louis_Agassiz_H3.jpg/250px-Louis_Agassiz_H3.jpg",
+      "alt": "",
+      "width": 190,
+      "height": 261
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Agassiz%2C_Louis_%E2%80%93_Nouvelles_%C3%A9tudes_et_exp%C3%A9riences_sur_les_glaciers_actuels%2C_1847_%E2%80%93_BEIC_12025435.jpg/250px-Agassiz%2C_Louis_%E2%80%93_Nouvelles_%C3%A9tudes_et_exp%C3%A9riences_sur_les_glaciers_actuels%2C_1847_%E2%80%93_BEIC_12025435.jpg",
+      "alt": "",
+      "width": 190,
+      "height": 335
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/SAM_PC_0_-_Ice_auger_of_Louis_Agassiz_and_Eduard_Desor.jpg/120px-SAM_PC_0_-_Ice_auger_of_Louis_Agassiz_and_Eduard_Desor.jpg",
+      "alt": "",
+      "width": 100,
+      "height": 432
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Agassiz_Louis_1807-1873.png/250px-Agassiz_Louis_1807-1873.png",
+      "alt": "",
+      "width": 190,
+      "height": 238
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Jean_Louis_Agassiz_1870.jpg/250px-Jean_Louis_Agassiz_1870.jpg",
+      "alt": "",
+      "width": 250,
+      "height": 300
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Agassiz.main.sk.jpg/250px-Agassiz.main.sk.jpg",
+      "alt": "",
+      "width": 190,
+      "height": 253
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Renty_an_African_slave.jpg/250px-Renty_an_African_slave.jpg",
+      "alt": "",
+      "width": 200,
+      "height": 245
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Renty_an_African_slave.jpg/120px-Renty_an_African_slave.jpg",
+      "alt": "\"Papa\" Renty Taylor Born Congo, 1775-died on/after 1866. Field hand on B.F. Taylor Plantation, Columbia South Carolina [Note a side profile picture can be found at online article \"Louis Agassiz Two Faces\"]",
+      "width": 98,
+      "height": 120
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Delia1850FrontPortrait.jpg/120px-Delia1850FrontPortrait.jpg",
+      "alt": "Delia (Born America); daughter of Renty on B.F. Taylor Plantation, Columbia South Carolina [Picture # 1]",
+      "width": 91,
+      "height": 120
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Slave_Portrait_Agassiz_Zealy_Woman_Side_Bust_2.jpg/120px-Slave_Portrait_Agassiz_Zealy_Woman_Side_Bust_2.jpg",
+      "alt": "Delia daughter of Renty on B.F. Taylor Plantation, Columbia South Carolina [Picture # 2]",
+      "width": 93,
+      "height": 120
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/JackGuineaProfileSlavePortrait.jpg/120px-JackGuineaProfileSlavePortrait.jpg",
+      "alt": "Jack of Guinea, a slave driver  on B.F. Taylor Plantation, Columbia South Carolina [Picture # 1]",
+      "width": 92,
+      "height": 120
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Jack1850FrontZealy.jpg/120px-Jack1850FrontZealy.jpg",
+      "alt": "Jack of Guinea, a slave driver  on B.F. Taylor Plantation, Columbia South Carolina [Picture # 2]",
+      "width": 82,
+      "height": 120
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Drana_%28frontal_portrait%29.jpg/120px-Drana_%28frontal_portrait%29.jpg",
+      "alt": "Drana daughter of Jack on B.F. Taylor Plantation, Columbia South Carolina [Picture # 1]",
+      "width": 97,
+      "height": 120
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Drana_%28profile_view%29.jpg/120px-Drana_%28profile_view%29.jpg",
+      "alt": "Drana daughter of Jack on B.F. Taylor Plantation, Columbia South Carolina [Picture # 2]",
+      "width": 93,
+      "height": 120
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Slave_Portrait_Agassiz_Zealy_Man_Side_Bust_2.jpg/120px-Slave_Portrait_Agassiz_Zealy_Man_Side_Bust_2.jpg",
+      "alt": "Fassena a mandingo Carpender on Wade Hampton Plantation, South Carolina [Note a full face picture can be found at https://saa3dm.org/2021/11/16/1850]",
+      "width": 93,
+      "height": 120
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Slave_Portrait_Agassiz_Zealy_Man_Standing_Back.jpg/120px-Slave_Portrait_Agassiz_Zealy_Man_Standing_Back.jpg",
+      "alt": "\"Jem. A Gullah..B.W. Green Plantation [See American Heritage June 1977 \"Faces of Slavery\"]",
+      "width": 80,
+      "height": 120
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Slave_Portrait_Agassiz_Zealy_Man_Front_01.jpg/120px-Slave_Portrait_Agassiz_Zealy_Man_Front_01.jpg",
+      "alt": "",
+      "width": 92,
+      "height": 120
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Slave_Portrait_Agassiz_Zealy_Man_Side_One_Leg.jpg/120px-Slave_Portrait_Agassiz_Zealy_Man_Side_One_Leg.jpg",
+      "alt": "",
+      "width": 94,
+      "height": 120
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Agassiz_in_the_Concrete.jpg/250px-Agassiz_in_the_Concrete.jpg",
+      "alt": "",
+      "width": 250,
+      "height": 317
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Wikisource-logo.svg/20px-Wikisource-logo.svg.png",
+      "alt": "Wikisource",
+      "width": 12,
+      "height": 13
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/20px-Commons-logo.svg.png",
+      "alt": "Wikimedia Commons logo",
+      "width": 20,
+      "height": 27
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Wikiquote-logo.svg/40px-Wikiquote-logo.svg.png",
+      "alt": "",
+      "width": 23,
+      "height": 27
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Wikisource-logo.svg/40px-Wikisource-logo.svg.png",
+      "alt": "Wikisource logo",
+      "width": 26,
+      "height": 27
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Wikispecies-logo.svg/40px-Wikispecies-logo.svg.png",
+      "alt": "Wikispecies logo",
+      "width": 23,
+      "height": 27
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/20px-Speaker_Icon.svg.png",
+      "alt": "",
+      "width": 15,
+      "height": 15
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Naturalist_on_the_River_Amazons_figure_17.png/120px-Naturalist_on_the_River_Amazons_figure_17.png",
+      "alt": "Sceliphron wasp building nest",
+      "width": 85,
+      "height": 123
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png",
+      "alt": "Edit this at Wikidata",
+      "width": 10,
+      "height": 10
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/6/69/P_vip.svg/20px-P_vip.svg.png",
+      "alt": "",
+      "width": 19,
+      "height": 19
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/The_Earth_seen_from_Apollo_17_with_transparent_background.png/20px-The_Earth_seen_from_Apollo_17_with_transparent_background.png",
+      "alt": "",
+      "width": 19,
+      "height": 19
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/WikiProject_Geology.svg/20px-WikiProject_Geology.svg.png",
+      "alt": "icon",
+      "width": 19,
+      "height": 19
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Newton%27s_reflecting_telescope.jpg/20px-Newton%27s_reflecting_telescope.jpg",
+      "alt": "image",
+      "width": 17,
+      "height": 19
+    }
+  ],
+  "image_count": 36
+}

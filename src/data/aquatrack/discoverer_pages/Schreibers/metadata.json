@@ -1,0 +1,39 @@
+{
+  "title": "Carl Franz Anton Ritter von Schreibers",
+  "description": "Austro-Hungarian scientist",
+  "extract": "Carl Franz Anton Ritter von Schreibers was an Austrian naturalist who was involved in organizing the natural history cabinet \"Naturalienkabinette\" of the Austrian emperor Franz II which later became the natural history museum of Vienna. He took an interest in zoology as well as minerals and particularly meteorites.",
+  "page_url": "https://en.wikipedia.org/wiki/Carl_Franz_Anton_Ritter_von_Schreibers",
+  "coordinates": null,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Karl_Franz_Anton_von_Schreibers.jpg/330px-Karl_Franz_Anton_von_Schreibers.jpg",
+    "width": 330,
+    "height": 414
+  },
+  "original_image": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Karl_Franz_Anton_von_Schreibers.jpg",
+    "width": 500,
+    "height": 628
+  },
+  "images": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Karl_Franz_Anton_von_Schreibers.jpg/330px-Karl_Franz_Anton_von_Schreibers.jpg",
+      "alt": "Infobox image for Carl Franz Anton Ritter von Schreibers",
+      "width": 330,
+      "height": 414,
+      "is_infobox": true
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Karl_Franz_Anton_von_Schreibers.jpg/250px-Karl_Franz_Anton_von_Schreibers.jpg",
+      "alt": "",
+      "width": 250,
+      "height": 314
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png",
+      "alt": "Edit this at Wikidata",
+      "width": 10,
+      "height": 10
+    }
+  ],
+  "image_count": 3
+}

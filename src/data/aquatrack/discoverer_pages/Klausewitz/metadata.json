@@ -1,0 +1,30 @@
+{
+  "title": "Wolfgang Klausewitz",
+  "description": "German zoologist, ichthyologist, marine biologist, and biohistorian (1921–2018)",
+  "extract": "Wolfgang Klausewitz was a German zoologist, ichthyologist, marine biologist and biohistorian.",
+  "page_url": "https://en.wikipedia.org/wiki/Wolfgang_Klausewitz",
+  "coordinates": null,
+  "thumbnail": null,
+  "original_image": null,
+  "images": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png",
+      "alt": "Edit this at Wikidata",
+      "width": 10,
+      "height": 10
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Scientist.svg/40px-Scientist.svg.png",
+      "alt": "Scientist icon",
+      "width": 30,
+      "height": 30
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/D%C3%BCrer_-_Rhinoceros.jpg/40px-D%C3%BCrer_-_Rhinoceros.jpg",
+      "alt": "Stub icon",
+      "width": 30,
+      "height": 21
+    }
+  ],
+  "image_count": 3
+}

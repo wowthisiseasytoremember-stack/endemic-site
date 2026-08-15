@@ -1,0 +1,16 @@
+{
+  "source": "Gabriella Plants",
+  "total_products": 170,
+  "records_with_signals": 28,
+  "records_without_signals": 142,
+  "signal_counts": {
+    "patent_ref": 1,
+    "origin_story": 10,
+    "parentage": 14,
+    "originator": 2,
+    "trade_name": 3
+  },
+  "genera_found": {
+    "Philodendron": 170
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Boman Framji Chhapgar",
+  "description": "Indian marine biologist",
+  "extract": "Boman Framji Chhapgar was an Indian marine biologist who specialized in carcinology. The author of popular accounts on marine biology under the pen-name of \"beefsea\", several new species of crab, mantis shrimp and fishes have been described by him.",
+  "page_url": "https://en.wikipedia.org/wiki/Boman_Framji_Chhapgar",
+  "coordinates": null,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/BF_Chhapgar.jpg/330px-BF_Chhapgar.jpg",
+    "width": 330,
+    "height": 429
+  },
+  "original_image": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/2/23/BF_Chhapgar.jpg",
+    "width": 395,
+    "height": 514
+  },
+  "images": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/BF_Chhapgar.jpg/330px-BF_Chhapgar.jpg",
+      "alt": "Infobox image for Boman Framji Chhapgar",
+      "width": 330,
+      "height": 429,
+      "is_infobox": true
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/BF_Chhapgar.jpg/250px-BF_Chhapgar.jpg",
+      "alt": "Photo of Boman Framji Chhapgar",
+      "width": 250,
+      "height": 325
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png",
+      "alt": "Edit this at Wikidata",
+      "width": 10,
+      "height": 10
+    }
+  ],
+  "image_count": 3
+}

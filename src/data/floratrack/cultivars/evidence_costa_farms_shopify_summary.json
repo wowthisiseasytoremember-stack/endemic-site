@@ -1,0 +1,27 @@
+{
+  "source": "Costa Farms",
+  "total_products": 129,
+  "records_with_signals": 107,
+  "records_without_signals": 22,
+  "signal_counts": {
+    "parentage": 78,
+    "origin_story": 57,
+    "trade_name": 17,
+    "originator": 10,
+    "patent_ref": 9
+  },
+  "genera_found": {
+    "Monstera": 10,
+    "Philodendron": 8,
+    "Epipremnum": 6,
+    "Ficus": 5,
+    "Hoya": 3,
+    "Alocasia": 3,
+    "Aglaonema": 3,
+    "Dieffenbachia": 2,
+    "Anthurium": 2,
+    "Calathea": 2,
+    "Zamioculcas": 1,
+    "Begonia": 1
+  }
+}

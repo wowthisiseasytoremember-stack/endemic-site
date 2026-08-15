@@ -1,0 +1,20 @@
+{
+  "source": "The Sill",
+  "total_products": 250,
+  "records_with_signals": 65,
+  "records_without_signals": 185,
+  "signal_counts": {
+    "parentage": 32,
+    "trade_name": 18,
+    "origin_story": 18
+  },
+  "genera_found": {
+    "Alocasia": 14,
+    "Calathea": 11,
+    "Aglaonema": 7,
+    "Anthurium": 4,
+    "Begonia": 2,
+    "Ficus": 2,
+    "Philodendron": 2
+  }
+}

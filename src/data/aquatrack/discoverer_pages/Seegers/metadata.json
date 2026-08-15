@@ -1,0 +1,30 @@
+{
+  "title": "Lothar Seegers",
+  "description": "German ichthyologist",
+  "extract": "Lothar Seegers was a German ichthyologist. Seegers authored 9 species within the family of Rivulidae.",
+  "page_url": "https://en.wikipedia.org/wiki/Lothar_Seegers",
+  "coordinates": null,
+  "thumbnail": null,
+  "original_image": null,
+  "images": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Wikispecies-logo.svg/20px-Wikispecies-logo.svg.png",
+      "alt": "Wikispecies logo",
+      "width": 14,
+      "height": 16
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png",
+      "alt": "Edit this at Wikidata",
+      "width": 10,
+      "height": 10
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Scientist.svg/40px-Scientist.svg.png",
+      "alt": "Scientist icon",
+      "width": 30,
+      "height": 30
+    }
+  ],
+  "image_count": 3
+}

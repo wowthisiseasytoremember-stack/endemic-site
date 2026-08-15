@@ -1,0 +1,24 @@
+{
+  "source": "California Carnivores",
+  "total_products": 250,
+  "records_with_signals": 195,
+  "records_without_signals": 55,
+  "signal_counts": {
+    "parentage": 175,
+    "origin_story": 38,
+    "introduced_year": 18,
+    "trade_name": 2,
+    "originator": 17
+  },
+  "genera_found": {
+    "Nepenthes": 48,
+    "Pinguicula": 35,
+    "Dionaea": 29,
+    "Sarracenia": 23,
+    "Drosera": 16,
+    "Byblis": 4,
+    "Drosophyllum": 2,
+    "Cephalotus": 1,
+    "Darlingtonia": 1
+  }
+}

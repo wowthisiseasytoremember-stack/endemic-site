@@ -1,0 +1,24 @@
+{
+  "source": "Altman Plants",
+  "total_products": 155,
+  "records_with_signals": 64,
+  "records_without_signals": 91,
+  "signal_counts": {
+    "parentage": 34,
+    "origin_story": 30,
+    "originator": 6,
+    "patent_ref": 4,
+    "trade_name": 7
+  },
+  "genera_found": {
+    "Echeveria": 17,
+    "Crassula": 11,
+    "Aloe": 8,
+    "Sedum": 7,
+    "Portulacaria": 4,
+    "Kalanchoe": 3,
+    "Peperomia": 2,
+    "Gasteria": 1,
+    "Haworthia": 1
+  }
+}

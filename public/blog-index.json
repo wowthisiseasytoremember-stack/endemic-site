@@ -1,0 +1,126 @@
+{
+  "posts": [
+    {
+      "slug": "f-rio-negro",
+      "title": "F — The Rio Negro Blackwater Biotope: Building the Amazon's Most Extreme Habitat",
+      "excerpt": "This water looks dirty. It is not. This is one of the cleanest, most specialized environments on the planet — and we are going to recreate it piece by piece.  The Rio Negro is the largest blackwater r...",
+      "category": "Biotope Guides",
+      "tags": [
+        "biotope",
+        "rio-negro",
+        "blackwater",
+        "amazon",
+        "cardinal-tetra",
+        "apistogramma"
+      ],
+      "series": "Biotope Builds",
+      "seriesOrder": 1,
+      "publishDate": "2026-06-01",
+      "readTime": "4 min",
+      "heroImage": "/images/blog/f-rio-negro-hero.webp",
+      "heroAlt": "Hero image for F — The Rio Negro Blackwater Biotope: Building the Amazon's Most Extreme Habitat"
+    },
+    {
+      "slug": "e-pink-princess",
+      "title": "E — The Pink Princess Patent: Is Your Plant the Plant on the Paper?",
+      "excerpt": "This is one of the most hyped houseplants of the last decade. There's a patent that covers its genetics. And there's a very good chance the one you bought isn't the plant on the paper.  The Pink Princ...",
+      "category": "Cultivar Controversies",
+      "tags": [
+        "cultivars",
+        "pink-princess",
+        "patents",
+        "chimeras",
+        "tissue-culture",
+        "philodendron"
+      ],
+      "series": "Cultivar Controversies",
+      "seriesOrder": 1,
+      "publishDate": "2026-05-15",
+      "readTime": "3 min",
+      "heroImage": "/images/blog/e-pink-princess-hero.webp",
+      "heroAlt": "Hero image for E — The Pink Princess Patent: Is Your Plant the Plant on the Paper?"
+    },
+    {
+      "slug": "d-schott",
+      "title": "D — Heinrich Wilhelm Schott: The Palace Botanist Who Mapped the Aroid Kingdom",
+      "excerpt": "Almost every Anthurium in your collection — the velvet-leaf giants, the flamingo flowers, the rare crystallinum — shares one name in its scientific history: one Austrian botanist, one enormous genus, ...",
+      "category": "Discoverer Dossiers",
+      "tags": [
+        "discoverers",
+        "schott",
+        "anthurium",
+        "aroids",
+        "botanical-history",
+        "schonbrunn"
+      ],
+      "series": "Discoverer Dossiers",
+      "seriesOrder": 2,
+      "publishDate": "2026-04-05",
+      "readTime": "4 min",
+      "heroImage": "/images/blog/d-schott-hero.webp",
+      "heroAlt": "Hero image for D — Heinrich Wilhelm Schott: The Palace Botanist Who Mapped the Aroid Kingdom"
+    },
+    {
+      "slug": "c-etymology",
+      "title": "C — What Your Aquarium Fish's Scientific Name Actually Means",
+      "excerpt": "These aren't random words. Every scientific name is a tiny sentence — a dedication, a description, a place, or an inside joke hidden in Latin.  Scientific names look intimidating. They're not meant to...",
+      "category": "Species Spotlight",
+      "tags": [
+        "etymology",
+        "scientific-names",
+        "latin",
+        "taxonomy",
+        "nomenclature"
+      ],
+      "series": "",
+      "seriesOrder": 0,
+      "publishDate": "2026-03-10",
+      "readTime": "4 min",
+      "heroImage": "/images/blog/c-etymology-hero.webp",
+      "heroAlt": "Hero image for C — What Your Aquarium Fish's Scientific Name Actually Means"
+    },
+    {
+      "slug": "b-bleeker",
+      "title": "B — Pieter Bleeker: The Army Doctor Who Named Half Your Aquarium",
+      "excerpt": "If you keep Southeast Asian fish, chances are one man named nearly half your tank — and he did it in his spare time, between shifts as a colonial army doctor.  Pieter Bleeker was not a professional ic...",
+      "category": "Discoverer Dossiers",
+      "tags": [
+        "discoverers",
+        "bleeker",
+        "southeast-asia",
+        "history",
+        "colonial-science",
+        "atlas-ichthyologique"
+      ],
+      "series": "Discoverer Dossiers",
+      "seriesOrder": 1,
+      "publishDate": "2026-02-20",
+      "readTime": "6 min",
+      "heroImage": "/images/blog/b-bleeker-hero.webp",
+      "heroAlt": "Hero image for B — Pieter Bleeker: The Army Doctor Who Named Half Your Aquarium"
+    },
+    {
+      "slug": "a-puffer",
+      "title": "A — 11 Freshwater Pufferfish Species: A Complete Guide",
+      "excerpt": "Pufferfish break most of the rules we set for community aquariums. They have teeth that never stop growing. They recognize their owners. Many are aggressive, most are messy, and a handful will kill an...",
+      "category": "Species Spotlight",
+      "tags": [
+        "puffers",
+        "biotope",
+        "species-guide",
+        "congo",
+        "amazon",
+        "india",
+        "taxonomy",
+        "conservation"
+      ],
+      "series": "Puffer Profiles",
+      "seriesOrder": 1,
+      "publishDate": "2026-01-15",
+      "readTime": "6 min",
+      "heroImage": "/images/blog/a-puffer-hero.webp",
+      "heroAlt": "Hero image for A — 11 Freshwater Pufferfish Species: A Complete Guide"
+    }
+  ],
+  "generatedAt": "2026-07-18T07:55:08.179Z"
+}

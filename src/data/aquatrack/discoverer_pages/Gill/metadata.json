@@ -1,0 +1,57 @@
+{
+  "title": "Theodore Gill",
+  "description": "American biologist",
+  "extract": "Theodore Nicholas Gill was an American ichthyologist, mammalogist, malacologist, and librarian.",
+  "page_url": "https://en.wikipedia.org/wiki/Theodore_Gill",
+  "coordinates": null,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/2/29/TN_Gill.jpg",
+    "width": 254,
+    "height": 298
+  },
+  "original_image": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/2/29/TN_Gill.jpg",
+    "width": 254,
+    "height": 298
+  },
+  "images": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/2/29/TN_Gill.jpg",
+      "alt": "Infobox image for Theodore Gill",
+      "width": 254,
+      "height": 298,
+      "is_infobox": true
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/TN_Gill.jpg/250px-TN_Gill.jpg",
+      "alt": "",
+      "width": 250,
+      "height": 293
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Theodore_Nicholas_Gill.jpg/250px-Theodore_Nicholas_Gill.jpg",
+      "alt": "",
+      "width": 250,
+      "height": 432
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/40px-Commons-logo.svg.png",
+      "alt": "Wikimedia Commons logo",
+      "width": 30,
+      "height": 40
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Wikisource-logo.svg/40px-Wikisource-logo.svg.png",
+      "alt": "Wikisource logo",
+      "width": 38,
+      "height": 40
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png",
+      "alt": "Edit this at Wikidata",
+      "width": 10,
+      "height": 10
+    }
+  ],
+  "image_count": 6
+}

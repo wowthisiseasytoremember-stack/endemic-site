@@ -1,0 +1,26 @@
+{
+  "source": "Canopy Plant Co",
+  "total_products": 250,
+  "records_with_signals": 87,
+  "records_without_signals": 163,
+  "signal_counts": {
+    "parentage": 55,
+    "origin_story": 36,
+    "trade_name": 6,
+    "introduced_year": 1,
+    "originator": 1
+  },
+  "genera_found": {
+    "Hoya": 93,
+    "Alocasia": 34,
+    "Begonia": 25,
+    "Anthurium": 24,
+    "Calathea": 9,
+    "Ficus": 7,
+    "Epipremnum": 3,
+    "Aglaonema": 3,
+    "Peperomia": 2,
+    "Monstera": 2,
+    "Philodendron": 1
+  }
+}

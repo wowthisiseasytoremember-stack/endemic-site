@@ -1,0 +1,30 @@
+{
+  "title": "Han Nijssen",
+  "description": "Dutch ichthyologist",
+  "extract": "Han Nijssen was a Dutch ichthyologist.",
+  "page_url": "https://en.wikipedia.org/wiki/Han_Nijssen",
+  "coordinates": null,
+  "thumbnail": null,
+  "original_image": null,
+  "images": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png",
+      "alt": "Edit this at Wikidata",
+      "width": 10,
+      "height": 10
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Scientist.svg/40px-Scientist.svg.png",
+      "alt": "Scientist icon",
+      "width": 30,
+      "height": 30
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Gessner_Conrad_1516-1565.jpg/40px-Gessner_Conrad_1516-1565.jpg",
+      "alt": "Stub icon",
+      "width": 30,
+      "height": 32
+    }
+  ],
+  "image_count": 3
+}

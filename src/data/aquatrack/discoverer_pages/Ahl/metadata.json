@@ -1,0 +1,51 @@
+{
+  "title": "Ernst Ahl",
+  "description": "German zoologist, ichthyologist and herpetologist",
+  "extract": "Christoph Gustav Ernst Ahl was a German zoologist, born in Berlin.",
+  "page_url": "https://en.wikipedia.org/wiki/Ernst_Ahl",
+  "coordinates": null,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/D%C3%BCrigen_%E2%80%93_Waldeidechse_%28Das_Aquarium%2C_1928%29.pdf/page1-330px-D%C3%BCrigen_%E2%80%93_Waldeidechse_%28Das_Aquarium%2C_1928%29.pdf.jpg",
+    "width": 330,
+    "height": 455
+  },
+  "original_image": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/D%C3%BCrigen_%E2%80%93_Waldeidechse_%28Das_Aquarium%2C_1928%29.pdf/page1-1280px-D%C3%BCrigen_%E2%80%93_Waldeidechse_%28Das_Aquarium%2C_1928%29.pdf.jpg",
+    "width": 1320,
+    "height": 1818
+  },
+  "images": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/D%C3%BCrigen_%E2%80%93_Waldeidechse_%28Das_Aquarium%2C_1928%29.pdf/page1-330px-D%C3%BCrigen_%E2%80%93_Waldeidechse_%28Das_Aquarium%2C_1928%29.pdf.jpg",
+      "alt": "Infobox image for Ernst Ahl",
+      "width": 330,
+      "height": 455,
+      "is_infobox": true
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/D%C3%BCrigen_%E2%80%93_Waldeidechse_%28Das_Aquarium%2C_1928%29.pdf/page1-250px-D%C3%BCrigen_%E2%80%93_Waldeidechse_%28Das_Aquarium%2C_1928%29.pdf.jpg",
+      "alt": "",
+      "width": 250,
+      "height": 344
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png",
+      "alt": "Edit this at Wikidata",
+      "width": 10,
+      "height": 10
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Scientist.svg/40px-Scientist.svg.png",
+      "alt": "Scientist icon",
+      "width": 30,
+      "height": 30
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/D%C3%BCrer_-_Rhinoceros.jpg/40px-D%C3%BCrer_-_Rhinoceros.jpg",
+      "alt": "Stub icon",
+      "width": 30,
+      "height": 21
+    }
+  ],
+  "image_count": 5
+}

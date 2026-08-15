@@ -1,0 +1,25 @@
+{
+  "source": "Carnivorous Plant Nursery",
+  "total_products": 250,
+  "records_with_signals": 226,
+  "records_without_signals": 24,
+  "signal_counts": {
+    "parentage": 225,
+    "introduced_year": 1,
+    "origin_story": 20,
+    "trade_name": 7,
+    "originator": 7
+  },
+  "genera_found": {
+    "Sarracenia": 68,
+    "Drosera": 48,
+    "Nepenthes": 23,
+    "Heliamphora": 4,
+    "Cephalotus": 3,
+    "Genlisea": 3,
+    "Pinguicula": 2,
+    "Aldrovanda": 1,
+    "Darlingtonia": 1,
+    "Dionaea": 1
+  }
+}

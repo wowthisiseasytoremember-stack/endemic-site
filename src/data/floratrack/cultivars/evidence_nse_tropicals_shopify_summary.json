@@ -1,0 +1,13 @@
+{
+  "source": "NSE Tropicals",
+  "total_products": 75,
+  "records_with_signals": 0,
+  "records_without_signals": 75,
+  "signal_counts": {},
+  "genera_found": {
+    "Anthurium": 33,
+    "Philodendron": 18,
+    "Monstera": 2,
+    "Alocasia": 1
+  }
+}

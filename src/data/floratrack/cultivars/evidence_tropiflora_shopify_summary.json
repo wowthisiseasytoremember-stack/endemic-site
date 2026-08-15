@@ -1,0 +1,16 @@
+{
+  "source": "Tropiflora",
+  "total_products": 250,
+  "records_with_signals": 85,
+  "records_without_signals": 165,
+  "signal_counts": {
+    "origin_story": 40,
+    "parentage": 53,
+    "patent_ref": 5,
+    "originator": 2
+  },
+  "genera_found": {
+    "Aechmea": 231,
+    "Tillandsia": 10
+  }
+}

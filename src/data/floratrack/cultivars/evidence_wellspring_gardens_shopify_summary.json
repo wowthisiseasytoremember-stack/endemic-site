@@ -1,0 +1,22 @@
+{
+  "source": "Wellspring Gardens",
+  "total_products": 250,
+  "records_with_signals": 51,
+  "records_without_signals": 199,
+  "signal_counts": {
+    "originator": 3,
+    "trade_name": 23,
+    "origin_story": 18,
+    "parentage": 12,
+    "introduced_year": 1
+  },
+  "genera_found": {
+    "Alocasia": 26,
+    "Colocasia": 23,
+    "Anthurium": 11,
+    "Ficus": 11,
+    "Philodendron": 1,
+    "Pilea": 1,
+    "Begonia": 1
+  }
+}

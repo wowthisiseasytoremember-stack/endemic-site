@@ -1,0 +1,36 @@
+{
+  "title": "Rolf Geisler",
+  "description": "German ichthyologist (1925–2012)",
+  "extract": "\nRolf Geisler was a German ichthyologist, limnologist and aquarist.",
+  "page_url": "https://en.wikipedia.org/wiki/Rolf_Geisler",
+  "coordinates": null,
+  "thumbnail": null,
+  "original_image": null,
+  "images": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Ambox_important.svg/40px-Ambox_important.svg.png",
+      "alt": "",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/60px-Question_book-new.svg.png",
+      "alt": "icon",
+      "width": 50,
+      "height": 39
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Edit-clear.svg/40px-Edit-clear.svg.png",
+      "alt": "",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Iguanodectes_geisleri_-_AquaPorteDoree.JPG/250px-Iguanodectes_geisleri_-_AquaPorteDoree.JPG",
+      "alt": "",
+      "width": 250,
+      "height": 141
+    }
+  ],
+  "image_count": 4
+}

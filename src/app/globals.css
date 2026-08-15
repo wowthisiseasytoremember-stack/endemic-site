@@ -1,0 +1,172 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+  --ink: #0a1417;
+  --aqua: #1fb8c4;
+  --aqua-deep: #0b6b78;
+  --emerald: #2fae6b;
+  --emerald-deep: #14603a;
+  --amber: #e8a12c;
+  --amber-deep: #a5651a;
+  --sand: #f5efe3;
+  
+  /* Brand System & Tokens (Mapped to Endemic Theme) */
+  --brand-dark: #1A1A2E;
+  --brand-surface: #27272A;
+  --brand-raised: #44444A;
+  --brand-text: #F4F4F5;
+  --brand-muted: #A1A1AA;
+  --brand-accent: #EAB308;
+  --brand-accent-deep: #776400;
+}
+
+@theme inline {
+  --font-display: var(--font-display), ui-serif, Georgia, serif;
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --color-ink: var(--ink);
+  --color-aqua: var(--aqua);
+  --color-aqua-deep: var(--aqua-deep);
+  --color-emerald: var(--emerald);
+  --color-emerald-deep: var(--emerald-deep);
+  --color-amber: var(--amber);
+  --color-amber-deep: var(--amber-deep);
+  --color-sand: var(--sand);
+
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-surface: var(--brand-surface);
+  --color-brand-raised: var(--brand-raised);
+  --color-brand-text: var(--brand-text);
+  --color-brand-muted: var(--brand-muted);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-accent-deep: var(--brand-accent-deep);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--brand-dark);
+  color: var(--brand-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Base Responsive Typography Flow */
+.article-flow > * { 
+  width: min(calc(100% - 2rem), 70ch); 
+  margin-inline: auto; 
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+/* Zone color grading anchors */
+.zone-aqua {
+  --zone: var(--aqua);
+  --zone-deep: var(--aqua-deep);
+}
+.zone-emerald {
+  --zone: var(--emerald);
+  --zone-deep: var(--emerald-deep);
+}
+.zone-amber {
+  --zone: var(--amber);
+  --zone-deep: var(--amber-deep);
+}
+
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 3px 3px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 0.5; }
+  90% { opacity: 0.4; }
+  100% { transform: translateY(-120vh) translateX(20px); opacity: 0; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(31, 184, 196, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(31, 184, 196, 0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+}
+.reveal.in {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    var(--zone, #1fb8c4) 0%,
+    #ffffff 50%,
+    var(--zone, #1fb8c4) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+.glow-text-aqua {
+  filter: drop-shadow(0 0 25px rgba(31, 184, 196, 0.6));
+}
+
+.glow-text-emerald {
+  filter: drop-shadow(0 0 25px rgba(47, 174, 107, 0.6));
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.card-hover {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s, background 0.4s;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  border-color: var(--zone, rgba(255, 255, 255, 0.25));
+}
+
+::selection {
+  background: var(--aqua);
+  color: #06100f;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #06100f; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--aqua-deep), var(--emerald-deep));
+  border-radius: 20px;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}

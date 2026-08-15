@@ -1,0 +1,5 @@
+assignee,confidence_score,cultivar_name,genus,inventor,is_high_confidence,originator,patent_id,source_type,source_url,title
+,2,Pink Princess,Philodendron,,False,Unknown,,cultivar_evidence,,
+,3,Thai Constellation,Monstera,,False,Florida,USPP12345,cultivar_evidence,,
+['ABC Plants'],5,,,['John Doe'],True,,USPP12345,patent_evidence,['google.com'],Monstera Thai Constellation
+,4,,,['Jane Smith'],True,,USPP67890,patent_evidence,['justia.com'],Philodendron Green Emerald
