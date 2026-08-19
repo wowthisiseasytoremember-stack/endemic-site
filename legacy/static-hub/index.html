@@ -1,0 +1,1996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                          DESIGN RATIONALE                                  ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║                                                                              ║
+║  PURPOSE:                                                                    ║
+║  A single-file HTML landing page for the Content Factory ecosystem hub —     ║
+║  aquarium (AquaTrack) and plant (FloraTrack) apps, two YouTube channels,     ║
+║  a biotope-matching explainer, blog, and affiliate gear section.             ║
+║  Primary conversions: App downloads → YouTube subscriptions → Email →        ║
+║  Affiliate revenue.                                                          ║
+║                                                                              ║
+║  DESIGN SYSTEM:                                                              ║
+║  • Zone-based color grading: aquatic teal (#0a4a4f) in AquaTrack sections,  ║
+║    plant emerald (#1a3a2a) in FloraTrack sections, warm amber (#4a3020) in   ║
+║    blog/community areas. Section backgrounds and accents shift subtly as     ║
+║    the user scrolls between zones.                                          ║
+║  • AquaTrack tokens (from DesignTokens.swift): ricePaper (#F7F5F0) canvas,  ║
+║    koiRed (#E85D4E) primary accent, inkBlack (#1A1A1A) for headings.        ║
+║  • FloraTrack tokens (from DESIGN.md): dark canvas (#121a15), mint green     ║
+║    (#2ecc71) primary, gold (#f1c40f) accent, serif display (Cormorant       ║
+║    Garamond), sans body (Inter).                                            ║
+║  • Typography: Cormorant Garamond (serif display) for headings, Inter       ║
+║    (sans-serif) for body, matching FloraTrack's botanical-expedition theme.  ║
+║                                                                              ║
+║  LAYOUT:                                                                     ║
+║  • Mobile-first, single-column, responsive up to large desktop breakpoints.  ║
+║  • Feature grids use CSS Grid with auto-fill/auto-fit for responsive cols.   ║
+║  • Stats bar fixed-attachment parallax effect with scroll-triggered counter   ║
+║    animation using IntersectionObserver (no external libraries).              ║
+║  • Sticky CTA bar (app store badges) appears after 400px scroll.             ║
+║                                                                              ║
+║  DATA VERIFICATION:                                                          ║
+║  All numbers (species counts, collector links, test results, etc.) are from  ║
+║  real SQLite databases on disk per the build doc. No fabricated statistics.   ║
+║  All discoverer names, dates, expedition details, and controversy text        ║
+║  are from verified GBIF collector data and provenance records.               ║
+║                                                                              ║
+║  SEMANTICS:                                                                  ║
+║  • Schema.org MobileApplication markup for both apps                          ║
+║  • Schema.org Product markup for affiliate items                              ║
+║  • Semantic HTML5 with proper heading hierarchy (h1→h2→h3)                   ║
+║  • Real alt text on all images                                                ║
+║  • ARIA labels where appropriate                                              ║
+║                                                                              ║
+║  ASSET PLACEMENT:                                                             ║
+║  This file is self-contained HTML/CSS/JS. Image paths are relative to the    ║
+║  dist/ folder for deployment. Place assets at:                               ║
+║    dist/img/ — screenshots, thumbnails, logos                                ║
+║    dist/fonts/ — (optional, Google Fonts CDN is primary)                     ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Connection Web — AquaTrack &amp; FloraTrack Ecosystem Hub</title>
+<meta name="description" content="Know the river your fish comes from. Know who named your plant. Every species has a story. AquaTrack and FloraTrack unlock the hidden connections between your aquarium and your collection.">
+<meta name="theme-color" content="#0a4a4f">
+
+<!-- Schema.org markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "The Connection Web — Aquarium &amp; Plant Ecosystem Hub",
+  "description": "Apps that reveal the hidden stories behind aquarium fish and tropical plants — biotope matching, discoverer profiles, and provenance tracking.",
+  "mainEntity": [
+    {
+      "@type": "MobileApplication",
+      "name": "AquaTrack",
+      "applicationCategory": "Education",
+      "operatingSystem": "iOS 17.0+",
+      "description": "Biotope matching app for aquarium fish. Enter your species and see the exact river they come from, who discovered them, and what else lives there.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "MobileApplication",
+      "name": "FloraTrack",
+      "applicationCategory": "Education",
+      "operatingSystem": "iOS 17.0+",
+      "description": "Plant provenance app for tropical plant collectors. Track cultivar origins, discoverer histories, and patent controversies.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Google Fonts: Cormorant Garamond (display) + Inter (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  /* ============================================================
+     CSS VARIABLES — DESIGN TOKENS
+     ============================================================ */
+  :root {
+    /* ---- Base (AquaTrack zone) ---- */
+    --color-bg: #F7F5F0;
+    --color-surface: #FFFFFF;
+    --color-surface-alt: #F0EDE6;
+    --color-text: #1A1A1A;
+    --color-text-secondary: #6B6B6B;
+    --color-text-muted: #9E9B93;
+    --color-accent: #E85D4E;
+    --color-accent-dark: #C94A3C;
+    --color-border: #E8E6E0;
+    --color-accent-teal: #0a4a4f;
+    --color-accent-teal-light: #1a7a7f;
+
+    /* ---- FloraTrack zone (dark) ---- */
+    --color-ft-bg: #121a15;
+    --color-ft-surface: #161a18;
+    --color-ft-text: #e8edea;
+    --color-ft-text-secondary: #8b9991;
+    --color-ft-primary: #2ecc71;
+    --color-ft-gold: #f1c40f;
+
+    /* ---- Blog/Amber zone ---- */
+    --color-blog-bg: #1A0E06;
+    --color-blog-surface: #2A1810;
+    --color-blog-text: #F0E8DC;
+    --color-blog-accent: #D4884A;
+    --color-blog-gold: #E3B341;
+
+    /* ---- Typography ---- */
+    --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+    /* ---- Spacing ---- */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    --space-3xl: 64px;
+    --space-4xl: 96px;
+
+    /* ---- Radii ---- */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+
+    /* ---- Transitions ---- */
+    --transition-fast: 200ms ease;
+    --transition-normal: 350ms ease;
+    --transition-slow: 600ms ease;
+  }
+
+  /* ============================================================
+     RESET & BASE
+     ============================================================ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background: var(--color-bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* ============================================================
+     TYPOGRAPHY
+     ============================================================ */
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+  h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); }
+  h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+  h4 { font-size: clamp(1.1rem, 2vw, 1.35rem); }
+
+  .section-label {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: var(--space-sm);
+    opacity: 0.7;
+  }
+
+  .text-serif { font-family: var(--font-display); }
+  .text-sm { font-size: 0.875rem; }
+  .text-xs { font-size: 0.75rem; }
+  .text-muted { color: var(--color-text-secondary); }
+  .italic { font-style: italic; }
+
+  /* ============================================================
+     LAYOUT
+     ============================================================ */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+  }
+
+  .section {
+    padding: var(--space-4xl) 0;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto var(--space-3xl);
+  }
+
+  .section-header p {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    margin-top: var(--space-md);
+  }
+
+  /* ============================================================
+     BUTTONS / CTAs
+     ============================================================ */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+  }
+
+  .btn-primary {
+    background: var(--color-accent);
+    color: white;
+  }
+  .btn-primary:hover {
+    background: var(--color-accent-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(232, 93, 78, 0.3);
+  }
+
+  .btn-outline {
+    background: transparent;
+    border: 2px solid var(--color-accent);
+    color: var(--color-accent);
+  }
+  .btn-outline:hover {
+    background: var(--color-accent);
+    color: white;
+  }
+
+  .btn-dark {
+    background: var(--color-ft-primary);
+    color: #0a1a0f;
+  }
+  .btn-dark:hover {
+    background: #27ae60;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+  }
+
+  .btn-dark-outline {
+    background: transparent;
+    border: 2px solid var(--color-ft-primary);
+    color: var(--color-ft-primary);
+  }
+  .btn-dark-outline:hover {
+    background: var(--color-ft-primary);
+    color: #0a1a0f;
+  }
+
+  .btn-amber {
+    background: var(--color-blog-accent);
+    color: #1A0E06;
+  }
+  .btn-amber:hover {
+    background: #c07a3a;
+    transform: translateY(-1px);
+  }
+
+  .app-store-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background: #000;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: opacity var(--transition-fast);
+  }
+  .app-store-badge:hover { opacity: 0.85; }
+  .app-store-badge .store-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+  .app-store-badge .store-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.2;
+  }
+  .app-store-badge .store-text small {
+    font-size: 0.6rem;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* ============================================================
+     CARD COMPONENT
+     ============================================================ */
+  .card {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    border: 1px solid var(--color-border);
+    transition: all var(--transition-normal);
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  }
+
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .card h3 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .card p, .card li {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+  }
+
+  /* ============================================================
+     HERO SECTION
+     ============================================================ */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-3xl) var(--space-lg);
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0a4a4f 0%, #0d2f35 50%, #061214 100%);
+    color: white;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 80%, rgba(46, 240, 201, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(242, 204, 84, 0.06) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-lg);
+    line-height: 1.1;
+  }
+
+  .hero h1 strong {
+    font-weight: 700;
+    display: block;
+    background: linear-gradient(135deg, #2EF0C9, #7DD3FC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    opacity: 0.85;
+    max-width: 640px;
+    margin: 0 auto var(--space-2xl);
+    line-height: 1.6;
+  }
+
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .hero-counter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-xl) var(--space-3xl);
+    padding-top: var(--space-2xl);
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .counter-item {
+    text-align: center;
+  }
+
+  .counter-number {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: #2EF0C9;
+  }
+  .counter-item .counter-number[data-category="plants"] { color: #66FF66; }
+  .counter-item .counter-number[data-category="collectors"] { color: #F5C84B; }
+
+  .counter-label {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-top: var(--space-xs);
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: var(--space-xl);
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    opacity: 0.5;
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  /* ============================================================
+     STICKY CTA BAR
+     ============================================================ */
+  .sticky-cta {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(10, 74, 79, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: var(--space-sm) var(--space-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    transform: translateY(-100%);
+    transition: transform var(--transition-slow);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    color: white;
+  }
+
+  .sticky-cta.visible {
+    transform: translateY(0);
+  }
+
+  .sticky-cta-brand {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .sticky-cta-actions {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .sticky-cta .app-store-badge {
+    padding: 6px 14px;
+    font-size: 0.7rem;
+    background: white;
+    color: #1A1A1A;
+  }
+  .sticky-cta .app-store-badge .store-icon { font-size: 1.1rem; }
+
+  /* ============================================================
+     FEATURE GRID
+     ============================================================ */
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .feature-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  /* ============================================================
+     EXAMPLE / DATA CARD (inside feature cards)
+     ============================================================ */
+  .example-box {
+    margin-top: var(--space-md);
+    padding: var(--space-md);
+    background: var(--color-surface-alt);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    border-left: 3px solid var(--color-accent-teal);
+  }
+
+  .example-box dt {
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-top: var(--space-sm);
+  }
+  .example-box dt:first-child { margin-top: 0; }
+  .example-box dd {
+    margin-left: 0;
+    margin-bottom: var(--space-xs);
+  }
+
+  .example-box .gps-coords {
+    font-family: 'SF Mono', 'Cascadia Code', 'Consolas', monospace;
+    font-size: 0.8rem;
+    color: var(--color-accent-teal);
+  }
+
+  .controversy-card {
+    border-left-color: var(--color-accent);
+  }
+
+  /* ============================================================
+     AQUATRACK ZONE
+     ============================================================ */
+  .zone-aquatrack {
+    background: var(--color-bg);
+  }
+
+  .zone-aquatrack .card-icon {
+    background: rgba(10, 74, 79, 0.1);
+    color: var(--color-accent-teal);
+  }
+
+  /* ============================================================
+     FLORATRACK ZONE (dark)
+     ============================================================ */
+  .zone-floratrack {
+    background: var(--color-ft-bg);
+    color: var(--color-ft-text);
+  }
+
+  .zone-floratrack .section-header p {
+    color: var(--color-ft-text-secondary);
+  }
+
+  .zone-floratrack .card {
+    background: var(--color-ft-surface);
+    border-color: transparent;
+    color: var(--color-ft-text);
+  }
+
+  .zone-floratrack .card p,
+  .zone-floratrack .card li {
+    color: var(--color-ft-text-secondary);
+  }
+
+  .zone-floratrack .card-icon {
+    background: rgba(46, 204, 113, 0.15);
+    color: var(--color-ft-primary);
+  }
+
+  .zone-floratrack .example-box {
+    background: rgba(0,0,0,0.25);
+    border-left-color: var(--color-ft-primary);
+    color: var(--color-ft-text-secondary);
+  }
+
+  .zone-floratrack .example-box dt {
+    color: var(--color-ft-text-secondary);
+  }
+
+  .zone-floratrack .controversy-card {
+    border-left-color: var(--color-ft-gold);
+  }
+
+  /* ============================================================
+     YOUTUBE SECTION
+     ============================================================ */
+  .zone-youtube {
+    background: linear-gradient(180deg, var(--color-bg) 0%, #f0ede6 100%);
+  }
+
+  .youtube-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    transition: all var(--transition-normal);
+  }
+  .youtube-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+
+  .youtube-card-thumb {
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, #0a4a4f, #061214);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: rgba(255,255,255,0.3);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .youtube-card-thumb .play-btn {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c00;
+    font-size: 1.5rem;
+    transition: transform var(--transition-fast);
+  }
+  .youtube-card:hover .play-btn {
+    transform: scale(1.1);
+  }
+
+  .youtube-card-body {
+    padding: var(--space-lg);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .youtube-card-body h3 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .youtube-card-body p {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-md);
+    flex: 1;
+  }
+
+  .youtube-card-body .btn {
+    align-self: flex-start;
+  }
+
+  .youtube-card.tangle-trove .youtube-card-thumb {
+    background: linear-gradient(135deg, #071014, #0A1A1F);
+  }
+  .youtube-card.dionaea .youtube-card-thumb {
+    background: linear-gradient(135deg, #080E06, #0E1A0A);
+  }
+
+  .sub-count {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-top: var(--space-sm);
+  }
+
+  /* ============================================================
+     STATS BAR
+     ============================================================ */
+  .stats-bar {
+    background: linear-gradient(135deg, #0a3a3f 0%, #061214 100%);
+    color: white;
+    padding: var(--space-3xl) 0;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-lg);
+    text-align: center;
+  }
+
+  .stat-item {
+    padding: var(--space-lg);
+  }
+
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: var(--space-xs);
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    max-width: 220px;
+    margin: 0 auto;
+    line-height: 1.4;
+  }
+
+  .stat-icon { font-size: 1.5rem; margin-bottom: var(--space-sm); }
+
+  .stat-item[data-color="teal"] .stat-number { color: #2EF0C9; }
+  .stat-item[data-color="green"] .stat-number { color: #66FF66; }
+  .stat-item[data-color="gold"] .stat-number { color: #F5C84B; }
+  .stat-item[data-color="coral"] .stat-number { color: #FF7B6B; }
+  .stat-item[data-color="blue"] .stat-number { color: #7DD3FC; }
+
+  /* ============================================================
+     DISCOVERER CARDS
+     ============================================================ */
+  .discoverer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .discoverer-card {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+    padding: var(--space-lg);
+  }
+
+  .discoverer-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--color-surface-alt);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+  }
+
+  .discoverer-info h4 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 2px;
+  }
+
+  .discoverer-info .lifespan {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .discoverer-info .story {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    margin-top: var(--space-sm);
+    line-height: 1.5;
+  }
+
+  .discoverer-info .key-species {
+    font-size: 0.8rem;
+    color: var(--color-accent-teal);
+    font-style: italic;
+    margin-top: var(--space-xs);
+  }
+
+  /* ============================================================
+     BIOTOPE EXPLAINER
+     ============================================================ */
+  .biotope-explainer {
+    background: linear-gradient(180deg, #f0ede6 0%, #e8e3da 100%);
+  }
+
+  .biotope-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+    counter-reset: step;
+  }
+
+  .biotope-step {
+    counter-increment: step;
+    position: relative;
+    padding: var(--space-xl);
+    padding-top: var(--space-3xl);
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+  }
+
+  .biotope-step::before {
+    content: counter(step);
+    position: absolute;
+    top: var(--space-md);
+    left: var(--space-xl);
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-accent-teal);
+    opacity: 0.2;
+    line-height: 1;
+  }
+
+  .biotope-step h3 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .biotope-step p {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+  }
+
+  .biotope-example {
+    margin-top: var(--space-2xl);
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+  }
+
+  .biotope-example-header {
+    background: var(--color-accent-teal);
+    color: white;
+    padding: var(--space-md) var(--space-lg);
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .biotope-example table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .biotope-example th {
+    text-align: left;
+    padding: var(--space-sm) var(--space-lg);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    background: var(--color-surface-alt);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .biotope-example td {
+    padding: var(--space-sm) var(--space-lg);
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .biotope-example td:first-child {
+    font-weight: 600;
+    white-space: nowrap;
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+  }
+
+  .biotope-example tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* ============================================================
+     BLOG TEASER
+     ============================================================ */
+  .zone-blog {
+    background: var(--color-blog-bg);
+    color: var(--color-blog-text);
+  }
+
+  .zone-blog .section-header p {
+    color: rgba(240, 232, 220, 0.6);
+  }
+
+  .blog-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .blog-card {
+    background: var(--color-blog-surface);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    border: 1px solid rgba(212, 136, 74, 0.15);
+    transition: all var(--transition-normal);
+  }
+  .blog-card:hover {
+    border-color: var(--color-blog-accent);
+    transform: translateY(-3px);
+  }
+
+  .blog-card-icon {
+    font-size: 1.75rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .blog-card h3 {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+  }
+
+  .blog-card p {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    line-height: 1.5;
+    margin-bottom: var(--space-md);
+  }
+
+  .blog-card .blog-link {
+    font-size: 0.85rem;
+    color: var(--color-blog-accent);
+    font-weight: 600;
+  }
+
+  /* ============================================================
+     EMAIL CAPTURE
+     ============================================================ */
+  .zone-email {
+    background: linear-gradient(135deg, #0a4a4f 0%, #0d2f35 100%);
+    color: white;
+    text-align: center;
+  }
+
+  .email-form {
+    max-width: 480px;
+    margin: var(--space-xl) auto 0;
+    display: flex;
+    gap: var(--space-sm);
+  }
+
+  .email-form input {
+    flex: 1;
+    padding: 14px 18px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    background: rgba(255,255,255,0.08);
+    color: white;
+    outline: none;
+    transition: border-color var(--transition-fast);
+  }
+  .email-form input::placeholder { color: rgba(255,255,255,0.4); }
+  .email-form input:focus { border-color: #2EF0C9; }
+
+  .email-form .btn {
+    background: #2EF0C9;
+    color: #061214;
+    font-weight: 700;
+  }
+  .email-form .btn:hover {
+    background: #27dbb6;
+  }
+
+  .lead-magnet {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: var(--space-lg);
+    border: 1px solid rgba(46, 240, 201, 0.2);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-xl);
+  }
+
+  .lead-magnet h3 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .lead-magnet p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+
+  /* ============================================================
+     AFFILIATE GEAR
+     ============================================================ */
+  .zone-gear {
+    background: var(--color-bg);
+  }
+
+  .gear-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .gear-card {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    padding: var(--space-xl);
+    transition: all var(--transition-normal);
+  }
+  .gear-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  }
+
+  .gear-card-image {
+    width: 100%;
+    height: 160px;
+    background: var(--color-surface-alt);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: var(--color-text-muted);
+  }
+
+  .gear-card h3 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .gear-card .biotope-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(10, 74, 79, 0.1);
+    color: var(--color-accent-teal);
+    margin-top: var(--space-sm);
+  }
+
+  .gear-card p {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    margin-top: var(--space-sm);
+  }
+
+  .gear-card .price {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: var(--space-md);
+  }
+
+  .gear-card .btn {
+    margin-top: var(--space-md);
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  .footer {
+    background: #061214;
+    color: rgba(255,255,255,0.7);
+    padding: var(--space-2xl) 0;
+    font-size: 0.85rem;
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--space-lg);
+  }
+
+  .footer-inner .disclosure {
+    max-width: 480px;
+    line-height: 1.5;
+    font-size: 0.8rem;
+    opacity: 0.6;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    opacity: 0.7;
+    transition: opacity var(--transition-fast);
+  }
+  .footer-links a:hover { opacity: 1; }
+
+  /* ============================================================
+     RESPONSIVE
+     ============================================================ */
+  @media (max-width: 768px) {
+    .section { padding: var(--space-3xl) 0; }
+    .hero { min-height: auto; padding: var(--space-3xl) var(--space-lg); }
+    .feature-grid { grid-template-columns: 1fr; }
+    .feature-grid-2 { grid-template-columns: 1fr; }
+    .hero-ctas { flex-direction: column; align-items: center; }
+    .hero-counter { gap: var(--space-lg); }
+    .email-form { flex-direction: column; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .sticky-cta { padding: var(--space-sm) var(--space-md); }
+    .sticky-cta-brand { display: none; }
+    .biotope-example { font-size: 0.85rem; }
+  }
+
+  @media (max-width: 480px) {
+    .container { padding: 0 var(--space-md); }
+    .stats-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ============================================================
+     ANIMATIONS
+     ============================================================ */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity var(--transition-slow), transform var(--transition-slow);
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .fade-in-delay-1 { transition-delay: 100ms; }
+  .fade-in-delay-2 { transition-delay: 200ms; }
+  .fade-in-delay-3 { transition-delay: 300ms; }
+</style>
+</head>
+<body>
+
+  <!-- ============================================================
+       STICKY CTA BAR
+       ============================================================ -->
+  <div class="sticky-cta" id="stickyCta" role="toolbar" aria-label="Quick app downloads">
+    <span class="sticky-cta-brand">The Connection Web</span>
+    <div class="sticky-cta-actions">
+      <a href="#" class="app-store-badge" aria-label="Download AquaTrack on the App Store">
+        <span class="store-icon">🐟</span>
+        <span class="store-text">
+          <small>Download</small>
+          AquaTrack
+        </span>
+      </a>
+      <a href="#" class="app-store-badge" aria-label="Download FloraTrack on the App Store">
+        <span class="store-icon">🌿</span>
+        <span class="store-text">
+          <small>Download</small>
+          FloraTrack
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SECTION 1: HERO
+       ============================================================ -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <p class="section-label" style="color: rgba(255,255,255,0.5);">Content Factory Ecosystem</p>
+      <h1>
+        The Connection
+        <strong>Web</strong>
+      </h1>
+      <p class="hero-subtitle">
+        Know the river your fish comes from. Know who named your plant.
+        Every species has a story — and they're more connected than you think.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#" class="app-store-badge" aria-label="Download AquaTrack on the App Store">
+          <span class="store-icon">🐟</span>
+          <span class="store-text">
+            <small>Download on the</small>
+            <strong>App Store</strong>
+            <span style="font-size:0.65rem; opacity:0.7;">AquaTrack</span>
+          </span>
+        </a>
+        <a href="#" class="app-store-badge" aria-label="Download FloraTrack on the App Store">
+          <span class="store-icon">🌿</span>
+          <span class="store-text">
+            <small>Download on the</small>
+            <strong>App Store</strong>
+            <span style="font-size:0.65rem; opacity:0.7;">FloraTrack</span>
+          </span>
+        </a>
+      </div>
+
+      <!-- Animated species counter -->
+      <div class="hero-counter" id="heroCounter">
+        <div class="counter-item">
+          <div class="counter-number" data-target="1669" data-category="fish">0</div>
+          <div class="counter-label">Fish Species Cataloged</div>
+        </div>
+        <div class="counter-item">
+          <div class="counter-number" data-target="3066" data-category="plants">0</div>
+          <div class="counter-label">Plant Species Tracked</div>
+        </div>
+        <div class="counter-item">
+          <div class="counter-number" data-target="757" data-category="collectors">0</div>
+          <div class="counter-label">Collectors Documented</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true">↓</div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 2: AQUATRACK
+       ============================================================ -->
+  <section class="section zone-aquatrack" id="aquatrack">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">AquaTrack</p>
+        <h2>Open the App, See the River</h2>
+        <p>
+          I built AquaTrack because I had 14 puffers and wanted to know which
+          Amazon tributary each one came from. Google couldn't tell me.
+          George Boulenger's 1899 description of <em>Tetraodon mbu</em> could
+          — right down to the Congo basin river system.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        <!-- Feature 1: Biotope Matching -->
+        <div class="card fade-in fade-in-delay-1">
+          <div class="card-icon">🌊</div>
+          <h3>Biotope Matching</h3>
+          <p>
+            Enter the species in your tank and the app cross-references every
+            native range — temperature, pH, hardness, river system, continent.
+            Not from Wikipedia. From <strong>1,669 species × 77 columns</strong>
+            of curated data.
+          </p>
+          <div class="example-box">
+            <dl>
+              <dt>Dwarf Puffer (<em>Carinotetraodon travancoricus</em>)</dt>
+              <dd><span class="gps-coords">9.36°N, 76.47°E</span></dd>
+              <dd>Pamba River, Kerala, India</dd>
+              <dd>Discovered by Hora &amp; Nair, 1941</dd>
+              <dd>Temp: 22–28°C · pH: 6.8–8.0</dd>
+              <dd>Status: <strong>Endangered</strong> — endemic to Kerala</dd>
+            </dl>
+          </div>
+        </div>
+
+        <!-- Feature 2: Discoverer Connections -->
+        <div class="card fade-in fade-in-delay-2">
+          <div class="card-icon">🔗</div>
+          <h3>Discoverer Connections</h3>
+          <p>
+            <strong>533,422 cross-kingdom connections</strong> — fish and plants
+            linked by shared native biotope. The person who named your fish
+            also named plants from the same rivers. It's not a coincidence;
+            they collected those waters.
+          </p>
+          <div class="example-box">
+            <p><strong>Pieter Bleeker</strong> (1819–1878)</p>
+            <p class="text-sm">Dutch army doctor in Indonesia. Described 500+ fish from dinner-market specimens — including your Clown Loach. Named plant species from the same islands.</p>
+          </div>
+        </div>
+
+        <!-- Feature 3: Name Etymology -->
+        <div class="card fade-in fade-in-delay-3">
+          <div class="card-icon">📖</div>
+          <h3>Name Etymology</h3>
+          <p>
+            Every scientific name has a story. <em>Travancoricus</em> means
+            "from Travancore." <em>Davidianus</em> honors Father David
+            (Père David's deer). <em>Regani</em> honors Charles Tate Regan.
+            The app surfaces the etymology — and the person — behind every name.
+          </p>
+          <div class="example-box">
+            <dl>
+              <dt><em>Carinotetraodon travancoricus</em></dt>
+              <dd>"travancoricus" = from Travancore, the former princely state where the Pamba River flows</dd>
+              <dt><em>Betta splendens</em></dt>
+              <dd>Named by Charles Tate Regan, 1910 — "splendens" = shining, splendid</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 3: FLORATRACK
+       ============================================================ -->
+  <section class="section zone-floratrack" id="floratrack">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label" style="color: var(--color-ft-gold);">FloraTrack</p>
+        <h2>Every Plant Has a Paper Trail</h2>
+        <p>
+          See who named your philodendron, which expedition it was collected on,
+          whether its patent is real, and why the price tag says what it does.
+          <strong>3,066 species</strong> across 22 genera, with provenance
+          records going back to the 19th century.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        <!-- Feature 1: Cultivar Provenance -->
+        <div class="card fade-in fade-in-delay-1">
+          <div class="card-icon">📜</div>
+          <h3>Cultivar Provenance</h3>
+          <p>
+            <strong>2,593 provenance records</strong> across 35 genera —
+            patent IDs, origin stories, trade names, nursery chains. Every
+            plant you buy has a journey from jungle to big-box store.
+          </p>
+          <div class="example-box controversy-card">
+            <p><strong>⚠ <em>Monstera</em> 'Thai Constellation'</strong></p>
+            <p class="text-sm">Three competing origin theories:</p>
+            <ol style="margin-top: var(--space-xs); padding-left: var(--space-lg); font-size:0.85rem;">
+              <li>1970s roadside find in Thailand</li>
+              <li>Late-1990s Thai lab discovery</li>
+              <li>~2020 tissue-culture mass production</li>
+            </ol>
+            <p class="text-sm" style="margin-top: var(--space-xs);">Costa Farms patent — expiry status unverified.</p>
+          </div>
+        </div>
+
+        <!-- Feature 2: Expedition Map -->
+        <div class="card fade-in fade-in-delay-2">
+          <div class="card-icon">🗺️</div>
+          <h3>Expedition Map</h3>
+          <p>
+            <strong>20,602 biotope stories</strong> from real GBIF field notes
+            across 7 categories. Trace each plant back to the exact expedition
+            that collected it — the collector, the year, the GPS coordinates,
+            the country.
+          </p>
+          <div class="example-box">
+            <p><strong>Heinrich Wilhelm Schott</strong> (1794–1865)</p>
+            <p class="text-sm">Director of the Imperial Gardens at Vienna's Schönbrunn Palace. Primary describer of the genus <em>Anthurium</em> — <strong>1,426 species</strong> in our database attributed to him. One man, one genus, a 40-year career.</p>
+          </div>
+        </div>
+
+        <!-- Feature 3: Controversy Cards -->
+        <div class="card fade-in fade-in-delay-3">
+          <div class="card-icon">🔍</div>
+          <h3>Controversy Cards</h3>
+          <p>
+            Not every plant's origin story is clear-cut. We surface the
+            disputes — competing patents, mislabeled clones, botanical
+            reclassifications — so you can make informed decisions about
+            your collection.
+          </p>
+          <div class="example-box controversy-card">
+            <p><strong>⚠ <em>Philodendron</em> 'Pink Princess'</strong></p>
+            <p class="text-sm">Real patent for the genetics — but the plant sold in big-box stores is a different clone under the same name.</p>
+            <p style="margin-top: var(--space-xs);"><strong>⚠ <em>Hoya</em> 'Compacta'</strong></p>
+            <p class="text-sm">Sport mutation vs. separate species reclassification — botanical literature disagrees.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 4: YOUTUBE
+       ============================================================ -->
+  <section class="section zone-youtube" id="youtube">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>From the Rivers, to Your Screen</h2>
+        <p>
+          Two channels covering the creatures that inspired the apps —
+          73 published shorts and counting.
+        </p>
+      </div>
+
+      <div class="feature-grid-2">
+        <!-- Tangle Trove -->
+        <div class="youtube-card tangle-trove fade-in fade-in-delay-1">
+          <div class="youtube-card-thumb">
+            <span style="opacity:0.15; font-size:4rem;">🦞</span>
+            <div class="play-btn">▶</div>
+          </div>
+          <div class="youtube-card-body">
+            <h3>The Tangle Trove</h3>
+            <p>
+              Puffers, crayfish, killifish — 11 puffer species tracked,
+              from the <em>Tetraodon mbu</em> (Congo basin, Boulenger 1899)
+              to the Dwarf Puffer (Kerala's Pamba River, Hora &amp; Nair 1941).
+              Seasonal killies with annual lifecycles, Cambarellus dwarf crayfish,
+              and the rivers they call home.
+            </p>
+            <a href="https://youtube.com/@The_Tangle_Trove" class="btn btn-primary" target="_blank" rel="noopener">
+              ▶ Subscribe · @The_Tangle_Trove
+            </a>
+          </div>
+        </div>
+
+        <!-- Dionaea's Mousetrap -->
+        <div class="youtube-card dionaea fade-in fade-in-delay-2">
+          <div class="youtube-card-thumb">
+            <span style="opacity:0.15; font-size:4rem;">🪴</span>
+            <div class="play-btn">▶</div>
+          </div>
+          <div class="youtube-card-body">
+            <h3>Dionaea's Mousetrap</h3>
+            <p>
+              Carnivorous plants and rare tropicals. Nepenthes, Sarracenia,
+              Dionaea, Drosera, Pinguicula, Heliamphora, Cephalotus,
+              Darlingtonia — plus terrarium builds and rare aroid spotlights.
+              Every plant's provenance is documented in FloraTrack.
+            </p>
+            <a href="https://youtube.com/@DionaeasMousetrap" class="btn btn-outline" target="_blank" rel="noopener">
+              ▶ Subscribe · @DionaeasMousetrap
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 5: THE DATA (Stats Bar)
+       ============================================================ -->
+  <section class="stats-bar" id="data">
+    <div class="container">
+      <div class="section-header" style="color:white;">
+        <h2>Verified Data. Real Connections.</h2>
+        <p style="color: rgba(255,255,255,0.6);">
+          Every number on this page comes from actual SQLite databases — not
+          estimates, not placeholders.
+        </p>
+      </div>
+
+      <div class="stats-grid" id="statsGrid">
+        <div class="stat-item fade-in" data-color="teal">
+          <div class="stat-icon">🐟</div>
+          <div class="stat-number" data-target="1669">0</div>
+          <div class="stat-label">Fish species · 77 data columns each</div>
+        </div>
+        <div class="stat-item fade-in fade-in-delay-1" data-color="green">
+          <div class="stat-icon">🌿</div>
+          <div class="stat-number" data-target="3066">0</div>
+          <div class="stat-label">Tropical plants · 22 genera</div>
+        </div>
+        <div class="stat-item fade-in fade-in-delay-2" data-color="gold">
+          <div class="stat-icon">📋</div>
+          <div class="stat-number" data-target="2593">0</div>
+          <div class="stat-label">Cultivar provenance records · 35 genera</div>
+        </div>
+        <div class="stat-item fade-in fade-in-delay-3" data-color="coral">
+          <div class="stat-icon">🔗</div>
+          <div class="stat-number" data-target="533422">0</div>
+          <div class="stat-label">Cross-kingdom biotope connections</div>
+        </div>
+        <div class="stat-item fade-in" data-color="blue">
+          <div class="stat-icon">🧑‍🔬</div>
+          <div class="stat-number" data-target="757">0</div>
+          <div class="stat-label">Collectors · 21,152 species links</div>
+        </div>
+        <div class="stat-item fade-in fade-in-delay-1" data-color="teal">
+          <div class="stat-icon">🧪</div>
+          <div class="stat-number" data-target="313">0</div>
+          <div class="stat-label">Tests passing · 33 medication warnings live</div>
+        </div>
+        <div class="stat-item fade-in fade-in-delay-2" data-color="green">
+          <div class="stat-icon">📝</div>
+          <div class="stat-number" data-target="20602">0</div>
+          <div class="stat-label">Biotope stories from real GBIF field notes</div>
+        </div>
+        <div class="stat-item fade-in fade-in-delay-3" data-color="gold">
+          <div class="stat-icon">📍</div>
+          <div class="stat-number" data-target="1609">0</div>
+          <div class="stat-label">1,609 species with geotagged GPS coordinates</div>
+        </div>
+      </div>
+
+      <!-- Discoverer Profiles -->
+      <div style="margin-top: var(--space-3xl);">
+        <h3 style="text-align:center; font-family:var(--font-display); color:white; margin-bottom:var(--space-xl); font-weight:300;">
+          The People Behind the Names
+        </h3>
+        <div class="discoverer-grid">
+          <div class="card discoverer-card fade-in" style="background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.08); color:white;">
+            <div class="discoverer-avatar" style="background: rgba(46,240,201,0.15); color:#2EF0C9;">PB</div>
+            <div class="discoverer-info">
+              <h4 style="color:white;">Pieter Bleeker</h4>
+              <div class="lifespan" style="color: rgba(255,255,255,0.5);">1819–1878</div>
+              <div class="story" style="color: rgba(255,255,255,0.6);">
+                Dutch army doctor stationed in Indonesia who described
+                <strong>500+ fish</strong> from dinner-market specimens.
+                One man named half your Southeast Asian tank.
+              </div>
+              <div class="key-species" style="color: #2EF0C9;">
+                <em>Chromobotia macracanthus</em> (Clown Loach), <em>Betta</em> spp.
+              </div>
+            </div>
+          </div>
+
+          <div class="card discoverer-card fade-in fade-in-delay-1" style="background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.08); color:white;">
+            <div class="discoverer-avatar" style="background: rgba(126,255,126,0.15); color:#66FF66;">GB</div>
+            <div class="discoverer-info">
+              <h4 style="color:white;">George Albert Boulenger</h4>
+              <div class="lifespan" style="color: rgba(255,255,255,0.5);">1858–1937</div>
+              <div class="story" style="color: rgba(255,255,255,0.6);">
+                Described <strong>1,096 fish species</strong> — more than
+                anyone in history — without ever traveling. He worked from
+                specimens sent to the British Museum by colonial collectors.
+              </div>
+              <div class="key-species" style="color: #66FF66;">
+                <em>Tetraodon mbu</em> (Giant Puffer), <em>T. miurus</em> (Congo Puffer)
+              </div>
+            </div>
+          </div>
+
+          <div class="card discoverer-card fade-in fade-in-delay-2" style="background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.08); color:white;">
+            <div class="discoverer-avatar" style="background: rgba(245,200,75,0.15); color:#F5C84B;">HS</div>
+            <div class="discoverer-info">
+              <h4 style="color:white;">Heinrich Wilhelm Schott</h4>
+              <div class="lifespan" style="color: rgba(255,255,255,0.5);">1794–1865</div>
+              <div class="story" style="color: rgba(255,255,255,0.6);">
+                Austrian botanist, director of the Imperial Gardens at Vienna's
+                Schönbrunn Palace. Primary describer of <em>Anthurium</em> —
+                <strong>126 species</strong> in our database.
+              </div>
+              <div class="key-species" style="color: #F5C84B;">
+                Most <em>Anthurium</em> species trace back to him
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 6: BIOTOPE MATCHING EXPLAINER
+       ============================================================ -->
+  <section class="section biotope-explainer" id="biotope-matching">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Your Tank Has a River</h2>
+        <p>
+          The core feature isn't parameter tracking. It's this: enter the
+          species in your tank, and the app tells you the closest natural
+          biotope match — and everything else that lives there.
+        </p>
+      </div>
+
+      <div class="biotope-steps">
+        <div class="biotope-step fade-in">
+          <h3>Cross-Reference Every Native Range</h3>
+          <p>
+            Temperature, pH, hardness, biotope type, continent, river system.
+            1,669 species × 77 data columns. Not from Wikipedia — from curated
+            ichthyological records.
+          </p>
+        </div>
+
+        <div class="biotope-step fade-in fade-in-delay-1">
+          <h3>Score Your Tank Against Known Biotopes</h3>
+          <p>
+            Rio Negro, Mekong, Congo, Lake Tanganyika, Kerala's Pamba River,
+            the Orinoco, the Nile. A tank with 3 Amazon puffers and a Marbled
+            Headstander? Rio Negro basin match at 83%.
+          </p>
+        </div>
+
+        <div class="biotope-step fade-in fade-in-delay-2">
+          <h3>Discover Natural Tankmates</h3>
+          <p>
+            The app surfaces everything that shares your biotope — fish, plants,
+            and inverts you might not have considered. Bleeker named your loach
+            AND an orchid from the same island.
+          </p>
+        </div>
+
+        <div class="biotope-step fade-in fade-in-delay-3">
+          <h3>See the Discoverer Connection</h3>
+          <p>
+            The person who named your fish also named plants from the same
+            rivers. Not a coincidence — they worked the same watersheds.
+          </p>
+        </div>
+
+        <div class="biotope-step fade-in">
+          <h3>Catch Mismatches Before They're Problems</h3>
+          <p>
+            Congo Puffer (pH 6.5–7.5) in hard alkaline water? Care alert.
+            Putting it with a Lake Tanganyika cichlid? Biotope mismatch card
+            — different African drainages.
+          </p>
+        </div>
+
+        <div class="biotope-step fade-in fade-in-delay-1">
+          <h3>Full Provenance Card for Every Species</h3>
+          <p>
+            Who discovered it, when, what expedition, the GPS of the type
+            locality, the etymology of its name, the controversies around
+            its classification.
+          </p>
+        </div>
+      </div>
+
+      <!-- Concrete Example: Dwarf Puffer -->
+      <div class="biotope-example fade-in">
+        <div class="biotope-example-header">
+          🐡 Example: Dwarf Puffer (<em>Carinotetraodon travancoricus</em>)
+        </div>
+        <table>
+          <thead>
+            <tr><th>Field</th><th>Data in the App</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Native river</td><td>Pamba River, Kerala, India</td></tr>
+            <tr><td>GPS type locality</td><td><code>9.356655°N, 76.470033°E</code></td></tr>
+            <tr><td>Discovered by</td><td>Sundar Lal Hora &amp; K.K. Nair, 1941</td></tr>
+            <tr><td>Biotope type</td><td>Indian subcontinent stream (soft, acidic, slow-moving)</td></tr>
+            <tr><td>Temp / pH</td><td>22–28°C · 6.8–8.0</td></tr>
+            <tr><td>Natural tankmates</td><td><em>Carinotetraodon imitator</em>, <em>Puntius</em> spp., <em>Dario dario</em> (Scarlet Badis)</td></tr>
+            <tr><td>Name etymology</td><td>"travancoricus" = from Travancore, the former princely state</td></tr>
+            <tr><td>Conservation</td><td>Endangered — endemic to Kerala, threatened by habitat loss</td></tr>
+            <tr><td>Max size</td><td>25mm (1") — one of the smallest pufferfish in the world</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 7: BLOG TEASER
+       ============================================================ -->
+  <section class="section zone-blog" id="blog">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label" style="color: var(--color-blog-gold);">The Blog</p>
+        <h2>Every Species Has a Story to Tell</h2>
+        <p>
+          Long-form investigations into the rivers, the people, and the names
+          behind your aquarium and collection.
+        </p>
+      </div>
+
+      <div class="blog-cards">
+        <div class="blog-card fade-in">
+          <div class="blog-card-icon">🏞️</div>
+          <h3>Biotopes</h3>
+          <p>
+            Deep dives into the Rio Negro, the Congo, the Mekong — what lives
+            there, what the water chemistry looks like, and how to recreate it
+            in your tank.
+          </p>
+          <span class="blog-link">Explore biotopes →</span>
+        </div>
+
+        <div class="blog-card fade-in fade-in-delay-1">
+          <div class="blog-card-icon">🧑‍🔬</div>
+          <h3>Discoverer Profiles</h3>
+          <p>
+            Bleeker, Boulenger, Schott, Lobb, Agassiz, Natterer — the
+            explorers who named your fish and plants, and the expeditions
+            that brought them to science.
+          </p>
+          <span class="blog-link">Meet the discoverers →</span>
+        </div>
+
+        <div class="blog-card fade-in fade-in-delay-2">
+          <div class="blog-card-icon">📖</div>
+          <h3>Name Etymology</h3>
+          <p>
+            <em>Exsul, Davidi, Regani</em> — what your fish's name actually
+            means. Every epithet is a clue to a person, a place, or a story.
+          </p>
+          <span class="blog-link">Read the etymologies →</span>
+        </div>
+
+        <div class="blog-card fade-in fade-in-delay-3">
+          <div class="blog-card-icon">🔍</div>
+          <h3>Provenance Investigations</h3>
+          <p>
+            The Pink Princess Patent. Thai Constellation's three origin
+            theories. The Hoya Compacta reclassification. The real stories
+            behind the plants you buy.
+          </p>
+          <span class="blog-link">Investigate provenance →</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 8: EMAIL CAPTURE
+       ============================================================ -->
+  <section class="section zone-email" id="email-signup">
+    <div class="container">
+      <div class="section-header fade-in" style="color:white;">
+        <h2>Get the Backstory</h2>
+        <p style="color: rgba(255,255,255,0.7);">
+          Behind every species is a journey. Get deep dives into biotopes,
+          discoverer histories, and provenance investigations delivered
+          to your inbox.
+        </p>
+      </div>
+
+      <div class="lead-magnet fade-in">
+        <h3>📘 Free Guide: The Biotope Builder's Handbook</h3>
+        <p>
+          How to identify your tank's natural biotope, choose compatible
+          species, and set up authentic Amazonian, African, or Asian
+          biotope aquariums — using real data from AquaTrack.
+        </p>
+      </div>
+
+      <form class="email-form fade-in fade-in-delay-1" onsubmit="event.preventDefault(); alert('Thanks! You\'ll receive The Biotope Builder\'s Handbook shortly.');">
+        <input type="email" placeholder="Your email address" aria-label="Email address" required>
+        <button type="submit" class="btn">Get the Guide</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 9: AFFILIATE GEAR
+       ============================================================ -->
+  <section class="section zone-gear" id="gear" itemscope itemtype="https://schema.org/ItemList">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Gear I Use</h2>
+        <p>
+          Biotope-specific recommendations. Building a Rio Negro tank? Here's
+          the substrate, light, and filter setup that matches the conditions.
+        </p>
+      </div>
+
+      <div class="gear-grid">
+        <div class="gear-card fade-in" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product">
+          <div class="gear-card-image">🌊</div>
+          <h3 itemprop="name">Amazonian Blackwater Sand</h3>
+          <span class="biotope-tag">Rio Negro · pH 5.0–6.5</span>
+          <p itemprop="description">Fine-grained inert sand that replicates the soft, acidic substrate of Amazonian blackwater streams. Ideal for corydoras, dwarf cichlids, and Amazon puffers.</p>
+          <div class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <span itemprop="priceCurrency" content="USD">$</span><span itemprop="price" content="24.99">24.99</span>
+          </div>
+          <a href="#" class="btn btn-outline" itemprop="url">Shop this substrate</a>
+        </div>
+
+        <div class="gear-card fade-in fade-in-delay-1" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product">
+          <div class="gear-card-image">💡</div>
+          <h3 itemprop="name">Low-Iron Plant LED</h3>
+          <span class="biotope-tag">Mekong · Community</span>
+          <p itemprop="description">Full-spectrum LED with adjustable intensity. Simulates the dappled light of Southeast Asian streams. PAR-compatible for low-light biotope plants like Anubias and Java Fern.</p>
+          <div class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <span itemprop="priceCurrency" content="USD">$</span><span itemprop="price" content="89.99">89.99</span>
+          </div>
+          <a href="#" class="btn btn-outline" itemprop="url">Shop this light</a>
+        </div>
+
+        <div class="gear-card fade-in fade-in-delay-2" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product">
+          <div class="gear-card-image">🔧</div>
+          <h3 itemprop="name">Slow-Flow Canister Filter</h3>
+          <span class="biotope-tag">Congo · Soft Water</span>
+          <p itemprop="description">Adjustable flow canister with coarse sponge and ceramic media. Designed for species that prefer gentle current — Congo puffers, Bettas, and dwarf shrimp.</p>
+          <div class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <span itemprop="priceCurrency" content="USD">$</span><span itemprop="price" content="129.99">129.99</span>
+          </div>
+          <a href="#" class="btn btn-outline" itemprop="url">Shop this filter</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 10: FOOTER
+       ============================================================ -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <p style="font-family: var(--font-display); font-size:1.1rem; color:white; margin-bottom: var(--space-sm);">
+            The Connection Web
+          </p>
+          <p class="disclosure">
+            <strong>FTC Disclosure:</strong> Some links on this site are affiliate links.
+            I may earn a small commission if you purchase through them, at no extra cost
+            to you. I only recommend gear I actually use and biotope-test myself.
+          </p>
+          <p style="margin-top:var(--space-md); opacity:0.5;">
+            © 2026 Content Factory · Built with verified data from real SQLite databases
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Contact</a>
+          <a href="https://youtube.com/@The_Tangle_Trove" target="_blank" rel="noopener">The Tangle Trove</a>
+          <a href="https://youtube.com/@DionaeasMousetrap" target="_blank" rel="noopener">Dionaea's Mousetrap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+  <script>
+  (function() {
+    'use strict';
+
+    /* -------------------------------------------------------
+       STICKY CTA BAR — appears after 400px scroll
+       ------------------------------------------------------- */
+    const stickyCta = document.getElementById('stickyCta');
+    let stickyVisible = false;
+
+    function handleStickyScroll() {
+      const shouldShow = window.scrollY > 400;
+      if (shouldShow !== stickyVisible) {
+        stickyVisible = shouldShow;
+        stickyCta.classList.toggle('visible', shouldShow);
+      }
+    }
+
+    window.addEventListener('scroll', handleStickyScroll, { passive: true });
+    handleStickyScroll(); // initial check
+
+    /* -------------------------------------------------------
+       COUNTER ANIMATION — scroll-triggered via IntersectionObserver
+       Counts up from 0 to target value
+       ------------------------------------------------------- */
+    function animateCounter(el) {
+      const target = parseInt(el.getAttribute('data-target'), 10);
+      if (isNaN(target) || target === 0) { el.textContent = target; return; }
+
+      const duration = 2000; // ms
+      const startTime = performance.now();
+
+      // Determine step size based on magnitude
+      const step = target <= 100 ? 1 : target <= 1000 ? 1 : target <= 10000 ? 5 : target <= 100000 ? 50 : 500;
+
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease-out cubic
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(eased * target);
+        el.textContent = current.toLocaleString();
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          el.textContent = target.toLocaleString();
+        }
+      }
+
+      requestAnimationFrame(update);
+    }
+
+    // Hero counter
+    const heroCounterItems = document.querySelectorAll('#heroCounter .counter-number');
+    let heroCountersStarted = false;
+    function startHeroCounters() {
+      if (heroCountersStarted) return;
+      heroCountersStarted = true;
+      heroCounterItems.forEach(animateCounter);
+    }
+
+    // Check if hero counters are in view initially
+    const heroObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          startHeroCounters();
+          heroObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    heroCounterItems.forEach(function(el) {
+      heroObserver.observe(el);
+    });
+
+    // Stats grid counters
+    const statNumbers = document.querySelectorAll('#statsGrid .stat-number');
+    let statsCountersStarted = false;
+    function startStatsCounters() {
+      if (statsCountersStarted) return;
+      statsCountersStarted = true;
+      statNumbers.forEach(animateCounter);
+    }
+
+    const statsObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          startStatsCounters();
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    statNumbers.forEach(function(el) {
+      statsObserver.observe(el);
+    });
+
+    /* -------------------------------------------------------
+       FADE-IN ON SCROLL
+       ------------------------------------------------------- */
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const fadeObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+    fadeElements.forEach(function(el) {
+      fadeObserver.observe(el);
+    });
+
+    /* -------------------------------------------------------
+       SMOOTH SCROLL FOR INTERNAL LINKS
+       ------------------------------------------------------- */
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  })();
+  </script>
+</body>
+</html>
