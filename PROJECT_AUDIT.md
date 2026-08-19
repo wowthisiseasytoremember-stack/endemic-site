@@ -2,6 +2,8 @@
 
 **Last Updated:** 2026-08-19
 
+> **Forward plan:** See `ROADMAP.md` for the canonical built-vs-planned map and the sequenced execution plan (Phase 0 SEO → Phase 0.5 dossier engine → GEO surface → monetization). This file is the static audit; `ROADMAP.md` is the trajectory.
+
 ## 1. Stack & Tooling
 - **Core Languages & Frameworks**: Next.js 16.2.6 (React 19), TypeScript, Node.js.
 - **Styling & UI**: TailwindCSS 4, Framer Motion for complex animations and transitions.
