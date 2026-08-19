@@ -166,14 +166,14 @@ Controlled vocabulary for cross-cutting concerns:
 
 ```python
 # All unresolved debates
-[ent for ent in data if any(c['status']=='unresolved' for c in ent['controversies'])]
+[ent for ent in data if any(c["status"] == "unresolved" for c in ent["controversies"])]
 
 # All origin debates
-[ent for ent in data if any(c['topic']=='origin' for c in ent['controversies'])]
+[ent for ent in data if any(c["topic"] == "origin" for c in ent["controversies"])]
 
 # All by genus
-[ent for ent in data if ent['genus']=='Philodendron']
+[ent for ent in data if ent["genus"] == "Philodendron"]
 
 # All with tag
-[ent for ent in data if 'mislabeling' in ent['tags']]
+[ent for ent in data if "mislabeling" in ent["tags"]]
 ```
