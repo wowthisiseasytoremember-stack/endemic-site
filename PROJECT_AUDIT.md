@@ -1,5 +1,7 @@
 # Project Recon Audit: Aquarium Ecosystem Landing Page v2
 
+**Last Updated:** 2026-08-19
+
 ## 1. Stack & Tooling
 - **Core Languages & Frameworks**: Next.js 16.2.6 (React 19), TypeScript, Node.js.
 - **Styling & UI**: TailwindCSS 4, Framer Motion for complex animations and transitions.
