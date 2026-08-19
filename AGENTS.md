@@ -17,7 +17,7 @@ modules:
   - name: Data sync layer
     path: (integration)
     does: Requires AquaTrack/FloraTrack species DB live before content phases.
-    status: blocked
+    status: wip
 updated: 2026-08-19 20:30 UTC
 ---
 
