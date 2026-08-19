@@ -44,6 +44,6 @@
 ## 7. State of the Code
 - **Completed (Stable)**: Security hard-coding fixes (no leaked DB URLs), Drizzle schema introspection, Framer Motion replacements for legacy SMIL animations, and CSS variable theming mappings are done.
 - **In-Progress / Planned**: 
-  - **L2 Production Polish** (from `AUDIT_FIX_PLAN.md`) is currently `OPEN`. Pending tasks include Sanity headless CMS finalization, structured data/SEO integrations (JSON-LD), and finalizing a CI/CD GitHub Action.
+  - **L2 Production Polish** (from `AUDIT_FIX_PLAN.md`) is currently `OPEN`. Pending tasks include Sanity headless CMS finalization, **per-route** structured data/SEO integrations (global `WebSite` JSON-LD + metadata already ship in `src/app/layout.tsx`; per-route `Article`/`BreadcrumbList`/`FAQPage` JSON-LD, per-route `metadata`, `canonical`, `og:image`, `sitemap.xml`, `robots.txt`, and `llms.txt` are the gaps — see `~/wiki/reports/seo-geo-audit-endemic-site-2026-08-19.md`, 2026-08-19), and finalizing a CI/CD GitHub Action.
   - **Blog Data Sync** (Phase 0 of `BLOG_MASTER_PLAN.md`) needs implementation to `rsync` databases from the `ichabod` server, which unblocks the rest of the dynamic article generation.
 - **Future Enhancements**: E2E testing, PWA manifests, and advanced analytics tracking remain deferred to L3.
