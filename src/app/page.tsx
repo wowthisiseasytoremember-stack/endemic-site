@@ -25,28 +25,28 @@ export default function EndemicPortal() {
               <h1 className="font-display text-5xl font-medium tracking-tight md:text-7xl">
                 Endemic
               </h1>
-              <p className="mx-auto mt-4 max-w-xl text-lg text-white/60">
+              <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/60 sm:text-lg">
                 Don&apos;t guess. Replicate the wild.
               </p>
             </div>
           </Reveal>
 
           {/* Primary Apps - Pulled up into the viewport */}
-          <div className="mt-16 grid gap-6 md:grid-cols-2 lg:gap-10">
+          <div id="apps" className="mt-12 grid scroll-mt-28 gap-5 md:mt-16 md:grid-cols-2 lg:gap-8">
             {/* AquaTrack */}
-            <div className="h-[400px] md:h-[450px]">
+            <div className="h-[330px] sm:h-[380px] md:h-[440px]">
               <TiltCard href="/aquatrack" className="group relative overflow-hidden rounded-[2rem] bg-[#030b14] ring-1 ring-white/10">
                 <div className="absolute inset-0 z-0">
                   <Image src={IMG.pufferHero} fill priority alt="AquaTrack" className="object-cover opacity-20 mix-blend-luminosity transition-transform duration-700 group-hover:scale-105 group-hover:opacity-40 group-hover:mix-blend-normal" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#030b14] via-[#030b14]/50 to-transparent" />
                 </div>
                 
-                <div className="relative z-10 flex h-full flex-col p-10 transform-gpu" style={{ transform: "translateZ(30px)" }}>
+                <div className="relative z-10 flex h-full flex-col p-7 sm:p-9 lg:p-10 transform-gpu" style={{ transform: "translateZ(30px)" }}>
                   <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#7fe3ec]/20 bg-[#7fe3ec]/10 text-[#7fe3ec]">
                     🌊
                   </div>
                   <div className="mt-auto">
-                    <h2 className="font-display text-4xl font-medium text-white">AquaTrack</h2>
+                    <h2 className="font-display text-3xl font-medium tracking-tight text-white sm:text-4xl">AquaTrack</h2>
                     <p className="mt-2 text-lg text-white/70">Build authentic river biotopes.</p>
                     <div className="mt-6 flex items-center gap-3 text-sm font-medium text-[#7fe3ec]">
                       <span className="h-px w-6 bg-[#7fe3ec]" />
@@ -58,19 +58,19 @@ export default function EndemicPortal() {
             </div>
 
             {/* FloraTrack */}
-            <div className="h-[400px] md:h-[450px]">
+            <div className="h-[330px] sm:h-[380px] md:h-[440px]">
               <TiltCard href="/floratrack" className="group relative overflow-hidden rounded-[2rem] bg-[#020b06] ring-1 ring-white/10">
                 <div className="absolute inset-0 z-0">
                   <Image src={IMG.nepenthes} fill priority alt="FloraTrack" className="object-cover opacity-20 mix-blend-luminosity transition-transform duration-700 group-hover:scale-105 group-hover:opacity-40 group-hover:mix-blend-normal" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#020b06] via-[#020b06]/50 to-transparent" />
                 </div>
                 
-                <div className="relative z-10 flex h-full flex-col p-10 transform-gpu" style={{ transform: "translateZ(30px)" }}>
+                <div className="relative z-10 flex h-full flex-col p-7 sm:p-9 lg:p-10 transform-gpu" style={{ transform: "translateZ(30px)" }}>
                   <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#2fae6b]/20 bg-[#2fae6b]/10 text-[#2fae6b]">
                     🌿
                   </div>
                   <div className="mt-auto">
-                    <h2 className="font-display text-4xl font-medium text-white">FloraTrack</h2>
+                    <h2 className="font-display text-3xl font-medium tracking-tight text-white sm:text-4xl">FloraTrack</h2>
                     <p className="mt-2 text-lg text-white/70">Cultivate vibrant indoor canopies.</p>
                     <div className="mt-6 flex items-center gap-3 text-sm font-medium text-[#2fae6b]">
                       <span className="h-px w-6 bg-[#2fae6b]" />
@@ -82,16 +82,24 @@ export default function EndemicPortal() {
             </div>
           </div>
           
-          <div className="mt-12 flex justify-center opacity-50 animate-bounce">
+          <div className="mt-10 hidden justify-center opacity-40 motion-safe:animate-bounce md:flex">
             <span className="text-sm tracking-widest uppercase">Scroll for more</span>
           </div>
         </div>
       </section>
 
       {/* BELOW FOLD: Ecosystem Content */}
-      <section className="relative z-10 mx-auto max-w-7xl px-6 py-24">
+      <section className="relative z-10 mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-28">
         <Reveal>
-          <h2 className="font-display text-3xl font-medium text-white mb-10">The Endemic Ecosystem</h2>
+          <div className="mb-10 flex items-end justify-between gap-6">
+            <div>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/35">Beyond the apps</p>
+              <h2 className="font-display text-3xl font-medium tracking-tight text-white sm:text-4xl">The Endemic Ecosystem</h2>
+            </div>
+            <span className="hidden max-w-sm text-right text-sm leading-relaxed text-white/40 md:block">
+              Field notes, expedition media, and practical tools built around provenance.
+            </span>
+          </div>
         </Reveal>
         
         <div className="grid gap-8 md:grid-cols-3">
