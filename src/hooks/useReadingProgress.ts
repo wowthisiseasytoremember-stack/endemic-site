@@ -9,13 +9,15 @@ export function useReadingProgress() {
     // 1. Gather all H2 and H3 elements in the article
     const headingElements = Array.from(document.querySelectorAll('article.article-flow h2, article.article-flow h3'));
     
-    setHeadings(
-      headingElements.map((h) => ({
-        id: h.id,
-        text: h.textContent || '',
-        level: h.tagName.toLowerCase() === 'h2' ? 2 : 3,
-      }))
-    );
+    const headingFrame = window.requestAnimationFrame(() => {
+      setHeadings(
+        headingElements.map((h) => ({
+          id: h.id,
+          text: h.textContent || '',
+          level: h.tagName.toLowerCase() === 'h2' ? 2 : 3,
+        }))
+      );
+    });
 
     // 2. Setup Intersection Observer for active heading
     const observer = new IntersectionObserver(
@@ -45,6 +47,7 @@ export function useReadingProgress() {
     handleScroll(); // Init
     
     return () => {
+      window.cancelAnimationFrame(headingFrame);
       observer.disconnect();
       window.removeEventListener('scroll', handleScroll);
     };
