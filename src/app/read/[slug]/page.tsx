@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { ClientArticleContent } from '@/components/blog/ClientArticleContent';
-import { Nav } from '@/components/Nav';
 import { db } from '@/lib/endemic-db';
 import { getEntitiesByArticle, getEntityByRoute, ProductEntity, VideoEntity } from '@/data/entities';
 import { MDXRemote } from 'next-mdx-remote/rsc';
@@ -143,7 +142,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   return (
     <main className="min-h-screen bg-[#040908] text-white selection:bg-[#7fe3ec] selection:text-[#040908]">
-      <Nav />
       <ClientArticleContent {...articleData}>
         <MDXRemote source={content} components={components} />
       </ClientArticleContent>
