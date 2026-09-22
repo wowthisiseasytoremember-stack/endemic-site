@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from "framer-motion";
 import Link from "next/link";
 
 interface TiltCardProps {
@@ -13,6 +13,7 @@ interface TiltCardProps {
 
 export function TiltCard({ href, children, className = "", style }: TiltCardProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const reduceMotion = useReducedMotion();
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -24,7 +25,7 @@ export function TiltCard({ href, children, className = "", style }: TiltCardProp
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-7deg", "7deg"]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    if (!ref.current) return;
+    if (reduceMotion || !ref.current) return;
     const rect = ref.current.getBoundingClientRect();
     const width = rect.width;
     const height = rect.height;
@@ -68,16 +69,7 @@ export function TiltCard({ href, children, className = "", style }: TiltCardProp
   }
 
   return (
-    <div
-      className={wrapperClasses}
-      tabIndex={0}
-      onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          // Add custom logic if this card needs to act like a button
-        }
-      }}
-    >
+    <div className="block h-full w-full rounded-[2rem]">
       {Inner}
     </div>
   );
