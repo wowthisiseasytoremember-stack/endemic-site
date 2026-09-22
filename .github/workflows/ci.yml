@@ -22,6 +22,12 @@ jobs:
     - name: Toolchain
       run: node --version && npm --version
 
+    - name: Lock repair diagnostics
+      run: |
+        npm view @emnapi/runtime@1.11.3 version dist.tarball dist.integrity license dependencies optionalDependencies peerDependencies engines --json
+        npm view @emnapi/core@1.11.3 version dist.tarball dist.integrity license dependencies optionalDependencies peerDependencies engines --json
+        npm view @emnapi/wasi-threads@1.2.3 version dist.tarball dist.integrity license dependencies optionalDependencies peerDependencies engines --json
+
     - name: Install dependencies
       run: npm ci
       
