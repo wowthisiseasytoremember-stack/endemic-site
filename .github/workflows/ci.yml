@@ -25,6 +25,9 @@ jobs:
     - name: Install dependencies
       run: npm ci
       
+    - name: Compile publication artifact (diagnostic)
+      run: node scripts/compile-publication-data.mjs --stdout
+
     - name: Lint
       run: npm run lint
       
