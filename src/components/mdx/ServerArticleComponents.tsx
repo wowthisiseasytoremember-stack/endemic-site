@@ -31,19 +31,19 @@ function BaseLink({ slug, children, className = "", color = 'aqua', routePrefix 
 }
 
 export function SpeciesLink({ slug, children, className = "" }: { slug: string; children?: React.ReactNode; className?: string }) {
-  return <BaseLink slug={slug} children={children} className={className} color="aqua" routePrefix="/aquatrack/species/" />;
+  return <BaseLink slug={slug} className={className} color="aqua" routePrefix="/aquatrack/species/">{children}</BaseLink>;
 }
 
 export function DiscovererLink({ slug, children, className = "" }: { slug: string; children?: React.ReactNode; className?: string }) {
-  return <BaseLink slug={slug} children={children} className={className} color="amber" routePrefix="/read/discoverer/" />;
+  return <BaseLink slug={slug} className={className} color="amber" routePrefix="/read/discoverer/">{children}</BaseLink>;
 }
 
 export function BiotopeLink({ slug, children, className = "" }: { slug: string; children?: React.ReactNode; className?: string }) {
-  return <BaseLink slug={slug} children={children} className={className} color="emerald" routePrefix="/aquatrack/biotope/" />;
+  return <BaseLink slug={slug} className={className} color="emerald" routePrefix="/aquatrack/biotope/">{children}</BaseLink>;
 }
 
 export function CultivarLink({ slug, children, className = "" }: { slug: string; children?: React.ReactNode; className?: string }) {
-  return <BaseLink slug={slug} children={children} className={className} color="emerald" routePrefix="/floratrack/cultivar/" />;
+  return <BaseLink slug={slug} className={className} color="emerald" routePrefix="/floratrack/cultivar/">{children}</BaseLink>;
 }
 
 interface FigureImageProps {

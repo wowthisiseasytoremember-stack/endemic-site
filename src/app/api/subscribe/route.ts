@@ -1,4 +1,4 @@
-import { db } from "@/db";
+import { getDb } from "@/db";
 import { subscribers } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { z } from "zod";
@@ -60,6 +60,8 @@ const parsed = SubscribeSchema.safeParse(body);
 
     const { email, leadMagnet } = parsed.data;
     const normalizedEmail = email.toLowerCase().trim();
+
+    const db = getDb();
 
     const existing = await db
       .select({ id: subscribers.id })

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -156,10 +157,10 @@ function NotFoundPage({ slug }: { slug: string }) {
     <main className="min-h-screen bg-[#040908] text-white flex items-center justify-center px-6">
       <div className="text-center">
         <h1 className="font-display text-4xl font-medium mb-4">Article not found</h1>
-        <p className="text-white/60 mb-8">The article <code className="bg-white/10 px-2 py-1 rounded">{slug}</code> doesn't exist.</p>
-        <a href="/read" className="inline-flex items-center gap-2 text-aqua hover:text-aqua/70">
+        <p className="text-white/60 mb-8">The article <code className="bg-white/10 px-2 py-1 rounded">{slug}</code> doesn&apos;t exist.</p>
+        <Link href="/read" className="inline-flex items-center gap-2 text-aqua hover:text-aqua/70">
           <span className="h-px w-8 bg-aqua" /> Back to Field Notes
-        </a>
+        </Link>
       </div>
     </main>
   );
