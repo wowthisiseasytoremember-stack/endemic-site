@@ -6,7 +6,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "data:publication": "node scripts/compile-publication-data.mjs",
+    "data:publication:check": "node scripts/compile-publication-data.mjs --check"
   },
   "dependencies": {
     "@portabletext/react": "^6.2.0",
