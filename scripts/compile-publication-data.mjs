@@ -21,20 +21,23 @@ function slugifyScientificName(name) {
   return String(name).trim().toLowerCase().replace(/\s+/g, "-");
 }
 
-function publicationSpeciesSlugs(sourceText) {
-  const slugs = new Set();
+function publicationSpecies(sourceText) {
+  const species = new Map();
 
   for (const line of sourceText.split(/\r?\n/)) {
     if (!/type:\s*['"]species['"]/.test(line)) continue;
-    const match = line.match(/slug:\s*['"]([^'"]+)['"]/);
-    if (match) slugs.add(match[1]);
+    const slug = line.match(/slug:\s*['"]([^'"]+)['"]/)?.[1];
+    const name = line.match(/name:\s*['"]([^'"]+)['"]/)?.[1] || "";
+    if (slug) species.set(slug, name);
   }
 
-  if (slugs.size === 0) {
+  if (species.size === 0) {
     throw new Error("No publication species found in src/data/entities.ts");
   }
 
-  return [...slugs].sort();
+  return [...species.entries()]
+    .map(([slug, name]) => ({ slug, name }))
+    .sort((a, b) => a.slug.localeCompare(b.slug));
 }
 
 const speciesBuffer = readBuffer(SPECIES_SOURCE);
@@ -55,7 +58,9 @@ for (const row of speciesRows) {
 const selected = {};
 const missing = [];
 
-for (const slug of publicationSpeciesSlugs(entitiesBuffer.toString("utf8"))) {
+const publicationEntries = publicationSpecies(entitiesBuffer.toString("utf8"));
+
+for (const { slug } of publicationEntries) {
   const species = speciesBySlug.get(slug);
   if (!species) {
     missing.push(slug);
@@ -80,16 +85,23 @@ for (const slug of publicationSpeciesSlugs(entitiesBuffer.toString("utf8"))) {
 
 if (missing.length > 0) {
   for (const slug of missing) {
+    const entry = publicationEntries.find((item) => item.slug === slug);
     const epithet = slug.split("-").at(-1) || slug;
+    const distinctive = String(entry?.name || "")
+      .toLowerCase()
+      .split(/\s+/)
+      .find((token) => token.length >= 5 && token !== "puffer");
     const candidates = speciesRows
       .filter((row) => {
         const scientific = String(row?.scientific_name || "").toLowerCase();
         const common = String(row?.common_name || "").toLowerCase();
-        return scientific.includes(epithet) || common.includes(epithet);
+        return scientific.includes(epithet) || (distinctive ? common.includes(distinctive) : false);
       })
-      .slice(0, 12)
+      .slice(0, 20)
       .map((row) => `${row.scientific_name} [${row.common_name || ""}]`);
-    console.error(`[publication] missing ${slug}; candidates: ${candidates.join(" | ") || "(none)"}`);
+    console.error(
+      `[publication] missing ${slug} (${entry?.name || "unknown"}); candidates: ${candidates.join(" | ") || "(none)"}`
+    );
   }
   throw new Error(`Publication species missing from species_traits_flat.json: ${missing.join(", ")}`);
 }
