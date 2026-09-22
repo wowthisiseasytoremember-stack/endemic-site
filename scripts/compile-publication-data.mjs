@@ -60,10 +60,16 @@ const missing = [];
 
 const publicationEntries = publicationSpecies(entitiesBuffer.toString("utf8"));
 
-for (const { slug } of publicationEntries) {
+for (const { slug, name } of publicationEntries) {
   const species = speciesBySlug.get(slug);
   if (!species) {
     missing.push(slug);
+    selected[slug] = {
+      scientificName: null,
+      commonName: name,
+      connections: [],
+      unmatched: true,
+    };
     continue;
   }
 
@@ -80,35 +86,20 @@ for (const { slug } of publicationEntries) {
     scientificName: species.scientific_name,
     commonName: species.common_name || species.scientific_name,
     connections,
+    unmatched: false,
   };
 }
 
 if (missing.length > 0) {
-  for (const slug of missing) {
-    const entry = publicationEntries.find((item) => item.slug === slug);
-    const epithet = slug.split("-").at(-1) || slug;
-    const distinctive = String(entry?.name || "")
-      .toLowerCase()
-      .split(/\s+/)
-      .find((token) => token.length >= 5 && token !== "puffer");
-    const candidates = speciesRows
-      .filter((row) => {
-        const scientific = String(row?.scientific_name || "").toLowerCase();
-        const common = String(row?.common_name || "").toLowerCase();
-        return scientific.includes(epithet) || (distinctive ? common.includes(distinctive) : false);
-      })
-      .slice(0, 20)
-      .map((row) => `${row.scientific_name} [${row.common_name || ""}]`);
-    console.error(
-      `[publication] missing ${slug} (${entry?.name || "unknown"}); candidates: ${candidates.join(" | ") || "(none)"}`
-    );
-  }
-  throw new Error(`Publication species missing from species_traits_flat.json: ${missing.join(", ")}`);
+  console.warn(
+    `[publication] unmatched editorial species retain empty connections: ${missing.join(", ")}`
+  );
 }
 
 const artifact = {
   schemaVersion: 1,
   maxConnectionsPerSpecies: MAX_CONNECTIONS_PER_SPECIES,
+  unmatchedSpecies: missing,
   sources: {
     speciesTraits: {
       path: "src/data/aquatrack/species_traits_flat.json",
