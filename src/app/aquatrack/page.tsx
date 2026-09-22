@@ -44,7 +44,7 @@ export default function AquaTrackPage() {
                 <div className="mt-10 flex flex-wrap items-center gap-6">
                   <div className="w-56 h-16">
                     <TiltCard href="#download" className="flex items-center justify-center rounded-full bg-[#7fe3ec] text-sm font-semibold text-[#030b14]">
-                      Download the App
+                      See iOS status
                     </TiltCard>
                   </div>
                   <Link href="/" className="text-sm font-medium text-white/60 transition-colors hover:text-white">
@@ -171,14 +171,16 @@ export default function AquaTrackPage() {
         <Reveal>
           <h2 className="font-display text-5xl font-medium text-white">Master the water.</h2>
           <p className="mx-auto mt-6 max-w-md text-lg text-white/60">
-            Download AquaTrack for iOS and map your first 5 tanks for free.
+            The iOS app is still in active development. This page is the product preview while the release build is being finished.
           </p>
-          <div className="mt-12 flex justify-center">
-             <div className="w-48 h-16">
-                <TiltCard href="#" className="flex items-center justify-center rounded-full bg-white text-sm font-semibold text-[#030b14]">
-                  Get AquaTrack
-                </TiltCard>
-             </div>
+          <div className="mt-10 flex flex-wrap justify-center gap-3">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.05] px-5 py-3 text-sm font-semibold text-white/80">
+              <span className="h-2 w-2 rounded-full bg-[#7fe3ec] shadow-[0_0_10px_rgba(127,227,236,0.65)]" />
+              iOS release in development
+            </span>
+            <Link href="/read" className="inline-flex items-center gap-2 rounded-full border border-white/10 px-5 py-3 text-sm font-medium text-white/55 transition-colors hover:bg-white/[0.05] hover:text-white">
+              Read Field Notes <span aria-hidden="true">→</span>
+            </Link>
           </div>
         </Reveal>
       </section>
