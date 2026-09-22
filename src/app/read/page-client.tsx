@@ -19,13 +19,49 @@ interface BlogPost {
   heroAlt: string;
 }
 
-const CATEGORY_COLORS: Record<string, string> = {
-  'Species Spotlight': 'aqua',
-  'Discoverer Dossiers': 'amber',
-  'Biotope Guides': 'emerald',
-  'Cultivar Controversies': 'red',
-  'Expedition Logs': 'purple',
+const DEFAULT_CATEGORY_STYLE = {
+  text: "text-aqua",
+  border: "border-aqua/30",
+  background: "bg-aqua/20",
+  line: "bg-aqua",
+  glow: "shadow-[0_0_8px_rgba(31,184,196,0.65)]",
 };
+
+const CATEGORY_STYLES: Record<string, typeof DEFAULT_CATEGORY_STYLE> = {
+  "Species Spotlight": DEFAULT_CATEGORY_STYLE,
+  "Discoverer Dossiers": {
+    text: "text-amber",
+    border: "border-amber/30",
+    background: "bg-amber/20",
+    line: "bg-amber",
+    glow: "shadow-[0_0_8px_rgba(232,161,44,0.65)]",
+  },
+  "Biotope Guides": {
+    text: "text-emerald",
+    border: "border-emerald/30",
+    background: "bg-emerald/20",
+    line: "bg-emerald",
+    glow: "shadow-[0_0_8px_rgba(47,174,107,0.65)]",
+  },
+  "Cultivar Controversies": {
+    text: "text-[#f87171]",
+    border: "border-[#f87171]/30",
+    background: "bg-[#f87171]/15",
+    line: "bg-[#f87171]",
+    glow: "shadow-[0_0_8px_rgba(248,113,113,0.6)]",
+  },
+  "Expedition Logs": {
+    text: "text-[#c084fc]",
+    border: "border-[#c084fc]/30",
+    background: "bg-[#c084fc]/15",
+    line: "bg-[#c084fc]",
+    glow: "shadow-[0_0_8px_rgba(192,132,252,0.6)]",
+  },
+};
+
+function categoryStyle(category: string) {
+  return CATEGORY_STYLES[category] ?? DEFAULT_CATEGORY_STYLE;
+}
 
 export default function FieldNotesPageClient() {
   const [isExiting, setIsExiting] = useState(false);
@@ -176,7 +212,7 @@ export default function FieldNotesPageClient() {
               <div className="mt-20">
                 {(() => {
                   const featured = filteredPosts[0];
-                  const categoryColor = CATEGORY_COLORS[featured.category] || 'aqua';
+                  const style = categoryStyle(featured.category);
                   return (
                     <Link
                       href={`/read/${featured.slug}`}
@@ -192,9 +228,9 @@ export default function FieldNotesPageClient() {
                         
                         <div className="absolute inset-0 p-8 md:p-16 flex flex-col justify-end">
                           <div className="flex items-center gap-3 text-white/50 mb-6 drop-shadow-md">
-                            <span className={`h-px w-12 bg-${categoryColor} shadow-[0_0_8px_var(--${categoryColor})]`} />
+                            <span className={`h-px w-12 ${style.line} ${style.glow}`} />
                             <span className="text-xs font-bold uppercase tracking-widest text-white">{featured.category}</span>
-                            <span className={`px-2 py-0.5 rounded text-[10px] uppercase font-bold bg-${categoryColor}/20 text-${categoryColor} border border-${categoryColor}/30`}>
+                            <span className={`rounded border px-2 py-0.5 text-[10px] font-bold uppercase ${style.background} ${style.text} ${style.border}`}>
                               Latest
                             </span>
                           </div>
@@ -241,7 +277,7 @@ export default function FieldNotesPageClient() {
                     
                     {/* Glowing Category Badge */}
                     <div className="absolute top-4 left-4">
-                      <span className={`px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-full bg-[#040908]/80 backdrop-blur-md border border-${CATEGORY_COLORS[post.category] || 'aqua'}/30 text-${CATEGORY_COLORS[post.category] || 'aqua'} shadow-[0_0_10px_rgba(0,0,0,0.5)]`}>
+                      <span className={`rounded-full border bg-[#040908]/80 px-3 py-1 text-[10px] font-bold uppercase tracking-widest backdrop-blur-md shadow-[0_0_10px_rgba(0,0,0,0.5)] ${categoryStyle(post.category).border} ${categoryStyle(post.category).text}`}>
                         {post.category}
                       </span>
                     </div>
