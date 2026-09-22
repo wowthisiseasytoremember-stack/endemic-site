@@ -13,6 +13,7 @@ export function PresentationViewer({ file }: { file: string }) {
   const [numPages, setNumPages] = useState<number>();
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [pageWidth, setPageWidth] = useState(800);
   const containerRef = React.useRef<HTMLDivElement>(null);
 
   function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
