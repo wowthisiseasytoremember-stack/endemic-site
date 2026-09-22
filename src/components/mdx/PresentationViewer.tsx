@@ -48,6 +48,21 @@ export function PresentationViewer({ file }: { file: string }) {
     return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
   }, []);
 
+  React.useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const updatePageWidth = () => {
+      setPageWidth(Math.max(320, Math.floor(container.clientWidth * 0.9)));
+    };
+
+    updatePageWidth();
+    const resizeObserver = new ResizeObserver(updatePageWidth);
+    resizeObserver.observe(container);
+
+    return () => resizeObserver.disconnect();
+  }, []);
+
   return (
     <div 
       ref={containerRef}
@@ -67,15 +82,13 @@ export function PresentationViewer({ file }: { file: string }) {
         >
           {/* We use a fixed width or scale depending on fullscreen to make it fit properly */}
           <div className="relative w-full h-full flex items-center justify-center">
-            {containerRef.current && (
-               <Page 
-                 pageNumber={pageNumber} 
-                 renderTextLayer={false}
-                 renderAnnotationLayer={false}
-                 width={isFullscreen ? window.innerWidth * 0.9 : (containerRef.current.clientWidth || 800)}
-                 className="shadow-2xl"
-               />
-            )}
+            <Page
+              pageNumber={pageNumber}
+              renderTextLayer={false}
+              renderAnnotationLayer={false}
+              width={pageWidth}
+              className="shadow-2xl"
+            />
           </div>
         </Document>
       </div>
