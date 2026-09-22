@@ -5,7 +5,7 @@ import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import { Reveal } from "@/components/Reveal";
 import Link from "next/link";
 
-interface BlogPost {
+export interface BlogPost {
   slug: string;
   title: string;
   excerpt: string;
@@ -63,11 +63,10 @@ function categoryStyle(category: string) {
   return CATEGORY_STYLES[category] ?? DEFAULT_CATEGORY_STYLE;
 }
 
-export default function FieldNotesPageClient() {
+export default function FieldNotesPageClient({ initialPosts }: { initialPosts: BlogPost[] }) {
   const [isExiting, setIsExiting] = useState(false);
-  const [posts, setPosts] = useState<BlogPost[]>([]);
   const [activeCategory, setActiveCategory] = useState<string>('All');
-  const [loading, setLoading] = useState(true);
+  const posts = initialPosts;
 
   const { scrollY } = useScroll();
   const heroY = useTransform(scrollY, [0, 1000], [0, 300]);
@@ -78,16 +77,6 @@ export default function FieldNotesPageClient() {
     const handleNavOut = () => setIsExiting(true);
     window.addEventListener("navigating-out", handleNavOut);
     return () => window.removeEventListener("navigating-out", handleNavOut);
-  }, []);
-
-  useEffect(() => {
-    fetch('/blog-index.json')
-      .then(res => res.json())
-      .then(data => {
-        setPosts(data.posts);
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
   }, []);
 
   const categories = ['All', 'Species Spotlight', 'Discoverer Dossiers', 'Biotope Guides', 'Cultivar Controversies', 'Expedition Logs'];
