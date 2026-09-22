@@ -79,6 +79,18 @@ for (const slug of publicationSpeciesSlugs(entitiesBuffer.toString("utf8"))) {
 }
 
 if (missing.length > 0) {
+  for (const slug of missing) {
+    const epithet = slug.split("-").at(-1) || slug;
+    const candidates = speciesRows
+      .filter((row) => {
+        const scientific = String(row?.scientific_name || "").toLowerCase();
+        const common = String(row?.common_name || "").toLowerCase();
+        return scientific.includes(epithet) || common.includes(epithet);
+      })
+      .slice(0, 12)
+      .map((row) => `${row.scientific_name} [${row.common_name || ""}]`);
+    console.error(`[publication] missing ${slug}; candidates: ${candidates.join(" | ") || "(none)"}`);
+  }
   throw new Error(`Publication species missing from species_traits_flat.json: ${missing.join(", ")}`);
 }
 
