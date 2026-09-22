@@ -13,7 +13,7 @@ export default function NotFound() {
           Uncharted Waters
         </h2>
         <p className="text-white/60 mb-10 text-lg md:text-xl max-w-lg mx-auto">
-          You've drifted beyond the mapped ecosystem. The page you're looking for has been submerged or doesn't exist.
+          You&apos;ve drifted beyond the mapped ecosystem. The page you&apos;re looking for has been submerged or doesn&apos;t exist.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link 
