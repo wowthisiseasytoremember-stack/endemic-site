@@ -91,7 +91,15 @@ export default function EndemicPortal() {
       {/* BELOW FOLD: Ecosystem Content */}
       <section className="relative z-10 mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-28">
         <Reveal>
-          <div className="mb-10 flex items-end justify-between gap-6">\n            <div>\n              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/35">Beyond the apps</p>\n              <h2 className="font-display text-3xl font-medium tracking-tight text-white sm:text-4xl">The Endemic Ecosystem</h2>\n            </div>\n            <span className="hidden max-w-sm text-right text-sm leading-relaxed text-white/40 md:block">Field notes, expedition media, and practical tools built around provenance.</span>\n          </div>
+          <div className="mb-10 flex items-end justify-between gap-6">
+            <div>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/35">Beyond the apps</p>
+              <h2 className="font-display text-3xl font-medium tracking-tight text-white sm:text-4xl">The Endemic Ecosystem</h2>
+            </div>
+            <span className="hidden max-w-sm text-right text-sm leading-relaxed text-white/40 md:block">
+              Field notes, expedition media, and practical tools built around provenance.
+            </span>
+          </div>
         </Reveal>
         
         <div className="grid gap-8 md:grid-cols-3">
