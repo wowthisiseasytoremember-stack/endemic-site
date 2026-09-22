@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { Reveal } from "@/components/Reveal";
-import { Nav } from "@/components/Nav";
 import Link from "next/link";
 
 interface BlogPost {
@@ -82,7 +81,6 @@ export default function FieldNotesPageClient() {
       </motion.div>
 
       <div className="relative z-10">
-        <Nav />
         <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
           
           {/* Header */}
