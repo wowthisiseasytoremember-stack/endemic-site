@@ -102,6 +102,10 @@ export function SubjectIdentity({
   accent = "neutral",
   image,
   imageAlt = "",
+  imageCredit,
+  imageLicense,
+  imageSourceHref,
+  imagePosition = "50% 50%",
 }: {
   eyebrow?: string;
   title: string;
@@ -110,6 +114,10 @@ export function SubjectIdentity({
   accent?: RabbitHoleAccent;
   image?: string;
   imageAlt?: string;
+  imageCredit?: string;
+  imageLicense?: string;
+  imageSourceHref?: string;
+  imagePosition?: string;
 }) {
   const a = ACCENT[accent];
 
