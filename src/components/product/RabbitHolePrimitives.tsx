@@ -48,6 +48,52 @@ function stateLabel(state: ThreadState) {
   }
 }
 
+export function ExplorationTrail({
+  items,
+  accent = "neutral",
+}: {
+  items: Array<{
+    label: string;
+    href?: string;
+    context?: string;
+  }>;
+  accent?: RabbitHoleAccent;
+}) {
+  const a = ACCENT[accent];
+
+  return (
+    <nav aria-label="Exploration trail" className="overflow-x-auto">
+      <ol className="flex min-w-max items-center gap-2 py-1">
+        {items.map((item, index) => {
+          const content = (
+            <span className="inline-flex min-h-10 items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.018] px-3.5 text-sm text-white/58 transition-colors hover:border-white/18 hover:text-white">
+              <span>{item.label}</span>
+              {item.context && (
+                <span className="text-[10px] font-semibold uppercase tracking-[0.13em] text-white/28">
+                  {item.context}
+                </span>
+              )}
+            </span>
+          );
+
+          return (
+            <li key={`${item.label}-${index}`} className="flex items-center gap-2">
+              {index > 0 && <span className={`h-px w-5 ${a.line}`} aria-hidden="true" />}
+              {item.href ? (
+                <Link href={item.href} className="rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30">
+                  {content}
+                </Link>
+              ) : (
+                <span aria-current={index === items.length - 1 ? "page" : undefined}>{content}</span>
+              )}
+            </li>
+          );
+        })}
+      </ol>
+    </nav>
+  );
+}
+
 export function SubjectIdentity({
   eyebrow,
   title,
