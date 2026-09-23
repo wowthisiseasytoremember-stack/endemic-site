@@ -561,7 +561,7 @@ export const controversies = [
       "Big-box store plants are a different clone",
       "Same name, different plant",
     ],
-    verdict: "Patent real for the genetics — retail clone differs.",
+    verdict: "Pink Princess itself is described as unpatented in later U.S. plant patents.",
   },
   {
     cultivar: "Hoya 'Compacta'",
@@ -622,9 +622,9 @@ export const blogPosts = [
   },
   {
     category: "Provenance Investigation",
-    title: "The Pink Princess Patent: Is the Plant You Bought the Plant on the Paper?",
+    title: "The Pink Princess Patent Story Is Backwards",
     excerpt:
-      "A real patent covers the genetics — but the big-box clone tells a different story. We follow the paper trail.",
+      "The patent number long attached to Pink Princess belongs to another plant. Later U.S. patents describe Pink Princess as unpatented.",
     read: "11 min",
     accent: "emerald",
   },
