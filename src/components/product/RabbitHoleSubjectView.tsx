@@ -169,14 +169,24 @@ export function RabbitHoleSubjectView({ model }: { model: RabbitHoleSubjectModel
                     kind="thread"
                     delay={Math.min(index * 0.035, 0.1)}
                   >
-                    <ThreadLink
-                      question={thread.question}
-                      target={thread.target}
-                      relationshipHint={thread.relationshipHint}
-                      state={thread.state}
-                      href={thread.href}
-                      accent={accent}
-                    />
+                    {thread.state === "READY" || thread.state === "SUMMARY" ? (
+                      <ThreadLink
+                        question={thread.question}
+                        target={thread.target}
+                        relationshipHint={thread.relationshipHint}
+                        state={thread.state}
+                        href={thread.href}
+                        accent={accent}
+                      />
+                    ) : (
+                      <ThreadLink
+                        question={thread.question}
+                        target={thread.target}
+                        relationshipHint={thread.relationshipHint}
+                        state={thread.state}
+                        accent={accent}
+                      />
+                    )}
                   </RabbitHoleReveal>
                 ))}
               </div>
