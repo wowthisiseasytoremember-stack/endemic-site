@@ -17,3 +17,11 @@ export {
   ThreadSequence,
   ThreadStep,
 } from "./StoryMotion";
+
+export {
+  ProofLoadingSkeleton,
+  ResearchingState,
+  SourceDocument,
+  SourceShelf,
+  UnavailableState,
+} from "./ProofStates";
