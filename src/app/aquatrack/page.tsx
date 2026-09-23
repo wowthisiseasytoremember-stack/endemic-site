@@ -39,7 +39,7 @@ export default function AquaTrackPage() {
             <div className="lg:col-span-5 lg:pb-4">
               <Reveal delay={200}>
                 <p className="text-lg leading-relaxed text-white/70">
-                  Every fish in your tank evolved to survive a highly specific river or floodplain. We mapped the water chemistry of the Amazon, the Congo, and Lake Tanganyika so you can recreate their home perfectly.
+                  Fish come from very different habitats. AquaTrack is exploring how published habitat, range, and water-parameter records can make a biotope-inspired setup more informed without pretending every captive tank can reproduce one exact wild locality.
                 </p>
                 <div className="mt-10 flex flex-wrap items-center gap-6">
                   <div className="w-56 h-16">
@@ -125,10 +125,10 @@ export default function AquaTrackPage() {
             <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
               <div>
                 <h2 className="font-display text-4xl font-medium text-white md:text-5xl">
-                  Who discovered your fish?
+                  The people behind the name
                 </h2>
                 <p className="mt-6 text-lg leading-relaxed text-white/60">
-                  Every species has a history. The hobby is full of misidentified tetras, disputed origins, and forgotten expeditions. We map the paper trail from the first sketching to your living room.
+                  Every species has a paper trail. Describers, namesakes, collectors, and later researchers can all play different roles, and those roles should stay separate when the evidence does.
                 </p>
                 <div className="mt-10 space-y-6 border-l-2 border-white/10 pl-6">
                   <p className="text-lg text-white/80 transition-colors hover:text-[#7fe3ec]">Are your Neon Tetras actually from the Amazon?</p>
