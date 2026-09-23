@@ -8,8 +8,6 @@ const PRIMARY_LINKS = [
   { href: "/aquatrack", label: "AquaTrack", accent: "aqua" },
   { href: "/floratrack", label: "FloraTrack", accent: "flora" },
   { href: "/read", label: "Field Notes", accent: "neutral" },
-  { href: "/watch", label: "Watch", accent: "neutral" },
-  { href: "/gear", label: "Gear", accent: "neutral" },
 ] as const;
 
 export function Nav() {
