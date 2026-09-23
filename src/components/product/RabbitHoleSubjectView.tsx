@@ -58,7 +58,7 @@ export function RabbitHoleSubjectView({ model }: { model: RabbitHoleSubjectModel
           />
         </RabbitHoleReveal>
 
-        <section className="mt-16 md:mt-20" aria-labelledby="interesting-heading">
+        {model.researching ? (\n          <section className="mt-16 md:mt-20">\n            <ResearchingState\n              title={model.researching.title}\n              body={model.researching.body}\n              nextEvidence={model.researching.nextEvidence}\n              accent={accent}\n            />\n          </section>\n        ) : (\n        <>\n        <section className="mt-16 md:mt-20" aria-labelledby="interesting-heading">
           <RabbitHoleReveal kind="section">
             <div className="mb-7 max-w-2xl">
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/36">
