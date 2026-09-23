@@ -23,10 +23,10 @@ export default function DiscoverersPage() {
               The People Behind the Latin
             </span>
             <h1 className="font-display mt-3 text-5xl font-semibold sm:text-6xl">
-              Who discovered your fish?
+              The people behind the name
             </h1>
             <p className="mt-6 max-w-3xl text-xl leading-relaxed text-white/70">
-              Every scientific name in your tank connects back to a real person standing over a river or a jungle specimen. Here are the explorers, scientists, and naturalists who built the taxonomy.
+              Scientific names can connect organisms to people in different ways: describers, namesakes, collectors, authors, and researchers. This is a starting point for following those relationships without collapsing them into one generic “discoverer” story.
             </p>
           </Reveal>
 
