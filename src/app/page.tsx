@@ -97,12 +97,12 @@ export default function EndemicPortal() {
               <h2 className="font-display text-3xl font-medium tracking-tight text-white sm:text-4xl">The Endemic Ecosystem</h2>
             </div>
             <span className="hidden max-w-sm text-right text-sm leading-relaxed text-white/40 md:block">
-              Field notes, expedition media, and practical tools built around provenance.
+              Field Notes about the organisms, habitats, people, names, and paper trails behind the hobby.
             </span>
           </div>
         </Reveal>
         
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="max-w-2xl">
           <TiltCard href="/read" className="group relative overflow-hidden rounded-[2rem] bg-[#080d0b] ring-1 ring-white/10">
             <div className="absolute inset-0 z-0">
               <img src="/blog.jpg" alt="Field Notes" className="h-full w-full object-cover opacity-20 mix-blend-luminosity transition-transform duration-700 group-hover:scale-105 group-hover:opacity-40 group-hover:mix-blend-normal" />
@@ -114,27 +114,6 @@ export default function EndemicPortal() {
             </div>
           </TiltCard>
 
-          <TiltCard href="/watch" className="group relative overflow-hidden rounded-[2rem] bg-[#080d0b] ring-1 ring-white/10">
-            <div className="absolute inset-0 z-0">
-              <img src="/youtube.jpg" alt="Expedition TV" className="h-full w-full object-cover opacity-20 mix-blend-luminosity transition-transform duration-700 group-hover:scale-105 group-hover:opacity-50 group-hover:mix-blend-normal" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#080d0b] to-[#080d0b]/20" />
-            </div>
-            <div className="relative z-10 flex min-h-[350px] flex-col justify-end p-8 transform-gpu" style={{ transform: "translateZ(20px)" }}>
-              <h3 className="font-display text-2xl text-white">Expedition TV</h3>
-              <p className="mt-3 text-sm text-white/60">Watch biotope documentaries.</p>
-            </div>
-          </TiltCard>
-
-          <TiltCard href="/gear" className="group relative overflow-hidden rounded-[2rem] bg-[#080d0b] ring-1 ring-white/10">
-            <div className="absolute inset-0 z-0">
-              <img src="/gear.jpg" alt="Curated Gear" className="h-full w-full object-cover opacity-20 mix-blend-luminosity transition-transform duration-700 group-hover:scale-105 group-hover:opacity-50 group-hover:mix-blend-normal" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#080d0b] to-[#080d0b]/20" />
-            </div>
-            <div className="relative z-10 flex min-h-[350px] flex-col justify-end p-8 transform-gpu" style={{ transform: "translateZ(20px)" }}>
-              <h3 className="font-display text-2xl text-white">Curated Gear</h3>
-              <p className="mt-3 text-sm text-white/60">Biotope-matched equipment.</p>
-            </div>
-          </TiltCard>
         </div>
       </section>
       
