@@ -70,6 +70,27 @@ const components = {
   th: ({ children, ...props }: any) => <th className="border-b border-brand-raised py-4 px-2 text-xs font-bold uppercase tracking-widest text-brand-muted" {...props}>{children}</th>,
   td: ({ children, ...props }: any) => <td className="py-4 px-2 text-brand-text tabular-nums" {...props}>{children}</td>,
   a: ({ children, href, ...props }: any) => {
+    const unimplementedEntityRoute =
+      typeof href === "string" &&
+      [
+        "/aquatrack/species/",
+        "/aquatrack/biotope/",
+        "/floratrack/cultivar/",
+        "/read/discoverer/",
+      ].some((prefix) => href.startsWith(prefix));
+
+    if (unimplementedEntityRoute) {
+      return (
+        <span
+          className="font-medium text-brand-accent/75"
+          title="Dedicated page not built yet"
+          {...props}
+        >
+          {children}
+        </span>
+      );
+    }
+
     return <a href={href} className="text-brand-accent underline underline-offset-4 hover:text-brand-accent/70 font-medium transition-colors" target={href?.startsWith('http') ? '_blank' : undefined} rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined} {...props}>{children}</a>;
   },
 };
@@ -142,14 +163,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     categoryColor,
     slug,
     content,
-    crossKingdomData: crossKingdomData.map(({ species, connections }) => ({
-      species: { slug: species.slug, common_name: species.common_name },
-      connections: connections.map(conn => ({ pn: conn.pn, c: conn.c }))
-    })),
-    relatedSpecies: relatedSpecies.map(e => ({ slug: e.slug, name: e.name, description: e.description, route: e.route })),
-    relatedDiscoverers: relatedDiscoverers.map(e => ({ slug: e.slug, name: e.name, description: e.description, route: e.route })),
-    relatedBiotopes: relatedBiotopes.map(e => ({ slug: e.slug, name: e.name, description: e.description, route: e.route })),
-    relatedCultivars: relatedCultivars.map(e => ({ slug: e.slug, name: e.name, description: e.description, route: e.route })),
+    // Dedicated entity destinations do not exist yet. Keep article reading truthful:
+    // no automatic "Explore Further" or cross-kingdom cards until those routes are real.
+    crossKingdomData: [],
+    relatedSpecies: [],
+    relatedDiscoverers: [],
+    relatedBiotopes: [],
+    relatedCultivars: [],
   };
 
   return (
