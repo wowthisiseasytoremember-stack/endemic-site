@@ -28,6 +28,9 @@ jobs:
     - name: Verify publication artifact
       run: npm run data:publication:check
 
+    - name: Verify product-proof media manifest
+      run: npm run data:product-proof-media:check
+
     - name: Lint
       run: npm run lint
       
