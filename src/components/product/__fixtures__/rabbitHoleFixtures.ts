@@ -1,3 +1,4 @@
+import { proofMediaIdentityProps } from "@/data/product-proof/media";
 import type { RabbitHoleSubjectModel } from "../RabbitHoleTypes";
 
 /**
@@ -20,6 +21,7 @@ export const CARDINAL_DESIGN_FIXTURE: RabbitHoleSubjectModel = {
   lead:
     "Its paper trail separates the person who described it from the person it was named for — and keeps getting stranger from there.",
   accent: "aqua",
+  ...proofMediaIdentityProps("cardinal-tetra-hero-pd-paolo-neo"),
   interesting: [
     {
       id: "role-split",
@@ -154,6 +156,7 @@ export const PINK_PRINCESS_DESIGN_FIXTURE: RabbitHoleSubjectModel = {
   lead:
     "The accepted BioTrack record establishes one lineage relationship and deliberately leaves the original breeder question open.",
   accent: "flora",
+  ...proofMediaIdentityProps("pink-princess-hero-ccby2-cliff-landscape"),
   interesting: [
     {
       id: "em0003-lineage",
