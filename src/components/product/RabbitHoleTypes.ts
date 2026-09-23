@@ -77,7 +77,9 @@ export type ProductDocument = {
   rightsNote?: string;
 };
 
-export type RabbitHoleSubjectModel = {
+type NonEmptyArray<T> = [T, ...T[]];
+
+type RabbitHoleSubjectBase = {
   id: string;
   trail?: ProductTrailItem[];
   eyebrow?: string;
@@ -91,14 +93,30 @@ export type RabbitHoleSubjectModel = {
   imageLicense?: string;
   imageSourceHref?: string;
   imagePosition?: string;
-  interesting: ProductInterestingItem[];
-  threads: ProductThread[];
+};
+
+type ReadyRabbitHoleSubject = RabbitHoleSubjectBase & {
+  researching?: never;
+  interesting: NonEmptyArray<ProductInterestingItem>;
+  threads: NonEmptyArray<ProductThread>;
   corrections?: ProductCorrection[];
   unknowns?: ProductUnknown[];
   documents?: ProductDocument[];
-  researching?: {
+};
+
+type ResearchingRabbitHoleSubject = RabbitHoleSubjectBase & {
+  researching: {
     title?: string;
     body: string;
     nextEvidence?: string[];
   };
+  interesting?: never;
+  threads?: never;
+  corrections?: never;
+  unknowns?: never;
+  documents?: never;
 };
+
+export type RabbitHoleSubjectModel =
+  | ReadyRabbitHoleSubject
+  | ResearchingRabbitHoleSubject;
