@@ -174,18 +174,43 @@ unless the serving packet supplies that relationship.
 
 ## P1 — live subject hero
 
-**Role:** `SUBJECT_HERO`  
-**Candidate:** Wikimedia Commons `Pink princess philodendron.jpg`  
-**Source:** https://commons.wikimedia.org/wiki/File:Pink_princess_philodendron.jpg  
-**Current rights read:** CC0 1.0 / own work by Cmushore  
-**Original:** 1090 × 2098 according to current Commons metadata  
-**Production status:** candidate PASS after source-manifest verification.
+**Role:** `SUBJECT_HERO`
+
+### Preferred desktop
+
+- asset ID: `pink-princess-hero-ccby2-cliff-landscape`
+- Wikimedia Commons: `Arum Family - Araceae (3073312288) (3).jpg`
+- source: https://commons.wikimedia.org/wiki/File:Arum_Family_-_Araceae_(3073312288)_(3).jpg
+- 1280 × 853
+- creator: Cliff
+- license: CC BY 2.0
+- attribution required
+- current production status: READY_PREFERRED_DESKTOP
+
+Use because the native landscape geometry fits the 4:3 editorial hero without destroying the plant through a severe crop.
+
+### Portrait/mobile alternate
+
+- asset ID: `pink-princess-hero-cc0-cmushore`
+- Wikimedia Commons: `Pink princess philodendron.jpg`
+- source: https://commons.wikimedia.org/wiki/File:Pink_princess_philodendron.jpg
+- 1090 × 2098
+- creator: Cmushore
+- license: CC0 1.0
+- current production status: READY_PORTRAIT_ALTERNATE
 
 ### Product use
 
-Use as a real, colorful hero.
+Both images are exact-cultivar identity media only.
 
-Do not bury it under:
+Do not use either image as evidence for:
+- originator;
+- breeder;
+- patent status;
+- lineage;
+- wild habitat.
+
+Do not bury the subject under:
 - heavy green tint;
 - luminosity blend;
 - large dashboard overlay.
@@ -326,3 +351,36 @@ Every sourced asset handed from AquaScrape to Endemic should expose:
 ```
 
 This is a media handoff contract, not a new biological schema.
+
+
+---
+
+# Machine-readable gate
+
+Canonical handoff:
+- `src/data/product-proof/media-manifest.json`
+
+Resolver:
+- `src/data/product-proof/media.ts`
+- `getReadyProofMedia(assetId)`
+- `proofMediaIdentityProps(assetId)`
+
+READY assets fail closed unless they provide:
+- unique stable ID;
+- commercial-use clearance;
+- source and original HTTP(S) URLs;
+- creator;
+- license;
+- attribution text;
+- positive dimensions;
+- alt text;
+- claim scope;
+- recommended use;
+- prohibited implications.
+
+CI command:
+```bash
+npm run data:product-proof-media:check
+```
+
+Do not bypass the resolver in future product-proof routes merely because a raw image URL is available.
