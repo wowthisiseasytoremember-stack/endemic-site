@@ -43,7 +43,6 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Endemic",
-  "url": "https://endemic.app",
   "description": "Biotope matching, discoverer profiles, and cross-kingdom connections for aquarists and plant collectors."
 };
 
