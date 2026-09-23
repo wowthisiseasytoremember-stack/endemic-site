@@ -70,7 +70,7 @@ export function ExplorationTrail({
             <span className="inline-flex min-h-10 items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.018] px-3.5 text-sm text-white/58 transition-colors hover:border-white/18 hover:text-white">
               <span>{item.label}</span>
               {item.context && (
-                <span className="text-[10px] font-semibold uppercase tracking-[0.13em] text-white/28">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.13em] text-white/48">
                   {item.context}
                 </span>
               )}
@@ -164,7 +164,7 @@ export function SubjectIdentity({
             />
           </div>
           {(imageCredit || imageLicense) && (
-            <figcaption className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 px-1 text-[10px] leading-4 text-white/34">
+            <figcaption className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 px-1 text-[10px] leading-4 text-white/48">
               {imageSourceHref ? (
                 <a
                   href={imageSourceHref}
@@ -263,7 +263,7 @@ export function ThreadLink({
   const inner = (
     <>
       <div className="min-w-0">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/38">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/48">
           Follow the thread
         </p>
         <p className="mt-2 font-display text-xl font-medium leading-snug text-white">
@@ -294,7 +294,7 @@ export function ThreadLink({
     </>
   );
 
-  const className = `group flex w-full items-center justify-between gap-6 rounded-[1.15rem] border px-5 py-5 text-left transition-[border-color,background-color] duration-150 sm:px-6 ${a.softBorder} ${disabled ? "cursor-default bg-white/[0.018] opacity-70" : `${a.bg} hover:border-white/22 focus-visible:border-white/30 focus-visible:outline-none`}`;
+  const className = `group flex w-full items-center justify-between gap-6 rounded-[1.15rem] border px-5 py-5 text-left transition-[border-color,background-color] duration-150 sm:px-6 ${a.softBorder} ${disabled ? "cursor-default bg-white/[0.018]" : `${a.bg} hover:border-white/22 focus-visible:border-white/30 focus-visible:outline-none`}`;
 
   if (disabled) {
     return (
@@ -337,33 +337,33 @@ export function EvidenceReceipt({
           <span className={`h-2 w-2 rounded-full ${a.line}`} aria-hidden="true" />
           <span className="truncate text-sm font-medium text-white/72">View receipt</span>
         </span>
-        <span className="text-sm text-white/35 transition-transform duration-150 group-open:rotate-45" aria-hidden="true">
+        <span className="text-sm text-white/48 transition-transform duration-150 group-open:rotate-45" aria-hidden="true">
           +
         </span>
       </summary>
 
       <div className="border-t border-white/[0.07] px-5 py-5">
         <dl className="grid gap-x-6 gap-y-4 text-sm sm:grid-cols-[8rem_minmax(0,1fr)]">
-          <dt className="text-white/36">Source</dt>
+          <dt className="text-white/48">Source</dt>
           <dd className="break-words text-white/72">{sourceLabel}</dd>
 
           {relationship && (
             <>
-              <dt className="text-white/36">Supports</dt>
+              <dt className="text-white/48">Supports</dt>
               <dd className="break-words text-white/72">{relationship}</dd>
             </>
           )}
 
           {locator && (
             <>
-              <dt className="text-white/36">Locator</dt>
+              <dt className="text-white/48">Locator</dt>
               <dd className="break-all font-mono text-xs leading-5 text-white/58">{locator}</dd>
             </>
           )}
 
           {releaseId && (
             <>
-              <dt className="text-white/36">Release</dt>
+              <dt className="text-white/48">Release</dt>
               <dd className="break-all font-mono text-xs leading-5 text-white/58">{releaseId}</dd>
             </>
           )}
@@ -424,13 +424,13 @@ export function DocumentCard({
       {detail && <p className="mt-5 max-w-2xl text-sm leading-6 text-white/62">{detail}</p>}
 
       {identifier && (
-        <p className="mt-5 break-all border-t border-white/[0.07] pt-4 font-mono text-[11px] leading-5 text-white/42">
+        <p className="mt-5 break-all border-t border-white/[0.07] pt-4 font-mono text-[11px] leading-5 text-white/48">
           {identifier}
         </p>
       )}
 
       {rightsNote && (
-        <p className="mt-3 text-[11px] leading-5 text-white/34">
+        <p className="mt-3 text-[11px] leading-5 text-white/48">
           {rightsNote}
         </p>
       )}
@@ -475,7 +475,7 @@ export function ResearchingState({
 
       {nextEvidence.length > 0 && (
         <div className="mt-7 border-t border-white/[0.07] pt-5">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/34">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/48">
             What we are waiting for
           </p>
           <ul className="mt-3 space-y-2">
@@ -508,10 +508,10 @@ export function UnknownCard({
   return (
     <section className="rounded-[1.2rem] border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.035),rgba(255,255,255,0.012))] px-5 py-6 sm:px-7 sm:py-7">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/42">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/48">
           Still unsolved
         </p>
-        <span className="rounded-full border border-white/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/38">
+        <span className="rounded-full border border-white/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/48">
           {status.replace("_", " ")}
         </span>
       </div>
@@ -529,7 +529,7 @@ export function UnknownCard({
 
       {whatWouldResolve.length > 0 && (
         <div className="mt-7 border-t border-dashed border-white/12 pt-5">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/38">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/48">
             What would settle it
           </p>
           <ul className="mt-3 space-y-2">
@@ -565,12 +565,12 @@ export function CorrectionCard({
 
       <div className="mt-5 grid gap-5 sm:grid-cols-[0.9fr_1.1fr] sm:gap-7">
         <div>
-          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/32">Previous claim</p>
-          <p className="mt-2 text-base leading-7 text-white/38 line-through decoration-white/28">{oldClaim}</p>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/48">Previous claim</p>
+          <p className="mt-2 text-base leading-7 text-white/48 line-through decoration-white/28">{oldClaim}</p>
         </div>
 
         <div className="border-t border-white/[0.07] pt-5 sm:border-l sm:border-t-0 sm:pl-7 sm:pt-0">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/38">What the evidence supports</p>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/48">What the evidence supports</p>
           <p className="font-display mt-2 text-xl font-medium leading-snug text-white">{correctedClaim}</p>
         </div>
       </div>
