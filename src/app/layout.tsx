@@ -19,9 +19,9 @@ const sans = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Your Tank Has a River — AquaTrack & FloraTrack",
+  title: "Endemic — Field Notes for Fish, Plants, and Their Paper Trails",
   description:
-    "Open the app, see the exact river your fish comes from and the paper trail behind your plant. 1,669 fish, 3,066 plants, 757 collectors, 533,422 cross-kingdom connections.",
+    "Natural-history Field Notes and experimental tools for aquarium and plant hobbyists: habitats, names, provenance, people, and the evidence behind the stories.",
   keywords: [
     "aquarium biotope",
     "puffer fish",
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     "plant provenance",
   ],
   openGraph: {
-    title: "Your Tank Has a River",
+    title: "Endemic",
     description:
-      "Biotope matching, discoverer profiles, and cross-kingdom connections for aquarists and plant collectors.",
+      "Natural-history Field Notes and experimental tools for aquarium and plant hobbyists.",
     type: "website",
   },
 };
