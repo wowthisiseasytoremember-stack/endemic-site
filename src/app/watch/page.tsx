@@ -10,13 +10,13 @@ export default function ExpeditionTVPage() {
           <Reveal>
             <div className="mx-auto inline-flex items-center gap-3 rounded-full border border-aqua/20 bg-aqua/5 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-aqua">
               <span className="h-1.5 w-1.5 rounded-full bg-aqua shadow-[0_0_12px_rgba(31,184,196,0.7)]" />
-              In development
+              Tangle Trove
             </div>
             <h1 className="mt-7 font-display text-5xl font-medium tracking-[-0.04em] md:text-7xl">
-              Expedition TV
+              Tangle Trove
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/55 md:text-xl">
-              Field footage and visual explainers that connect an organism in captivity to the habitat it actually evolved in.
+              The video side of Endemic: aquarium species, habitat context, natural-history rabbit holes, and the stories behind the animals we keep.
             </p>
           </Reveal>
 
@@ -37,10 +37,21 @@ export default function ExpeditionTVPage() {
           </Reveal>
 
           <Reveal delay={220}>
-            <Link href="/read" className="mt-12 inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10">
-              Explore Field Notes
-              <span aria-hidden="true">→</span>
-            </Link>
+            <div className="mt-12 flex flex-wrap items-center justify-center gap-3">
+              <a
+                href="https://www.youtube.com/channel/UC6tvdKJ4iCZxRpkO72IYwgQ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#040908] transition-colors hover:bg-white/90"
+              >
+                Watch Tangle Trove on YouTube
+                <span aria-hidden="true">↗</span>
+              </a>
+              <Link href="/read" className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10">
+                Explore Field Notes
+                <span aria-hidden="true">→</span>
+              </Link>
+            </div>
           </Reveal>
         </div>
       </div>
