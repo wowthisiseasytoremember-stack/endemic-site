@@ -246,29 +246,6 @@ export function ClientArticleContent({
 
       <Reveal>
         <footer className="max-w-[88rem] mx-auto px-4 mt-20 pt-16 border-t border-white/10">
-          <div className="text-center mb-8">
-            <h3 className="font-display text-3xl font-medium text-white mb-4">Enjoyed this dispatch?</h3>
-            <p className="text-white/60 max-w-md mx-auto mb-6 text-lg leading-relaxed">
-              Get the next Field Notes article delivered — provenance, biotopes, and cultivar controversies.
-            </p>
-            <form action="/api/subscribe" method="POST" className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
-              <input type="hidden" name="leadMagnet" value={frontmatter.leadMagnet || 'field-notes-dispatch'} />
-              <input 
-                type="email" 
-                name="email" 
-                placeholder="your@email.com" 
-                required
-                className="flex-1 px-6 py-4 rounded-xl bg-black/40 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-aqua focus:ring-1 focus:ring-aqua transition-all font-medium backdrop-blur-md"
-              />
-              <button 
-                type="submit"
-                className="px-8 py-4 rounded-xl bg-aqua text-[#040908] font-bold tracking-wide hover:bg-white hover:text-black transition-all duration-300 whitespace-nowrap shadow-[0_0_20px_rgba(31,184,196,0.4)] hover:shadow-[0_0_30px_rgba(255,255,255,0.6)] hover:-translate-y-0.5"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
-
           <div className="flex flex-wrap justify-center gap-6 text-sm text-white/50 pb-16">
             <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(frontmatter.title)}&url=${encodeURIComponent(`https://endemic.app/read/${slug}`)}`} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
               Share on X

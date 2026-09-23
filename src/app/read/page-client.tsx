@@ -298,59 +298,6 @@ export default function FieldNotesPageClient({ initialPosts }: { initialPosts: B
             </div>
           )}
 
-          {/* Epic Newsletter CTA */}
-          <Reveal delay={400}>
-            <div className="mt-32 text-center flex justify-center">
-              <div className="relative flex flex-col items-center gap-6 glass rounded-[3rem] p-10 md:p-20 border border-white/10 max-w-4xl w-full overflow-hidden group">
-                
-                {/* Subtle Bleeker Watermark Background */}
-                <img 
-                  src="/images/bleeker/plate-ccxxiv.jpg" 
-                  className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-[0.03] group-hover:opacity-[0.08] group-hover:scale-105 transition-all duration-1000 grayscale pointer-events-none" 
-                  alt=""
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#040908] via-transparent to-transparent pointer-events-none" />
-                
-                <div className="relative z-10 flex flex-col items-center w-full">
-                  <div className="w-16 h-16 rounded-full glass border border-aqua/30 flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(31,184,196,0.2)]">
-                    <svg className="w-6 h-6 text-aqua" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  
-                  <h3 className="font-display text-4xl md:text-5xl font-medium text-white">Get the Field Notes dispatch</h3>
-                  <p className="text-xl text-white/60 font-light mt-4 max-w-xl">
-                    Provenance, rare biotopes, and cultivar controversies — delivered directly to your inbox.
-                  </p>
-                  
-                  <form className="flex flex-col sm:flex-row gap-3 w-full max-w-lg mt-10" action="/api/subscribe" method="POST">
-                    <input 
-                      type="hidden" 
-                      name="leadMagnet" 
-                      value="field-notes-dispatch" 
-                    />
-                    <div className="relative flex-1 group/input">
-                      <div className="absolute inset-0 bg-aqua/20 blur-xl rounded-full opacity-0 group-focus-within/input:opacity-100 transition-opacity duration-500" />
-                      <input 
-                        type="email" 
-                        name="email" 
-                        placeholder="Enter your email address" 
-                        required
-                        className="relative w-full px-6 py-4 rounded-xl bg-black/40 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-aqua focus:ring-1 focus:ring-aqua transition-all font-medium backdrop-blur-md shadow-inner"
-                      />
-                    </div>
-                    <button 
-                      type="submit"
-                      className="relative px-8 py-4 rounded-xl bg-aqua text-[#040908] font-bold tracking-wide hover:bg-white hover:text-black transition-all duration-300 whitespace-nowrap shadow-[0_0_20px_rgba(31,184,196,0.4)] hover:shadow-[0_0_30px_rgba(255,255,255,0.6)] hover:-translate-y-0.5"
-                    >
-                      Subscribe Now
-                    </button>
-                  </form>
-                  <p className="text-xs font-bold uppercase tracking-widest text-white/30 mt-6">No spam. Unsubscribe anytime.</p>
-                </div>
-              </div>
-            </div>
-          </Reveal>
         </div>
       </div>
     </main>
