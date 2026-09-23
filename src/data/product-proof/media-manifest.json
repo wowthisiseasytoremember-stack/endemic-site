@@ -62,10 +62,43 @@
       "alt": "Close view of a Cardinal Tetra (Paracheirodon axelrodi)."
     },
     {
+      "asset_id": "pink-princess-hero-ccby2-cliff-landscape",
+      "asset_role": "SUBJECT_HERO",
+      "subject_label": "Philodendron erubescens 'Pink Princess'",
+      "status": "READY_PREFERRED_DESKTOP",
+      "source_provider": "Wikimedia Commons",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Arum_Family_-_Araceae_(3073312288)_(3).jpg",
+      "original_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Arum%20Family%20-%20Araceae%20%283073312288%29%20%283%29.jpg",
+      "creator": "Cliff from Arlington, Virginia, USA",
+      "license": "CC BY 2.0 Generic",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "commercial_use": "YES",
+      "attribution_required": "YES",
+      "attribution_recommended": "Pink Princess philodendron — Cliff, CC BY 2.0, via Wikimedia Commons",
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      },
+      "claim_scope": "Exact-cultivar identity image only. Cultivated specimen at the United States Botanic Garden; does not establish breeder, origin, patent, lineage, or wild habitat.",
+      "recommended_use": [
+        "desktop subject hero",
+        "4:3 editorial crop"
+      ],
+      "prohibited_implications": [
+        "originator",
+        "breeder",
+        "patent status",
+        "historical provenance",
+        "wild habitat",
+        "native locality"
+      ],
+      "alt": "Pink Princess philodendron (Philodendron erubescens 'Pink Princess') in cultivation."
+    },
+    {
       "asset_id": "pink-princess-hero-cc0-cmushore",
       "asset_role": "SUBJECT_HERO",
       "subject_label": "Philodendron erubescens 'Pink Princess'",
-      "status": "READY",
+      "status": "READY_PORTRAIT_ALTERNATE",
       "source_provider": "Wikimedia Commons",
       "source_page_url": "https://commons.wikimedia.org/wiki/File:Pink_princess_philodendron.jpg",
       "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Pink_princess_philodendron.jpg",
@@ -80,7 +113,7 @@
       },
       "claim_scope": "Exact-cultivar identity image only. Modern cultivated specimen does not establish breeder, origin, patent, lineage, or historical appearance.",
       "recommended_use": [
-        "vertical subject hero",
+        "portrait/mobile subject hero",
         "cultivar identity thumbnail"
       ],
       "prohibited_implications": [
