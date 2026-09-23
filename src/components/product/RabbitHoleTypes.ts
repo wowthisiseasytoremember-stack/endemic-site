@@ -32,14 +32,22 @@ export type ProductInterestingItem = {
   receipt?: ProductReceipt;
 };
 
-export type ProductThread = {
+type ProductThreadBase = {
   id: string;
   question: string;
   target?: string;
   relationshipHint?: string;
-  state: ThreadState;
-  href?: string;
 };
+
+export type ProductThread =
+  | (ProductThreadBase & {
+      state: Extract<ThreadState, "READY" | "SUMMARY">;
+      href: string;
+    })
+  | (ProductThreadBase & {
+      state: Extract<ThreadState, "RESEARCHING" | "UNAVAILABLE">;
+      href?: never;
+    });
 
 export type ProductUnknown = {
   id: string;
