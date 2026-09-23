@@ -141,16 +141,37 @@ export function SubjectIdentity({
       </div>
 
       {image ? (
-        <figure className="relative aspect-[4/3] overflow-hidden rounded-[1.25rem] border border-white/10 bg-black/20">
-          <img
-            src={image}
-            alt={imageAlt}
-            className="h-full w-full object-cover opacity-90"
-          />
-          <div
-            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#040908]/38 via-transparent to-transparent"
-            aria-hidden="true"
-          />
+        <figure>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[1.25rem] border border-white/10 bg-black/20">
+            <img
+              src={image}
+              alt={imageAlt}
+              className="h-full w-full object-cover opacity-90"
+              style={{ objectPosition: imagePosition }}
+            />
+            <div
+              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#040908]/38 via-transparent to-transparent"
+              aria-hidden="true"
+            />
+          </div>
+          {(imageCredit || imageLicense) && (
+            <figcaption className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 px-1 text-[10px] leading-4 text-white/34">
+              {imageSourceHref ? (
+                <a
+                  href={imageSourceHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-white/15 underline-offset-2 transition-colors hover:text-white/58 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
+                >
+                  {imageCredit || "Image source"}
+                </a>
+              ) : (
+                imageCredit && <span>{imageCredit}</span>
+              )}
+              {imageCredit && imageLicense && <span aria-hidden="true">·</span>}
+              {imageLicense && <span>{imageLicense}</span>}
+            </figcaption>
+          )}
         </figure>
       ) : (
         <div
@@ -402,6 +423,52 @@ export function DocumentCard({
     <a href={href} target="_blank" rel="noopener noreferrer" className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30 rounded-[1.15rem]">
       {card}
     </a>
+  );
+}
+
+export function ResearchingState({
+  title = "This rabbit hole is still being verified.",
+  body,
+  nextEvidence = [],
+  accent = "neutral",
+}: {
+  title?: string;
+  body: string;
+  nextEvidence?: string[];
+  accent?: RabbitHoleAccent;
+}) {
+  const a = ACCENT[accent];
+
+  return (
+    <section className={`rounded-[1.2rem] border px-5 py-7 sm:px-7 sm:py-8 ${a.softBorder} ${a.bg}`}>
+      <div className="flex items-center gap-3">
+        <span className={`h-px w-8 ${a.line}`} aria-hidden="true" />
+        <p className={`text-[11px] font-semibold uppercase tracking-[0.2em] ${a.text}`}>
+          Researching
+        </p>
+      </div>
+
+      <h2 className="font-display mt-5 max-w-[26ch] text-3xl font-medium leading-tight text-white">
+        {title}
+      </h2>
+      <p className="mt-4 max-w-2xl text-base leading-7 text-white/62">{body}</p>
+
+      {nextEvidence.length > 0 && (
+        <div className="mt-7 border-t border-white/[0.07] pt-5">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/34">
+            What we are waiting for
+          </p>
+          <ul className="mt-3 space-y-2">
+            {nextEvidence.map((item) => (
+              <li key={item} className="flex gap-3 text-sm leading-6 text-white/52">
+                <span className={`mt-[0.68rem] h-px w-4 shrink-0 ${a.line}`} aria-hidden="true" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </section>
   );
 }
 
