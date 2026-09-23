@@ -170,7 +170,7 @@ export function SubjectIdentity({
                   href={imageSourceHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline decoration-white/15 underline-offset-2 transition-colors hover:text-white/58 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
+                  className="underline decoration-white/15 underline-offset-2 transition-colors hover:text-white/58 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30 px-2 py-3"
                 >
                   {imageCredit || "Image source"}
                 </a>
