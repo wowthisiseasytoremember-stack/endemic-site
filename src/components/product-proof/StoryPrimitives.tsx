@@ -148,7 +148,7 @@ export function ThreadCard({
     );
   }
 
-  return <div className={`${classes} opacity-${state === "UNAVAILABLE" ? "70" : "100"}`}>{body}</div>;
+  return <div className={`${classes} ${state === "UNAVAILABLE" ? "opacity-70" : "opacity-100"}`}>{body}</div>;
 }
 
 export function CorrectionCard({
