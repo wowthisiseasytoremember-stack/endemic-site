@@ -1,6 +1,12 @@
 import type { RabbitHoleAccent, ThreadState } from "./RabbitHolePrimitives";
 
-export type ProductTrailItem = {\n  label: string;\n  href?: string;\n  context?: string;\n};\n\nexport type ProductReceipt = {
+export type ProductTrailItem = {
+  label: string;
+  href?: string;
+  context?: string;
+};
+
+export type ProductReceipt = {
   sourceLabel: string;
   relationship?: string;
   locator?: string;
@@ -65,6 +71,7 @@ export type ProductDocument = {
 
 export type RabbitHoleSubjectModel = {
   id: string;
+  trail?: ProductTrailItem[];
   eyebrow?: string;
   title: string;
   scientificName?: string;
@@ -72,9 +79,18 @@ export type RabbitHoleSubjectModel = {
   accent?: RabbitHoleAccent;
   image?: string;
   imageAlt?: string;
+  imageCredit?: string;
+  imageLicense?: string;
+  imageSourceHref?: string;
+  imagePosition?: string;
   interesting: ProductInterestingItem[];
   threads: ProductThread[];
   corrections?: ProductCorrection[];
   unknowns?: ProductUnknown[];
   documents?: ProductDocument[];
+  researching?: {
+    title?: string;
+    body: string;
+    nextEvidence?: string[];
+  };
 };
