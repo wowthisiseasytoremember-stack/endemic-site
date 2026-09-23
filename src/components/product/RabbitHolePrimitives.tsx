@@ -229,6 +229,23 @@ export function RelationshipFact({
   );
 }
 
+type ThreadLinkBaseProps = {
+  question: string;
+  target?: string;
+  relationshipHint?: string;
+  accent?: RabbitHoleAccent;
+};
+
+type ThreadLinkProps =
+  | (ThreadLinkBaseProps & {
+      state: "READY" | "SUMMARY";
+      href: string;
+    })
+  | (ThreadLinkBaseProps & {
+      state: "RESEARCHING" | "UNAVAILABLE";
+      href?: never;
+    });
+
 export function ThreadLink({
   question,
   target,
@@ -236,16 +253,9 @@ export function ThreadLink({
   href,
   relationshipHint,
   accent = "neutral",
-}: {
-  question: string;
-  target?: string;
-  state: ThreadState;
-  href?: string;
-  relationshipHint?: string;
-  accent?: RabbitHoleAccent;
-}) {
+}: ThreadLinkProps) {
   const a = ACCENT[accent];
-  const disabled = state === "UNAVAILABLE" || state === "RESEARCHING" || !href;
+  const disabled = state === "UNAVAILABLE" || state === "RESEARCHING";
   const label = stateLabel(state);
 
   const inner = (
