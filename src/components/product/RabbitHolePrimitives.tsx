@@ -6,25 +6,25 @@ export type ThreadState = "READY" | "SUMMARY" | "RESEARCHING" | "UNAVAILABLE";
 
 const ACCENT = {
   aqua: {
-    text: "text-[#7fe3ec]",
-    border: "border-[#7fe3ec]/28",
-    softBorder: "border-[#7fe3ec]/16",
-    bg: "bg-[#7fe3ec]/[0.055]",
-    line: "bg-[#7fe3ec]/55",
+    text: "text-aqua",
+    border: "border-aqua/28",
+    softBorder: "border-aqua/16",
+    bg: "bg-aqua/[0.055]",
+    line: "bg-aqua/55",
   },
   flora: {
-    text: "text-[#66d495]",
-    border: "border-[#66d495]/28",
-    softBorder: "border-[#66d495]/16",
-    bg: "bg-[#66d495]/[0.055]",
-    line: "bg-[#66d495]/55",
+    text: "text-emerald",
+    border: "border-emerald/28",
+    softBorder: "border-emerald/16",
+    bg: "bg-emerald/[0.055]",
+    line: "bg-emerald/55",
   },
   amber: {
-    text: "text-[#e8b96a]",
-    border: "border-[#e8b96a]/28",
-    softBorder: "border-[#e8b96a]/16",
-    bg: "bg-[#e8b96a]/[0.055]",
-    line: "bg-[#e8b96a]/55",
+    text: "text-amber",
+    border: "border-amber/28",
+    softBorder: "border-amber/16",
+    bg: "bg-amber/[0.055]",
+    line: "bg-amber/55",
   },
   neutral: {
     text: "text-white/75",
@@ -556,8 +556,8 @@ export function CorrectionCard({
   children?: ReactNode;
 }) {
   return (
-    <section className="rounded-[1.2rem] border border-[#e8b96a]/20 bg-[#e8b96a]/[0.045] px-5 py-6 sm:px-7 sm:py-7">
-      <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#e8b96a]">
+    <section className="rounded-[1.2rem] border border-amber/20 bg-amber/[0.045] px-5 py-6 sm:px-7 sm:py-7">
+      <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-amber">
         Correction
       </p>
 
