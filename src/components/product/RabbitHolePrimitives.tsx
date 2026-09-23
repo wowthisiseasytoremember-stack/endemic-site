@@ -289,6 +289,76 @@ export function EvidenceReceipt({
   );
 }
 
+export function DocumentCard({
+  title,
+  institution,
+  year,
+  detail,
+  identifier,
+  href,
+  rightsNote,
+  accent = "neutral",
+}: {
+  title: string;
+  institution?: string;
+  year?: string | number;
+  detail?: string;
+  identifier?: string;
+  href?: string;
+  rightsNote?: string;
+  accent?: RabbitHoleAccent;
+}) {
+  const a = ACCENT[accent];
+
+  const card = (
+    <article className={`group rounded-[1.15rem] border bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.015))] px-5 py-6 transition-[border-color,background-color] duration-150 sm:px-7 ${a.softBorder} ${href ? "hover:border-white/22" : ""}`}>
+      <div className="flex items-start justify-between gap-5">
+        <div className="min-w-0">
+          <p className={`text-[10px] font-semibold uppercase tracking-[0.18em] ${a.text}`}>
+            Document
+          </p>
+          <h3 className="font-display mt-3 text-xl font-medium leading-snug text-white sm:text-2xl">
+            {title}
+          </h3>
+        </div>
+        {href && (
+          <span className={`mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-transform duration-150 group-hover:translate-x-1 ${a.border} ${a.text}`} aria-hidden="true">
+            ↗
+          </span>
+        )}
+      </div>
+
+      {(institution || year) && (
+        <p className="mt-3 text-sm leading-6 text-white/48">
+          {[institution, year].filter(Boolean).join(" · ")}
+        </p>
+      )}
+
+      {detail && <p className="mt-5 max-w-2xl text-sm leading-6 text-white/62">{detail}</p>}
+
+      {identifier && (
+        <p className="mt-5 break-all border-t border-white/[0.07] pt-4 font-mono text-[11px] leading-5 text-white/42">
+          {identifier}
+        </p>
+      )}
+
+      {rightsNote && (
+        <p className="mt-3 text-[11px] leading-5 text-white/34">
+          {rightsNote}
+        </p>
+      )}
+    </article>
+  );
+
+  if (!href) return card;
+
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30 rounded-[1.15rem]">
+      {card}
+    </a>
+  );
+}
+
 export function UnknownCard({
   question,
   currentAnswer,
