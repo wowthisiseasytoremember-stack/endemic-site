@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { ClientArticleContent } from '@/components/blog/ClientArticleContent';
-import { getEntitiesByArticle, getEntityByRoute, ProductEntity, VideoEntity } from '@/data/entities';
+import { getEntitiesByArticle, getEntityByRoute } from '@/data/entities';
 import publicationCrossKingdom from '@/data/publication/article-cross-kingdom.json';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { CrossKingdomCard, DiscovererCard, BiotopeCard, MythBustRow, FigureImage, SpeciesLink, DiscovererLink, BiotopeLink, CultivarLink, VideoEmbed, ProductCard, DataTable } from '@/components/mdx/ServerArticleComponents';
@@ -93,8 +93,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const relatedDiscoverers = relatedEntities.filter(e => e.type === 'discoverer');
   const relatedBiotopes = relatedEntities.filter(e => e.type === 'biotope');
   const relatedCultivars = relatedEntities.filter(e => e.type === 'cultivar');
-  const relatedVideos = relatedEntities.filter(e => e.type === 'video') as VideoEntity[];
-  const relatedProducts = relatedEntities.filter(e => e.type === 'product') as ProductEntity[];
   
   const categoryColor = CATEGORY_COLORS[frontmatter.category] || 'aqua';
   
@@ -152,8 +150,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     relatedDiscoverers: relatedDiscoverers.map(e => ({ slug: e.slug, name: e.name, description: e.description, route: e.route })),
     relatedBiotopes: relatedBiotopes.map(e => ({ slug: e.slug, name: e.name, description: e.description, route: e.route })),
     relatedCultivars: relatedCultivars.map(e => ({ slug: e.slug, name: e.name, description: e.description, route: e.route })),
-    relatedVideos: relatedVideos.map(e => ({ slug: e.slug, name: e.name, description: e.description, route: e.route, videoId: e.videoId })),
-    relatedProducts: relatedProducts.map(e => ({ slug: e.slug, name: e.name, description: e.description, route: e.route, price: e.price, thumbnail: e.thumbnail })),
   };
 
   return (
