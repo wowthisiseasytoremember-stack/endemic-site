@@ -29,33 +29,6 @@ export function RabbitHoleLoading({
   );
 }
 
-export function ResearchingState({
-  title = "This thread is still being researched",
-  detail,
-  children,
-}: {
-  title?: string;
-  detail: string;
-  children?: ReactNode;
-}) {
-  return (
-    <section className="rounded-[1.15rem] border border-[#e8b96a]/20 bg-[#e8b96a]/[0.03] p-6">
-      <div className="flex items-center gap-3">
-        <span
-          aria-hidden="true"
-          className="h-2 w-2 rounded-full bg-[#e8b96a] shadow-[0_0_14px_rgba(232,185,106,0.5)]"
-        />
-        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#e8b96a]">
-          Researching
-        </p>
-      </div>
-      <h3 className="font-display mt-4 text-xl font-medium text-white md:text-2xl">{title}</h3>
-      <p className="mt-3 max-w-2xl text-sm leading-6 text-white/52">{detail}</p>
-      {children && <div className="mt-5">{children}</div>}
-    </section>
-  );
-}
-
 export function UnavailableState({
   title = "Not enough evidence yet",
   detail,
