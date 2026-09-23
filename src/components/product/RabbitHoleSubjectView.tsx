@@ -84,7 +84,7 @@ export function RabbitHoleSubjectView({ model }: { model: RabbitHoleSubjectModel
             <section id="interesting" className="mt-16 scroll-mt-24 md:mt-20" aria-labelledby="interesting-heading">
               <RabbitHoleReveal kind="section">
                 <div className="mb-7 max-w-2xl">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/36">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/48">
                     Start here
                   </p>
                   <h2
@@ -105,7 +105,7 @@ export function RabbitHoleSubjectView({ model }: { model: RabbitHoleSubjectModel
                   >
                     <article className="border-t border-white/10 pt-6 sm:pt-7">
                       {item.kicker && (
-                        <p className="text-[11px] font-semibold uppercase tracking-[0.17em] text-white/38">
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.17em] text-white/48">
                           {item.kicker}
                         </p>
                       )}
@@ -151,7 +151,7 @@ export function RabbitHoleSubjectView({ model }: { model: RabbitHoleSubjectModel
             >
               <RabbitHoleReveal kind="section">
                 <div className="mb-7 max-w-2xl">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/36">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/48">
                     Keep going
                   </p>
                   <h2
@@ -264,7 +264,7 @@ export function RabbitHoleSubjectView({ model }: { model: RabbitHoleSubjectModel
               >
                 <RabbitHoleReveal kind="section">
                   <div className="mb-7 max-w-2xl">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/36">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/48">
                       Paper trail
                     </p>
                     <h2
