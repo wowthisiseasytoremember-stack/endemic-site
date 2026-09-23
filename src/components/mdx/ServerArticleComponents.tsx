@@ -206,12 +206,12 @@ interface SpeciesCardProps {
   slug: string;
 }
 
-export function SpeciesCard({ species, slug }: SpeciesCardProps) {
+export function SpeciesCard({ species }: SpeciesCardProps) {
   return (
-    <a href={`/aquatrack/species/${slug}`} className="glass rounded-xl p-4 border border-white/10 group hover:border-aqua/50 transition-colors block">
-      <SpeciesLink slug={slug} className="font-medium text-white group-hover:text-aqua">
+    <div className="glass rounded-xl p-4 border border-white/10">
+      <span className="font-medium text-white">
         {species.common_name}
-      </SpeciesLink>
+      </span>
       <p className="mt-1 text-sm text-white/50 italic">{species.scientific_name}</p>
       <div className="mt-3 flex flex-wrap gap-2 text-xs text-white/60">
         <span>{species.max_size_cm}cm max</span>
@@ -219,7 +219,7 @@ export function SpeciesCard({ species, slug }: SpeciesCardProps) {
         {species.temp_min_c && species.temp_max_c && <span>{species.temp_min_c}–{species.temp_max_c}°C</span>}
         <span className="text-emerald">{species.biotope_type}</span>
       </div>
-    </a>
+    </div>
   );
 }
 
