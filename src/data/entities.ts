@@ -72,7 +72,7 @@ export const ENTITIES: Entity[] = [
   { slug: 'borneo-blackwater', name: 'Borneo Blackwater', type: 'biotope', route: '/aquatrack/biotope/borneo-blackwater', articleSlug: 'a-puffer', description: 'Peat-stained streams. Carinotetraodon irrubesco — males flash red tail and ventral keel during display.' },
 
   // Cultivars
-  { slug: 'pink-princess', name: 'Pink Princess', type: 'cultivar', route: '/floratrack/cultivar/pink-princess', articleSlug: 'e-pink-princess', description: 'Philodendron erubescens var. — Periclinal chimera (L1/L2/L3 layer rearrangement). Unstable variegation. USPP31149.' },
+  { slug: 'pink-princess', name: 'Pink Princess', type: 'cultivar', route: '/floratrack/cultivar/pink-princess', articleSlug: 'e-pink-princess', description: "Philodendron erubescens 'Pink Princess' — later U.S. plant patents describe Pink Princess as unpatented; USPP36881 covers a newer mutation derived from it." },
   { slug: 'thai-constellation', name: 'Thai Constellation', type: 'cultivar', route: '/floratrack/cultivar/thai-constellation', articleSlug: 'e-pink-princess', description: 'Monstera deliciosa — Three competing origin theories. Costa Farms patent on file, expiry unverified.' },
   { slug: 'white-princess', name: 'White Princess', type: 'cultivar', route: '/floratrack/cultivar/white-princess', articleSlug: 'e-pink-princess', description: 'Philodendron — Patent application exists for "White Ice Philodendron" from self-pollination in Umatilla, Florida.' },
   { slug: 'white-knight', name: 'White Knight', type: 'cultivar', route: '/floratrack/cultivar/white-knight', articleSlug: 'e-pink-princess', description: 'Philodendron — H. Lincoln Foster introduced to US (1948). Parentage disputed: P. squamiferum × P. corrugatum vs P. erubescens mutation.' },
