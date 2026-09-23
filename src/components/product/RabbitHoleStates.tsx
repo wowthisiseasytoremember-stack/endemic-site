@@ -38,11 +38,11 @@ export function UnavailableState({
 }) {
   return (
     <section className="rounded-[1.15rem] border border-dashed border-white/12 bg-white/[0.015] p-6">
-      <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/28">
+      <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/48">
         Unavailable
       </p>
       <h3 className="font-display mt-3 text-xl font-medium text-white/64">{title}</h3>
-      <p className="mt-3 max-w-2xl text-sm leading-6 text-white/38">{detail}</p>
+      <p className="mt-3 max-w-2xl text-sm leading-6 text-white/48">{detail}</p>
     </section>
   );
 }
@@ -60,12 +60,12 @@ export function SourceShelf({
     <section className="rounded-[1.5rem] border border-white/10 bg-black/10 p-5 md:p-7">
       <div className="mb-5 flex items-end justify-between gap-4">
         <div>
-          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/32">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/48">
             Source shelf
           </p>
           <h3 className="font-display mt-2 text-xl font-medium text-white md:text-2xl">{title}</h3>
         </div>
-        <span className="hidden text-xs text-white/25 sm:block">{hint}</span>
+        <span className="hidden text-xs text-white/48 sm:block">{hint}</span>
       </div>
       <div className="grid gap-4 md:grid-cols-2">{children}</div>
     </section>
