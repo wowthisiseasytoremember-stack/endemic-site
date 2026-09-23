@@ -79,7 +79,7 @@ export type ProductDocument = {
 
 type NonEmptyArray<T> = [T, ...T[]];
 
-type RabbitHoleSubjectBase = {
+type RabbitHoleSubjectIdentity = {
   id: string;
   trail?: ProductTrailItem[];
   eyebrow?: string;
@@ -87,13 +87,27 @@ type RabbitHoleSubjectBase = {
   scientificName?: string;
   lead: string;
   accent?: RabbitHoleAccent;
-  image?: string;
-  imageAlt?: string;
-  imageCredit?: string;
-  imageLicense?: string;
-  imageSourceHref?: string;
-  imagePosition?: string;
 };
+
+type RabbitHoleSubjectMedia =
+  | {
+      image?: never;
+      imageAlt?: never;
+      imageCredit?: never;
+      imageLicense?: never;
+      imageSourceHref?: never;
+      imagePosition?: never;
+    }
+  | {
+      image: string;
+      imageAlt: string;
+      imageCredit: string;
+      imageLicense: string;
+      imageSourceHref: string;
+      imagePosition?: string;
+    };
+
+type RabbitHoleSubjectBase = RabbitHoleSubjectIdentity & RabbitHoleSubjectMedia;
 
 type ReadyRabbitHoleSubject = RabbitHoleSubjectBase & {
   researching?: never;
