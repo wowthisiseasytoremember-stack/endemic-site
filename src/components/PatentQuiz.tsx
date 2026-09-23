@@ -11,9 +11,9 @@ const CARDS = [
   },
   {
     cultivar: "Philodendron 'Pink Princess'",
-    real: true,
+    real: false,
     reveal:
-      "REAL patent for the genetics — but the plant in big-box stores is often a different clone sold under the same name.",
+      "No Pink Princess patent is established here. Later U.S. patents explicitly describe Pink Princess as unpatented; USPP36881 covers a newer mutation derived from it.",
   },
   {
     cultivar: "Hoya 'Compacta'",

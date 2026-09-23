@@ -127,7 +127,7 @@ Each outline gets **enriched with real DB queries**:
 | `b-bleeker` | Bleeker outline | `db.getDiscoverer('bleeker')`, `db.getSpeciesByDiscoverer('bleeker')`, `db.getCollectorStories('roberts')` |
 | `c-etymology` | Etymology outline | `db.getEtymology('travancoricus')` from etyfish, `db.getSpecies('carinotetraodon-travancoricus')` |
 | `d-schott` | Schott outline | `db.getDiscoverer('schott')`, `db.getCultivar('anthurium-crystallinum')`, `db.getCultivarByDiscoverer('schott')` |
-| `e-pink-princess` | Pink Princess outline | `db.getCultivar('pink-princess')`, `db.getPatent('USPP31149')`, `db.getControversy('pink-princess')`, nursery evidence |
+| `e-pink-princess` | Pink Princess outline | `db.getCultivar('pink-princess')`, verified patent records (USPP31149 correction + USPP36881 lineage), provenance evidence |
 | `f-rio-negro` | Rio Negro outline | `db.getBiotope('rio-negro')`, `db.getSpeciesByBiotope('rio-negro')`, `db.getCrossKingdomByBiotope('rio-negro')` |
 
 ### 1.2 Article Template with Data Slots

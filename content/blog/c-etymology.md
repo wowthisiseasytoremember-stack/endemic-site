@@ -119,4 +119,4 @@ Parentheses around authority = species was originally described in a DIFFERENT g
 - **species**: [Pea Puffer](/aquatrack/species/carinotetraodon-travancoricus) — Dwarf Puffer — 25mm, Kerala backwaters. pH 6.8–8.0, 22–28°C.
 - **species**: [Clown Loach](/aquatrack/species/chromobotia-macracanthus) — Clown Loach — 300mm, Borneo/Sumatra. Schooling in flooded forest.
 - **species**: [Bala Shark](/aquatrack/species/balantiocheilos-melanopterus) — Bala Shark — 350mm, SE Asia. Black-tipped fins (melanopterus).
-- **cultivar**: [Pink Princess](/floratrack/cultivar/pink-princess) — Philodendron erubescens var. — Periclinal chimera (L1/L2/L3 layer rearrangement). Unstable variegation. USPP31149.
+- **cultivar**: [Pink Princess](/floratrack/cultivar/pink-princess) — *Philodendron erubescens* 'Pink Princess'. Later U.S. plant patents describe it as unpatented; USPP36881 covers a newer mutation derived from it.

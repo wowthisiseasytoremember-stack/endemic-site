@@ -22,8 +22,8 @@
     },
     {
       "slug": "e-pink-princess",
-      "title": "E — The Pink Princess Patent: Is Your Plant the Plant on the Paper?",
-      "excerpt": "This is one of the most hyped houseplants of the last decade. There's a patent that covers its genetics. And there's a very good chance the one you bought isn't the plant on the paper.  The Pink Princ...",
+      "title": "E — The Pink Princess Patent Story Is Backwards",
+      "excerpt": "A patent number long attached to Pink Princess belongs to a completely different tree. Later U.S. plant patents explicitly describe Pink Princess as unpatented—and one covers a newer mutation derived from it.",
       "category": "Cultivar Controversies",
       "tags": [
         "cultivars",
@@ -36,9 +36,10 @@
       "series": "Cultivar Controversies",
       "seriesOrder": 1,
       "publishDate": "2026-05-15",
-      "readTime": "3 min",
+      "readTime": "4 min",
       "heroImage": "/images/blog/e-pink-princess-hero.webp",
-      "heroAlt": "Hero image for E — The Pink Princess Patent: Is Your Plant the Plant on the Paper?"
+      "heroAlt": "Hero image for E — The Pink Princess Patent: Is Your Plant the Plant on the Paper?",
+      "updatedDate": "2026-09-22"
     },
     {
       "slug": "d-schott",

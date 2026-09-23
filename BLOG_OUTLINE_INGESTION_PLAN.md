@@ -13,7 +13,7 @@
 | `b-bleeker-outline (3).md` | `b-bleeker` | Discoverer Dossiers | Fish | 1,925 species table, banishment story, Atlas artists, 50+ aquarium species list, 10 honorifics |
 | `c-etymology-outline (2).md` | `c-etymology` | Species Spotlight / Educational | Fish | Linnaeus system, 50+ suffix rules, 20 decoded hobby names, 5 pitfalls |
 | `d-schott-outline (2).md` | `d-schott` | Discoverer Dossiers | Plants | 126+ Anthurium species, living vs dried advantage, 7 genera shaped, rare-plant boom connection |
-| `e-pink-princess-outline (2).md` | `e-pink-princess` | Cultivar Controversies | Plants | USPP31149 patent, L1/L2/L3 chimera model, 3 variegation types, buyer's checklist |
+| `e-pink-princess-outline (2).md` | `e-pink-princess` | Cultivar Controversies | Plants | USPP31149 correction, USPP36881 lineage, unresolved originator, patent/provenance distinction |
 | `f-rio-negro-outline (2).md` | `f-rio-negro` | Biotope Guides | Fish | Water chemistry table (main/igapó), 5 species depth profiles, 8-step build timeline, 83% target, 5 tannin methods |
 
 ---

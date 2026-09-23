@@ -23,8 +23,8 @@
     },
     "entities": {
       "path": "src/data/entities.ts",
-      "bytes": 14694,
-      "sha256": "702eeabe166a1b7ae12ab4d2a66d3bc7a1b7f2dd66d84d88f502a44a62bb1618"
+      "bytes": 14735,
+      "sha256": "0741efff6cc325b0797b71e8d768394331322d3eeeb1db160d5b64fb43627162"
     }
   },
   "species": {
