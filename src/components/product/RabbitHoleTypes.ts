@@ -1,6 +1,6 @@
 import type { RabbitHoleAccent, ThreadState } from "./RabbitHolePrimitives";
 
-export type ProductReceipt = {
+export type ProductTrailItem = {\n  label: string;\n  href?: string;\n  context?: string;\n};\n\nexport type ProductReceipt = {
   sourceLabel: string;
   relationship?: string;
   locator?: string;
