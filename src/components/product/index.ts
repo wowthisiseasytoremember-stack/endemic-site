@@ -2,7 +2,9 @@ export {
   CorrectionCard,
   DocumentCard,
   EvidenceReceipt,
+  ExplorationTrail,
   RelationshipFact,
+  ResearchingState,
   SubjectIdentity,
   ThreadLink,
   UnknownCard,
@@ -23,7 +25,22 @@ export type {
 
 export {
   RabbitHoleLoading,
-  ResearchingState,
   SourceShelf,
   UnavailableState,
 } from "./RabbitHoleStates";
+
+export {
+  RabbitHoleSubjectView,
+} from "./RabbitHoleSubjectView";
+
+export type {
+  ProductCorrection,
+  ProductDocument,
+  ProductInterestingItem,
+  ProductReceipt,
+  ProductRelationship,
+  ProductThread,
+  ProductTrailItem,
+  ProductUnknown,
+  RabbitHoleSubjectModel,
+} from "./RabbitHoleTypes";
