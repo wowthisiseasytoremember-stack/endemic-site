@@ -479,6 +479,62 @@ Later subject/thread navigation should feel closer to 150–260ms and never inte
 
 ---
 
+
+## Navigation and focus behavior
+
+The rabbit-hole should feel faster than the current marketing/editorial transition experiments.
+
+### Thread navigation
+
+When a READY thread leads to another route:
+
+1. navigate immediately through Next `Link`;
+2. do not add an artificial timeout for exit animation;
+3. destination should place keyboard/screen-reader focus at the new subject's main heading or main region using normal Next/browser navigation behavior;
+4. preserve the exploration trail in the destination model;
+5. retain native browser back behavior.
+
+Do not replace navigation history with an in-page graph state machine merely to create smoother animation.
+
+### In-page SUMMARY destinations
+
+When a thread resolves within the current dossier:
+
+- use a real anchor/section target;
+- respect `prefers-reduced-motion`;
+- do not hide the target behind the fixed global nav;
+- heading remains semantic and focusable when needed.
+
+### Receipt disclosure
+
+`EvidenceReceipt` intentionally begins as semantic `<details>/<summary>`.
+
+This gives:
+- keyboard behavior without custom JS;
+- accessible open/closed semantics;
+- usable truth when motion fails or JS is unavailable.
+
+Do not replace it with hover-only tooltips.
+
+### Exploration trail
+
+The trail represents **navigation history/context**, not a graph assertion.
+
+Accessibility:
+- `nav aria-label="Exploration trail"`;
+- current terminal item uses `aria-current="page"`;
+- relationship meaning is never encoded only in connector color;
+- phone overflow is horizontally scrollable without hiding the current item.
+
+### Motion and focus
+
+Never move keyboard focus merely because an animation completed.
+
+Never wait for a transition's `onAnimationComplete` before making factual content available.
+
+The information hierarchy must remain correct with all motion disabled.
+
+
 ## Implementation boundary
 
 This design branch intentionally does **not**:
