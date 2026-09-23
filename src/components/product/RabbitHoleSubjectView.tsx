@@ -81,7 +81,7 @@ export function RabbitHoleSubjectView({ model }: { model: RabbitHoleSubjectModel
           </section>
         ) : (
           <>
-            <section className="mt-16 md:mt-20" aria-labelledby="interesting-heading">
+            <section id="interesting" className="mt-16 scroll-mt-24 md:mt-20" aria-labelledby="interesting-heading">
               <RabbitHoleReveal kind="section">
                 <div className="mb-7 max-w-2xl">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/36">
@@ -145,7 +145,8 @@ export function RabbitHoleSubjectView({ model }: { model: RabbitHoleSubjectModel
             </section>
 
             <section
-              className="mt-16 border-t border-white/10 pt-10 md:mt-20 md:pt-12"
+              id="threads"
+              className="mt-16 scroll-mt-24 border-t border-white/10 pt-10 md:mt-20 md:pt-12"
               aria-labelledby="threads-heading"
             >
               <RabbitHoleReveal kind="section">
@@ -194,7 +195,8 @@ export function RabbitHoleSubjectView({ model }: { model: RabbitHoleSubjectModel
 
             {model.corrections && model.corrections.length > 0 && (
               <section
-                className="mt-16 border-t border-white/10 pt-10 md:mt-20 md:pt-12"
+                id="corrections"
+                className="mt-16 scroll-mt-24 border-t border-white/10 pt-10 md:mt-20 md:pt-12"
                 aria-labelledby="corrections-heading"
               >
                 <RabbitHoleReveal kind="section">
@@ -226,7 +228,8 @@ export function RabbitHoleSubjectView({ model }: { model: RabbitHoleSubjectModel
 
             {model.unknowns && model.unknowns.length > 0 && (
               <section
-                className="mt-16 border-t border-white/10 pt-10 md:mt-20 md:pt-12"
+                id="unknowns"
+                className="mt-16 scroll-mt-24 border-t border-white/10 pt-10 md:mt-20 md:pt-12"
                 aria-labelledby="unknowns-heading"
               >
                 <RabbitHoleReveal kind="section">
@@ -255,7 +258,8 @@ export function RabbitHoleSubjectView({ model }: { model: RabbitHoleSubjectModel
 
             {model.documents && model.documents.length > 0 && (
               <section
-                className="mt-16 border-t border-white/10 pt-10 md:mt-20 md:pt-12"
+                id="documents"
+                className="mt-16 scroll-mt-24 border-t border-white/10 pt-10 md:mt-20 md:pt-12"
                 aria-labelledby="documents-heading"
               >
                 <RabbitHoleReveal kind="section">
