@@ -26,7 +26,7 @@ export default function EndemicPortal() {
                 Endemic
               </h1>
               <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/60 sm:text-lg">
-                Don&apos;t guess. Replicate the wild.
+                Natural history for the fish and plants you keep.
               </p>
             </div>
           </Reveal>
@@ -47,7 +47,7 @@ export default function EndemicPortal() {
                   </div>
                   <div className="mt-auto">
                     <h2 className="font-display text-3xl font-medium tracking-tight text-white sm:text-4xl">AquaTrack</h2>
-                    <p className="mt-2 text-lg text-white/70">Build authentic river biotopes.</p>
+                    <p className="mt-2 text-lg text-white/70">Explore habitat-informed aquarium keeping.</p>
                     <div className="mt-6 flex items-center gap-3 text-sm font-medium text-[#7fe3ec]">
                       <span className="h-px w-6 bg-[#7fe3ec]" />
                       Explore the app
@@ -110,7 +110,7 @@ export default function EndemicPortal() {
             </div>
             <div className="relative z-10 flex min-h-[350px] flex-col justify-end p-8 transform-gpu" style={{ transform: "translateZ(20px)" }}>
               <h3 className="font-display text-2xl text-white">Field Notes</h3>
-              <p className="mt-3 text-sm text-white/60">Read the blog & cultivar histories.</p>
+              <p className="mt-3 text-sm text-white/60">Read natural-history, provenance, and habitat stories.</p>
             </div>
           </TiltCard>
 
