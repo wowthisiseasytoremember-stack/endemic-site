@@ -8,7 +8,8 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "data:publication": "node scripts/compile-publication-data.mjs",
-    "data:publication:check": "node scripts/compile-publication-data.mjs --check"
+    "data:publication:check": "node scripts/compile-publication-data.mjs --check",
+    "data:product-proof-media:check": "node scripts/validate-product-proof-media.mjs"
   },
   "dependencies": {
     "@portabletext/react": "^6.2.0",

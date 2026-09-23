@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Product-proof media handoff. Asset identity/rights metadata only; not biological truth.",
+  "generatedFrom": "Cloud rights/source verification on 2026-09-22",
+  "assets": [
+    {
+      "asset_id": "cardinal-tetra-hero-pd-paolo-neo",
+      "asset_role": "SUBJECT_HERO",
+      "subject_label": "Paracheirodon axelrodi",
+      "status": "READY",
+      "source_provider": "Wikimedia Commons",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Paracheirodon_axelrodi_2.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Paracheirodon_axelrodi_2.jpg",
+      "creator": "Paolo Neo",
+      "license": "Public domain / PD-author",
+      "commercial_use": "YES",
+      "attribution_required": "NO",
+      "attribution_recommended": "Cardinal Tetras — Paolo Neo, public domain, via Wikimedia Commons",
+      "dimensions": {
+        "width": 2048,
+        "height": 1536
+      },
+      "claim_scope": "Exact-subject identity image only. Aquarium setting is not locality, habitat, substrate, or plant-association evidence.",
+      "recommended_use": [
+        "subject hero",
+        "subject thumbnail"
+      ],
+      "prohibited_implications": [
+        "native habitat",
+        "Rio Negro locality",
+        "sympatric plants",
+        "wild specimen"
+      ],
+      "alt": "Cardinal Tetras (Paracheirodon axelrodi) in an aquarium."
+    },
+    {
+      "asset_id": "cardinal-tetra-hero-pd-larsnikon",
+      "asset_role": "SUBJECT_HERO",
+      "subject_label": "Paracheirodon axelrodi",
+      "status": "READY_ALTERNATE",
+      "source_provider": "Wikimedia Commons",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Neontetra-vis.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Neontetra-vis.jpg",
+      "creator": "LarsNikon",
+      "license": "Public domain / PD-self",
+      "commercial_use": "YES",
+      "attribution_required": "NO",
+      "attribution_recommended": "Cardinal Tetra — LarsNikon, public domain, via Wikimedia Commons",
+      "dimensions": {
+        "width": 1080,
+        "height": 749
+      },
+      "claim_scope": "Exact-subject identity image only. Background aquarium context is not ecological evidence.",
+      "recommended_use": [
+        "close identity crop",
+        "relationship subject thumbnail"
+      ],
+      "prohibited_implications": [
+        "native habitat",
+        "wild specimen"
+      ],
+      "alt": "Close view of a Cardinal Tetra (Paracheirodon axelrodi)."
+    },
+    {
+      "asset_id": "pink-princess-hero-ccby2-cliff-landscape",
+      "asset_role": "SUBJECT_HERO",
+      "subject_label": "Philodendron erubescens 'Pink Princess'",
+      "status": "READY_PREFERRED_DESKTOP",
+      "source_provider": "Wikimedia Commons",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Arum_Family_-_Araceae_(3073312288)_(3).jpg",
+      "original_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Arum%20Family%20-%20Araceae%20%283073312288%29%20%283%29.jpg",
+      "creator": "Cliff from Arlington, Virginia, USA",
+      "license": "CC BY 2.0 Generic",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "commercial_use": "YES",
+      "attribution_required": "YES",
+      "attribution_recommended": "Pink Princess philodendron — Cliff, CC BY 2.0, via Wikimedia Commons",
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      },
+      "claim_scope": "Exact-cultivar identity image only. Cultivated specimen at the United States Botanic Garden; does not establish breeder, origin, patent, lineage, or wild habitat.",
+      "recommended_use": [
+        "desktop subject hero",
+        "4:3 editorial crop"
+      ],
+      "prohibited_implications": [
+        "originator",
+        "breeder",
+        "patent status",
+        "historical provenance",
+        "wild habitat",
+        "native locality"
+      ],
+      "alt": "Pink Princess philodendron (Philodendron erubescens 'Pink Princess') in cultivation."
+    },
+    {
+      "asset_id": "pink-princess-hero-cc0-cmushore",
+      "asset_role": "SUBJECT_HERO",
+      "subject_label": "Philodendron erubescens 'Pink Princess'",
+      "status": "READY_PORTRAIT_ALTERNATE",
+      "source_provider": "Wikimedia Commons",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Pink_princess_philodendron.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Pink_princess_philodendron.jpg",
+      "creator": "Cmushore",
+      "license": "CC0 1.0 Universal",
+      "commercial_use": "YES",
+      "attribution_required": "NO",
+      "attribution_recommended": "Pink Princess philodendron — Cmushore, CC0, via Wikimedia Commons",
+      "dimensions": {
+        "width": 1090,
+        "height": 2098
+      },
+      "claim_scope": "Exact-cultivar identity image only. Modern cultivated specimen does not establish breeder, origin, patent, lineage, or historical appearance.",
+      "recommended_use": [
+        "portrait/mobile subject hero",
+        "cultivar identity thumbnail"
+      ],
+      "prohibited_implications": [
+        "originator",
+        "breeder",
+        "patent status",
+        "historical provenance",
+        "wild habitat"
+      ],
+      "alt": "Pink Princess philodendron with dark green leaves and pink variegation."
+    }
+  ],
+  "blockedClasses": [
+    {
+      "class": "Smithsonian Schultz/Operation Crossroads images",
+      "status": "RIGHTS_REVIEW_REQUIRED",
+      "fallback": "Use DocumentCard/EvidenceReceipt with source record link until item-level commercial reuse is cleared."
+    },
+    {
+      "class": "Patent figures/scans",
+      "status": "RIGHTS_REVIEW_REQUIRED",
+      "fallback": "Use DocumentCard with patent title/identifier/source link; do not copy figures by default."
+    },
+    {
+      "class": "Generated photoreal subject imagery",
+      "status": "PROHIBITED_AS_EVIDENCE",
+      "fallback": "Use exact rights-cleared subject media or quiet typographic treatment."
+    }
+  ]
+}
