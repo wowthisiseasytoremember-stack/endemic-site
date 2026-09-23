@@ -1,4 +1,4 @@
-import type { RabbitHoleAccent, ThreadState } from "./RabbitHolePrimitives";
+import type { RabbitHoleAccent, ThreadHref, ThreadState } from "./RabbitHolePrimitives";
 
 export type ProductTrailItem = {
   label: string;
@@ -42,7 +42,7 @@ type ProductThreadBase = {
 export type ProductThread =
   | (ProductThreadBase & {
       state: Extract<ThreadState, "READY" | "SUMMARY">;
-      href: string;
+      href: ThreadHref;
     })
   | (ProductThreadBase & {
       state: Extract<ThreadState, "RESEARCHING" | "UNAVAILABLE">;
