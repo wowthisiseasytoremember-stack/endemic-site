@@ -25,6 +25,9 @@ jobs:
     - name: Install dependencies
       run: npm ci
       
+    - name: Verify publication artifact
+      run: npm run data:publication:check
+
     - name: Lint
       run: npm run lint
       

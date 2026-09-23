@@ -3,8 +3,8 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { ClientArticleContent } from '@/components/blog/ClientArticleContent';
-import { db } from '@/lib/endemic-db';
 import { getEntitiesByArticle, getEntityByRoute, ProductEntity, VideoEntity } from '@/data/entities';
+import publicationCrossKingdom from '@/data/publication/article-cross-kingdom.json';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { CrossKingdomCard, DiscovererCard, BiotopeCard, MythBustRow, FigureImage, SpeciesLink, DiscovererLink, BiotopeLink, CultivarLink, VideoEmbed, ProductCard, DataTable } from '@/components/mdx/ServerArticleComponents';
 import { Hero, FeatureGrid, FeatureCard, Callout, Timeline, TimelineStep, RankedList, RankItem, SpeciesCard, FeaturedSpecies, StatStrip, Figure, Sources, ProfileGrid, RelatedGrid, BentoGrid } from '@/components/mdx/EditorialComponents';
@@ -78,8 +78,6 @@ const components = {
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   
-  db.init();
-  
   const filePath = path.join(process.cwd(), 'content', 'blog', `${slug}.md`);
   
   if (!fs.existsSync(filePath)) {
@@ -100,19 +98,36 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   
   const categoryColor = CATEGORY_COLORS[frontmatter.category] || 'aqua';
   
-  // Get cross-kingdom data for related species
+  // Article routes consume the compact generated publication slice, not the raw research corpus.
+  const publicationSpecies = publicationCrossKingdom.species as Record<
+    string,
+    {
+      scientificName: string | null;
+      commonName: string;
+      connections: Array<{ pn: string; c: number }>;
+      unmatched: boolean;
+    }
+  >;
+
   const crossKingdomData = relatedSpecies
-    .map(species => {
-      const connections = db.getCrossKingdomForFish(species.slug);
-      if (connections.length > 0) {
-        return {
-          species: { slug: species.slug, common_name: species.name, scientific_name: '' },
-          connections
-        };
-      }
-      return null;
+    .map((species) => {
+      const entry = publicationSpecies[species.slug];
+      const connections = entry?.connections ?? [];
+      if (connections.length === 0) return null;
+
+      return {
+        species: {
+          slug: species.slug,
+          common_name: species.name,
+          scientific_name: entry?.scientificName ?? '',
+        },
+        connections,
+      };
     })
-    .filter((item): item is { species: { slug: string; common_name: string; scientific_name: string }; connections: Array<{ pn: string; c: number }> } => item !== null);
+    .filter((item): item is {
+      species: { slug: string; common_name: string; scientific_name: string };
+      connections: Array<{ pn: string; c: number }>;
+    } => item !== null);
   
   // Pass only serializable data to client component
   const articleData = {

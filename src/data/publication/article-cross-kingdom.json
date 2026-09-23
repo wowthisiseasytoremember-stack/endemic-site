@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "maxConnectionsPerSpecies": 12,
+  "unmatchedSpecies": [
+    "barbonymus-schwanenfeldii",
+    "dichotomyctere-fluviatilis",
+    "dichotomyctere-nigroviridis",
+    "dichotomyctere-ocellatus",
+    "pao-palembangensis"
+  ],
+  "sources": {
+    "speciesTraits": {
+      "path": "src/data/aquatrack/species_traits_flat.json",
+      "bytes": 41987339,
+      "sha256": "1f4bab07aca2d00d8d79442ceb460575e6345a1f27acb71a655ae039eb9dfe4e"
+    },
+    "crossKingdom": {
+      "path": "src/data/aquatrack/cross_kingdom_connections.json",
+      "bytes": 93489930,
+      "sha256": "6dc53061c920c1eab69c91924dd2004f5b1d7f385b613a38e32f5890c13041b6",
+      "version": "1.0",
+      "threshold": 0.8
+    },
+    "entities": {
+      "path": "src/data/entities.ts",
+      "bytes": 14694,
+      "sha256": "702eeabe166a1b7ae12ab4d2a66d3bc7a1b7f2dd66d84d88f502a44a62bb1618"
+    }
+  },
+  "species": {
+    "abramites-hypselonotus": {
+      "scientificName": "Abramites hypselonotus",
+      "commonName": "Marbled Headstander, Brachsensalmler (DE)",
+      "connections": [],
+      "unmatched": false
+    },
+    "acanthicus-hystrix": {
+      "scientificName": "Acanthicus hystrix",
+      "commonName": "L155, Lyre Tail Pleco, Schwarze Elfenwels (DE)",
+      "connections": [],
+      "unmatched": false
+    },
+    "apistogramma-agassizii": {
+      "scientificName": "Apistogramma agassizii",
+      "commonName": "Agassizi's Dwarf Cichlid, Agassiz Zwergbuntbarsch (DE)",
+      "connections": [],
+      "unmatched": false
+    },
+    "balantiocheilos-melanopterus": {
+      "scientificName": "Balantiocheilos melanopterus",
+      "commonName": "Silver Shark",
+      "connections": [],
+      "unmatched": false
+    },
+    "barbonymus-schwanenfeldii": {
+      "scientificName": null,
+      "commonName": "Tinfoil Barb",
+      "connections": [],
+      "unmatched": true
+    },
+    "carinotetraodon-irrubesco": {
+      "scientificName": "Carinotetraodon irrubesco",
+      "commonName": "Red-tailed Redeye Puffer",
+      "connections": [],
+      "unmatched": false
+    },
+    "carinotetraodon-lorteti": {
+      "scientificName": "Carinotetraodon lorteti",
+      "commonName": "Redeye Puffer",
+      "connections": [],
+      "unmatched": false
+    },
+    "carinotetraodon-travancoricus": {
+      "scientificName": "Carinotetraodon travancoricus",
+      "commonName": "Dwarf Puffer",
+      "connections": [],
+      "unmatched": false
+    },
+    "chromobotia-macracanthus": {
+      "scientificName": "Chromobotia macracanthus",
+      "commonName": "Clown Loach",
+      "connections": [],
+      "unmatched": false
+    },
+    "colomesus-asellus": {
+      "scientificName": "Colomesus asellus",
+      "commonName": "Amazon Puffer",
+      "connections": [],
+      "unmatched": false
+    },
+    "dichotomyctere-fluviatilis": {
+      "scientificName": null,
+      "commonName": "Ceylon Puffer",
+      "connections": [],
+      "unmatched": true
+    },
+    "dichotomyctere-nigroviridis": {
+      "scientificName": null,
+      "commonName": "Green Spotted Puffer",
+      "connections": [],
+      "unmatched": true
+    },
+    "dichotomyctere-ocellatus": {
+      "scientificName": null,
+      "commonName": "Figure 8 Puffer",
+      "connections": [],
+      "unmatched": true
+    },
+    "nannostomus-eques": {
+      "scientificName": "Nannostomus eques",
+      "commonName": "Hockeystick Pencilfish",
+      "connections": [],
+      "unmatched": false
+    },
+    "pao-baileyi": {
+      "scientificName": "Pao baileyi",
+      "commonName": "Hairy puffer",
+      "connections": [],
+      "unmatched": false
+    },
+    "pao-palembangensis": {
+      "scientificName": null,
+      "commonName": "Dragon Puffer",
+      "connections": [],
+      "unmatched": true
+    },
+    "paracheirodon-axelrodi": {
+      "scientificName": "Paracheirodon axelrodi",
+      "commonName": "Cardinal Tetra",
+      "connections": [],
+      "unmatched": false
+    },
+    "tetraodon-lineatus": {
+      "scientificName": "Tetraodon lineatus",
+      "commonName": "Fahaka Puffer",
+      "connections": [],
+      "unmatched": false
+    },
+    "tetraodon-mbu": {
+      "scientificName": "Tetraodon mbu",
+      "commonName": "Giant Puffer",
+      "connections": [],
+      "unmatched": false
+    },
+    "tetraodon-miurus": {
+      "scientificName": "Tetraodon miurus",
+      "commonName": "Congo Puffer",
+      "connections": [],
+      "unmatched": false
+    },
+    "trichopodus-leerii": {
+      "scientificName": "Trichopodus leerii",
+      "commonName": "Pearl Gourami",
+      "connections": [],
+      "unmatched": false
+    }
+  }
+}
