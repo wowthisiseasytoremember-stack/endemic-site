@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 
 export type RabbitHoleAccent = "aqua" | "flora" | "amber" | "neutral";
 export type ThreadState = "READY" | "SUMMARY" | "RESEARCHING" | "UNAVAILABLE";
+export type ThreadHref = `/${string}` | `#${string}`;
 
 const ACCENT = {
   aqua: {
@@ -239,7 +240,7 @@ type ThreadLinkBaseProps = {
 type ThreadLinkProps =
   | (ThreadLinkBaseProps & {
       state: "READY" | "SUMMARY";
-      href: string;
+      href: ThreadHref;
     })
   | (ThreadLinkBaseProps & {
       state: "RESEARCHING" | "UNAVAILABLE";
@@ -255,8 +256,9 @@ export function ThreadLink({
   accent = "neutral",
 }: ThreadLinkProps) {
   const a = ACCENT[accent];
-  const disabled = state === "UNAVAILABLE" || state === "RESEARCHING";
-  const label = stateLabel(state);
+  const emptyAnchor = href === "#";
+  const disabled = state === "UNAVAILABLE" || state === "RESEARCHING" || emptyAnchor;
+  const label = emptyAnchor ? "Not available" : stateLabel(state);
 
   const inner = (
     <>
