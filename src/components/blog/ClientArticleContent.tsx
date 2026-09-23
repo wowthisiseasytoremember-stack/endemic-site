@@ -35,6 +35,34 @@ export function ClientArticleContent({
 
   const { progress, activeHeading, headings } = useReadingProgress();
 
+  function currentArticleUrl() {
+    if (typeof window === "undefined") return `/read/${slug}`;
+    return window.location.href;
+  }
+
+  function shareOnX() {
+    const shareUrl = encodeURIComponent(currentArticleUrl());
+    const text = encodeURIComponent(frontmatter.title);
+    window.open(
+      `https://twitter.com/intent/tweet?text=${text}&url=${shareUrl}`,
+      "_blank",
+      "noopener,noreferrer",
+    );
+  }
+
+  function shareOnLinkedIn() {
+    const shareUrl = encodeURIComponent(currentArticleUrl());
+    window.open(
+      `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`,
+      "_blank",
+      "noopener,noreferrer",
+    );
+  }
+
+  function copyCurrentLink() {
+    navigator.clipboard.writeText(currentArticleUrl());
+  }
+
   return (
     <>
       <Hero 
@@ -247,14 +275,23 @@ export function ClientArticleContent({
       <Reveal>
         <footer className="max-w-[88rem] mx-auto px-4 mt-20 pt-16 border-t border-white/10">
           <div className="flex flex-wrap justify-center gap-6 text-sm text-white/50 pb-16">
-            <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(frontmatter.title)}&url=${encodeURIComponent(`https://endemic.app/read/${slug}`)}`} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+            <button
+              type="button"
+              onClick={shareOnX}
+              className="hover:text-white transition-colors cursor-pointer"
+            >
               Share on X
-            </a>
-            <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://endemic.app/read/${slug}`)}`} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+            </button>
+            <button
+              type="button"
+              onClick={shareOnLinkedIn}
+              className="hover:text-white transition-colors cursor-pointer"
+            >
               Share on LinkedIn
-            </a>
-            <button 
-              onClick={() => navigator.clipboard.writeText(`https://endemic.app/read/${slug}`)}
+            </button>
+            <button
+              type="button"
+              onClick={copyCurrentLink}
               className="hover:text-white transition-colors cursor-pointer"
             >
               Copy Link
