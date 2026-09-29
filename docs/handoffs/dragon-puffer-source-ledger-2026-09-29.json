@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-29",
+  "subject": {
+    "commonNames": [
+      "Dragon Puffer",
+      "Humpback Puffer"
+    ],
+    "acceptedNameWorking": "Pao palembangensis",
+    "historicalNames": [
+      "Tetraodon palembangensis"
+    ]
+  },
+  "purpose": "Source ledger for the Endemic Dragon Puffer exemplar. Records what was already accessible in project repositories versus what Cloud had to retrieve fresh, so pipeline gaps can be repaired rather than hidden.",
+  "canonicalDatabase": {
+    "path": "BioTrackCore/Sources/BioTrackCore/Resources/living_anthology.db",
+    "directQueryAvailableToCloud": false,
+    "reason": "The GitHub connector exposes UTF-8 repository content but cannot query/materialize the binary SQLite database in this session.",
+    "pendingDiagnostic": "https://github.com/wowthisiseasytoremember-stack/biotrack-core/issues/59"
+  },
+  "pipelineDefectsFiled": [
+    {
+      "repo": "wowthisiseasytoremember-stack/aquascrape",
+      "issue": 54,
+      "url": "https://github.com/wowthisiseasytoremember-stack/aquascrape/issues/54",
+      "defect": "General scholarly discovery did not surface the 2022 captive-breeding paper."
+    },
+    {
+      "repo": "wowthisiseasytoremember-stack/aquatrack",
+      "issue": 30,
+      "url": "https://github.com/wowthisiseasytoremember-stack/aquatrack/issues/30",
+      "defect": "SeriouslyFish source was captured, but the binomial collapsed to Tetraodonpalembangensis and failed normalization/projection."
+    }
+  ],
+  "sources": [
+    {
+      "id": "existing-seriouslyfish-cache",
+      "accessClass": "already_accessible",
+      "sourceType": "external_raw_cached_html",
+      "repo": "wowthisiseasytoremember-stack/aquatrack",
+      "path": "data/_scraper_cache/3181960c61aa84fa61d6b23a2a2161de.html",
+      "sourceUrl": "https://www.seriouslyfish.com/species/tetraodon-palembangensis/",
+      "claimsUsed": [
+        "older scientific name Tetraodon palembangensis",
+        "Humpback Puffer common name",
+        "aquarium dimensions",
+        "temperature",
+        "pH",
+        "hardness",
+        "diet",
+        "sedentary ambush behavior",
+        "rare captive spawning note"
+      ],
+      "pipelineObservation": "Raw source capture succeeded. Downstream name normalization/projection failed."
+    },
+    {
+      "id": "existing-seriouslyfish-index",
+      "accessClass": "already_accessible",
+      "sourceType": "external_structured_index",
+      "repo": "wowthisiseasytoremember-stack/aquatrack",
+      "path": "data/seriouslyfish_species_index.json",
+      "claimsUsed": [
+        "correct spaced source name Tetraodon palembangensis",
+        "SeriouslyFish URL"
+      ],
+      "pipelineObservation": "Confirms the upstream index preserved the valid two-token binomial before later corruption."
+    },
+    {
+      "id": "existing-crosswalk-failure",
+      "accessClass": "already_accessible",
+      "sourceType": "pipeline_diagnostic",
+      "repo": "wowthisiseasytoremember-stack/aquatrack",
+      "path": "data/_crosswalk_failures.csv",
+      "claimsUsed": [],
+      "pipelineObservation": "Contains Tetraodonpalembangensis as INVALID_NAME, proving a downstream whitespace-loss/normalization defect."
+    },
+    {
+      "id": "existing-biotope-projection",
+      "accessClass": "already_accessible",
+      "sourceType": "generated_projection",
+      "repo": "wowthisiseasytoremember-stack/aquatrack",
+      "path": "data/seriouslyfish_biotope.json",
+      "claimsUsed": [],
+      "pipelineObservation": "Carries the corrupted Tetraodonpalembangensis identity, so the defect propagated into derived ecology data."
+    },
+    {
+      "id": "existing-seasia-research-thesis",
+      "accessClass": "already_accessible",
+      "sourceType": "project_discovery_notes",
+      "repo": "wowthisiseasytoremember-stack/aquatrack",
+      "path": "research-findings/05-findings.md",
+      "claimsUsed": [],
+      "pipelineObservation": "Project already identified Dragon Puffer breeding as a multilingual discovery canary, but the surfaced Thai/Vietnamese leads were not available as preserved, source-backed Dragon Puffer evidence in the paths audited."
+    },
+    {
+      "id": "existing-endemic-entity",
+      "accessClass": "already_accessible",
+      "sourceType": "downstream_product_projection",
+      "repo": "wowthisiseasytoremember-stack/endemic-site",
+      "path": "src/data/entities.ts",
+      "claimsUsed": [],
+      "pipelineObservation": "Endemic already has puffer entity route /aquatrack/species/pao-palembangensis and a product description, but this is downstream prose, not canonical evidence."
+    },
+    {
+      "id": "existing-endemic-cross-kingdom",
+      "accessClass": "already_accessible",
+      "sourceType": "downstream_product_projection",
+      "repo": "wowthisiseasytoremember-stack/endemic-site",
+      "path": "src/data/publication/article-cross-kingdom.json",
+      "claimsUsed": [],
+      "pipelineObservation": "pao-palembangensis is explicitly unmatched and scientificName is null, exposing the downstream identity gap."
+    },
+    {
+      "id": "fresh-jstage-2022-breeding",
+      "accessClass": "freshly_retrieved",
+      "retrievalMethod": "ordinary current web search",
+      "sourceType": "peer_reviewed_journal",
+      "title": "Reproduction and development in captivity of the Southeast Asian freshwater pufferfish Pao palembangensis",
+      "authors": [
+        "Hiroyuki Doi",
+        "Tomo Akita",
+        "Harumi Sakai"
+      ],
+      "year": 2022,
+      "doi": "10.11233/aquaculturesci.70.197",
+      "url": "https://www.jstage.jst.go.jp/article/aquaculturesci/70/2/70_197/_article",
+      "claimsUsed": [
+        "freshwater captive reproduction",
+        "25-26 C",
+        "L12:D12 photoperiod",
+        "stone pipe spawning bed",
+        "three spawns June-August 2003",
+        "about 100 eggs per batch",
+        "2.25 mm egg diameter",
+        "10-day hatch",
+        "initial Artemia feeding"
+      ],
+      "pipelineObservation": "High-value miss. A basic species-name/reproduction search surfaces this paper. AquaScrape #54 tracks the missing scholarly-discovery lane.",
+      "expectedPipelineLane": "scholarly literature discovery from accepted name + synonym set"
+    },
+    {
+      "id": "fresh-catalog-of-fishes",
+      "accessClass": "freshly_retrieved",
+      "retrievalMethod": "ordinary current web search",
+      "sourceType": "taxonomic_catalog",
+      "title": "Eschmeyer's Catalog of Fishes species record",
+      "url": "https://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatget.asp?spid=61215",
+      "claimsUsed": [
+        "original combination Tetraodon palembangensis",
+        "Bleeker publication record",
+        "type locality Palembang, Sumatra, Indonesia",
+        "current placement in Pao"
+      ],
+      "pipelineObservation": "AquaScrape contains a Catalog-of-Fishes canary for Pea Puffer but no Dragon Puffer record surfaced in the audited projections.",
+      "expectedPipelineLane": "taxonomy/reference catalog lookup for every accepted subject + synonym"
+    },
+    {
+      "id": "fresh-fishbase",
+      "accessClass": "freshly_retrieved",
+      "retrievalMethod": "ordinary current web search",
+      "sourceType": "taxonomic_ecology_database",
+      "title": "FishBase Pao palembangensis summary",
+      "url": "https://www.fishbase.se/summary/25179",
+      "claimsUsed": [
+        "freshwater/demersal environment",
+        "Tetraodontidae classification",
+        "19.4 cm maximum standard length",
+        "Laos/Thailand/Malaysia/Indonesia distribution",
+        "lakes and rivers"
+      ],
+      "pipelineObservation": "FishBase is already a known AquaTrack source family, so absence of a clean Dragon Puffer canonical projection likely reflects identity/crosswalk failure more than total source-family absence.",
+      "expectedPipelineLane": "existing FishBase enrichment after alias normalization"
+    },
+    {
+      "id": "fresh-aquarium-glaser-2026",
+      "accessClass": "freshly_retrieved",
+      "retrievalMethod": "ordinary current web search",
+      "sourceType": "specialist_trade_husbandry",
+      "title": "Pao palembangensis (formerly Tetraodon palembangensis)",
+      "year": 2026,
+      "url": "https://www.aquariumglaser.de/en/fisharchive/pao-palembangensis-formerly-tetraodon-palembangensis/",
+      "claimsUsed": [
+        "pure freshwater husbandry observation",
+        "trade-name confusion with Figure 8 Puffer",
+        "ambush/carrion-mimic feeding observation",
+        "breeding reported successful"
+      ],
+      "pipelineObservation": "Useful specialist source found by ordinary search. Its narrow Sumatra/Borneo range conflicts with broader reference databases, so it is preserved as a source-specific claim rather than canonical range.",
+      "expectedPipelineLane": "specialist husbandry/trade discovery"
+    },
+    {
+      "id": "fresh-wikimedia-hero",
+      "accessClass": "freshly_retrieved",
+      "retrievalMethod": "ordinary current web/image search",
+      "sourceType": "rights_cleared_subject_media",
+      "title": "Pao palembangensis 263839696.jpg",
+      "creator": "Abu Hamas",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Pao_palembangensis_263839696.jpg",
+      "claimsUsed": [
+        "exact-subject identity image"
+      ],
+      "pipelineObservation": "Media was not in the existing Endemic product-proof manifest. Added as a rights-tracked hero asset.",
+      "expectedPipelineLane": "rights-cleared product media acquisition"
+    },
+    {
+      "id": "fresh-reddit-breeder-june-2026",
+      "accessClass": "freshly_retrieved",
+      "retrievalMethod": "ordinary current web search",
+      "sourceType": "community_field_note",
+      "title": "Pao palembangensis successfully breeding",
+      "year": 2026,
+      "url": "https://www.reddit.com/r/ProperFishKeeping/comments/1u12ysy/pao_palembangensis_successfully_breeding/",
+      "claimsUsed": [
+        "anecdotal repeated spawning every 2-3 weeks",
+        "one-month-old fry reported eating grindal worms"
+      ],
+      "pipelineObservation": "Not canonical evidence by itself. Useful lead showing contemporary hobby reproduction is occurring and worth a structured follow-up lane.",
+      "expectedPipelineLane": "community discovery lead, never auto-promoted"
+    },
+    {
+      "id": "fresh-reddit-breeder-aug-2026",
+      "accessClass": "freshly_retrieved",
+      "retrievalMethod": "ordinary current web search",
+      "sourceType": "community_field_note",
+      "title": "Another successful breeding",
+      "year": 2026,
+      "url": "https://www.reddit.com/r/Puffers/comments/1vn7efs/another_successful_breeding/",
+      "claimsUsed": [
+        "anecdotal repeated spawning",
+        "pair/cave husbandry field note",
+        "reported pH 7.2-7.6 and 78-81 F",
+        "egg removal due to male egg predation"
+      ],
+      "pipelineObservation": "Lead-only community evidence; useful for questions to investigate against stronger sources.",
+      "expectedPipelineLane": "community discovery lead, never auto-promoted"
+    }
+  ]
+}
