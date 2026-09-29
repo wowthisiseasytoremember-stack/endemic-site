@@ -124,6 +124,39 @@
         "wild habitat"
       ],
       "alt": "Pink Princess philodendron with dark green leaves and pink variegation."
+    },
+    {
+      "asset_id": "dragon-puffer-hero-ccby-sa4-abu-hamas",
+      "asset_role": "SUBJECT_HERO",
+      "subject_label": "Pao palembangensis",
+      "status": "READY",
+      "source_provider": "Wikimedia Commons / iNaturalist",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Pao_palembangensis_263839696.jpg",
+      "original_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Pao%20palembangensis%20263839696.jpg",
+      "creator": "Abu Hamas",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "commercial_use": "YES",
+      "attribution_required": "YES",
+      "attribution_recommended": "Humpback Puffer (Pao palembangensis) — Abu Hamas, CC BY-SA 4.0, via Wikimedia Commons / iNaturalist",
+      "dimensions": {
+        "width": 1800,
+        "height": 1800
+      },
+      "claim_scope": "Exact-subject identity image. iNaturalist/Commons record says the photographed animal was in Indonesia; image does not establish the full species range, habitat preference, husbandry, or captive-breeding behavior.",
+      "recommended_use": [
+        "subject hero",
+        "identity card",
+        "social screenshot"
+      ],
+      "prohibited_implications": [
+        "full native range",
+        "specific habitat parameters",
+        "captive-bred specimen",
+        "breeding behavior",
+        "type specimen"
+      ],
+      "alt": "Humpback or Dragon Puffer (Pao palembangensis), photographed in Indonesia."
     }
   ],
   "blockedClasses": [
