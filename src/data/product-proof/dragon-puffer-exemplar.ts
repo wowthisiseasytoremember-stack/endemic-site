@@ -186,14 +186,27 @@ export const DRAGON_PUFFER_EXEMPLAR: RabbitHoleSubjectModel = {
       id: "breeding-field-notes",
       question: "How reproducible is breeding in ordinary hobby aquaria?",
       currentAnswer:
-        "A controlled captive spawning is documented in the scientific literature, and recent hobbyists have publicly reported repeated spawning. The project does not yet have a systematically verified husbandry series large enough to turn those anecdotes into a general breeding protocol.",
+        "A controlled captive spawning is documented in the scientific literature. In 2026, a hobby breeder also publicly documented repeated spawns and growing fry across several posts. Those observations are useful field notes, but they are not yet a replicated husbandry series.",
       whyUnresolved:
-        "Recent Reddit breeder reports are valuable field notes but are not equivalent to replicated husbandry research.",
+        "Community breeder reports can reveal reproducible variables worth testing, but they are not equivalent to controlled or replicated research.",
       whatWouldResolve: [
         "multiple documented breeder logs with stable water, pair, cave and feeding variables",
-        "preserved Thai/Vietnamese breeding sources referenced by the AquaTrack SE-Asia research plan",
+        "comparison of hobby conditions against the 2022 captive-reproduction paper",
       ],
       status: "LEAD_ONLY",
+    },
+    {
+      id: "seasia-breeding-leads",
+      question: "Where are the Thai and Vietnamese breeding guides the project says exist?",
+      currentAnswer:
+        "AquaTrack research notes explicitly use Dragon Puffer as the motivating example for multilingual discovery and say Thai/Vietnamese sources contained breeding guidance and photos. During this audit I found the internal notes, but not preserved external URLs/evidence receipts for those claimed guides.",
+      whyUnresolved:
+        "The project remembers the result but the audited path does not preserve enough source identity to independently inspect or cite those particular guides.",
+      whatWouldResolve: [
+        "recover the original Thai/Vietnamese URLs or archived captures",
+        "run the native-language discovery queries again and preserve source receipts",
+      ],
+      status: "CORPUS_GAP",
     },
   ],
   documents: [
@@ -261,6 +274,28 @@ export const DRAGON_PUFFER_EXEMPLAR: RabbitHoleSubjectModel = {
         "Current trade/husbandry note useful for freshwater status, behavior and nomenclatural confusion; its narrow Sumatra/Borneo range statement conflicts with broader taxonomic/reference sources and is not treated as canonical.",
       href:
         "https://www.aquariumglaser.de/en/fisharchive/pao-palembangensis-formerly-tetraodon-palembangensis/",
+    },
+    {
+      id: "reddit-breeding-june",
+      title: "Pao palembangensis successfully breeding",
+      institution: "Reddit · r/ProperFishKeeping · community field note",
+      year: 2026,
+      detail:
+        "Lead-only husbandry observation: a breeder reported a pair spawning every 2–3 weeks and one-month-old fry eating grindal worms. Included as a contemporary field note, not canonical evidence.",
+      href:
+        "https://www.reddit.com/r/ProperFishKeeping/comments/1u12ysy/pao_palembangensis_successfully_breeding/",
+      rightsNote: "Community anecdote; do not treat as peer-reviewed or automatically generalizable.",
+    },
+    {
+      id: "reddit-breeding-august",
+      title: "Another successful breeding",
+      institution: "Reddit · r/Puffers · community field note",
+      year: 2026,
+      detail:
+        "Follow-up field note from the same breeding effort: repeated spawning, cave use, reported pH/temperature, and egg removal after parental predation. Useful for hypotheses to compare against formal literature.",
+      href:
+        "https://www.reddit.com/r/Puffers/comments/1vn7efs/another_successful_breeding/",
+      rightsNote: "Community anecdote; preserve as a lead rather than canonical husbandry guidance.",
     },
   ],
 };
