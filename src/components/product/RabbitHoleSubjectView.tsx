@@ -108,7 +108,7 @@ export function RabbitHoleSubjectView({ model }: { model: RabbitHoleSubjectModel
           </section>
         ) : (
           <>
-            <section id="interesting" className="mt-14 scroll-mt-24 md:mt-18" aria-labelledby="interesting-heading">
+            <section id="interesting" className="mt-14 scroll-mt-24 md:mt-20" aria-labelledby="interesting-heading">
               <RabbitHoleReveal kind="section">
                 <div className="mb-7 max-w-2xl">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/48">
