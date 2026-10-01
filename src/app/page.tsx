@@ -102,7 +102,7 @@ export default function EndemicPortal() {
           </div>
         </Reveal>
         
-        <div className="max-w-2xl">
+        <div className="grid max-w-5xl gap-5 md:grid-cols-2">
           <TiltCard href="/read" className="group relative overflow-hidden rounded-[2rem] bg-[#080d0b] ring-1 ring-white/10">
             <div className="absolute inset-0 z-0">
               <img src="/blog.jpg" alt="Field Notes" className="h-full w-full object-cover opacity-20 mix-blend-luminosity transition-transform duration-700 group-hover:scale-105 group-hover:opacity-40 group-hover:mix-blend-normal" />
@@ -114,6 +114,14 @@ export default function EndemicPortal() {
             </div>
           </TiltCard>
 
+          <TiltCard href="/prototype" className="group relative overflow-hidden rounded-[2rem] bg-[#06100f] ring-1 ring-white/10">
+            <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_70%_20%,rgba(31,184,196,0.18),transparent_45%),radial-gradient(circle_at_20%_80%,rgba(47,174,107,0.14),transparent_40%)]" />
+            <div className="relative z-10 flex min-h-[350px] flex-col justify-end p-8 transform-gpu" style={{ transform: "translateZ(20px)" }}>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#7fe3ec]/75">Research trails</p>
+              <h3 className="font-display text-2xl text-white">Rabbit Holes</h3>
+              <p className="mt-3 text-sm leading-6 text-white/60">Follow names, sources, corrections and unresolved questions beyond the care sheet.</p>
+            </div>
+          </TiltCard>
         </div>
       </section>
       

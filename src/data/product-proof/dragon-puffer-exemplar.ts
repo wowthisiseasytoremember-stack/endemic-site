@@ -143,10 +143,10 @@ export const DRAGON_PUFFER_EXEMPLAR: RabbitHoleSubjectModel = {
     },
     {
       id: "pipeline",
-      question: "Why did AquaTrack fail to surface a canonical Dragon Puffer record?",
-      target: "Tetraodonpalembangensis normalization failure",
-      relationshipHint: "internal pipeline repair in progress",
-      state: "RESEARCHING",
+      question: "Does Dragon Puffer survive the real AquaTrack → anthology path?",
+      target: "Pao palembangensis present in AquaTrack + anthology candidate",
+      relationshipHint: "real end-to-end proof · 2026-10-01",
+      state: "SUMMARY",
     },
   ],
   corrections: [
