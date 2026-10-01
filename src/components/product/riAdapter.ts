@@ -42,6 +42,8 @@ export interface ResearchIntelligenceSubjectConfig {
   mediaKey?: Parameters<typeof proofMediaIdentityProps>[0];
   trail?: ProductTrailItem[];
   documents?: ProductDocument[];
+  primaryInteresting?: ProductInterestingItem;
+  threads?: ProductThread[];
 }
 
 export function projectResearchIntelligenceToRabbitHole(
@@ -77,6 +79,10 @@ export function projectResearchIntelligenceToRabbitHole(
 
   const interesting: ProductInterestingItem[] = [];
 
+  if (config.primaryInteresting) {
+    interesting.push(config.primaryInteresting);
+  }
+
   const schultzReceipt = (packet.receipts || []).find((r) =>
     r.note?.includes("Leonard P. Schultz")
   );
@@ -93,7 +99,8 @@ export function projectResearchIntelligenceToRabbitHole(
       "The accepted graph separately records Herbert R. Axelrod as the namesake.",
   };
 
-  interesting.push({
+  if (!config.primaryInteresting) {
+    interesting.push({
     id: "biotrack-anchors",
     kicker: "Two people, two different roles",
     title: "The describer is not the namesake.",
@@ -105,7 +112,8 @@ export function projectResearchIntelligenceToRabbitHole(
       note: "Accepted BioTrack relationship",
     },
     receipt: primaryReceipt,
-  });
+    });
+  }
 
   const supportedFindings = (packet.findings || []).filter(
     (f) => f.status === "SUPPORTED"
@@ -128,18 +136,20 @@ export function projectResearchIntelligenceToRabbitHole(
     (f) => f.status === "CORPUS_GAP"
   );
 
-  const threads: ProductThread[] = [
-    {
-      id: "accepted-relationships",
-      question: "What relationships are accepted in BioTrack?",
-      target: "Leonard P. Schultz / Herbert R. Axelrod",
-      relationshipHint: "described_by & named_for (1956)",
-      state: "SUMMARY",
-      href: "#documents",
-    },
-  ];
+  const threads: ProductThread[] = config.threads
+    ? [...config.threads]
+    : [
+        {
+          id: "accepted-relationships",
+          question: "What relationships are accepted in BioTrack?",
+          target: "Leonard P. Schultz / Herbert R. Axelrod",
+          relationshipHint: "described_by & named_for (1956)",
+          state: "SUMMARY",
+          href: "#documents",
+        },
+      ];
 
-  if (corpusGapFindings.length > 0) {
+  if (!config.threads && corpusGapFindings.length > 0) {
     corpusGapFindings.forEach((gap, idx) => {
       threads.push({
         id: `corpus-gap-${idx + 1}`,
@@ -149,7 +159,7 @@ export function projectResearchIntelligenceToRabbitHole(
         state: "RESEARCHING",
       });
     });
-  } else {
+  } else if (!config.threads) {
     threads.push({
       id: "further-research",
       question: "What additional source receipts are being collected?",
