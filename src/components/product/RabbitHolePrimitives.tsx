@@ -123,7 +123,7 @@ export function SubjectIdentity({
   const a = ACCENT[accent];
 
   return (
-    <header className="grid gap-8 border-b border-white/10 pb-10 md:grid-cols-[minmax(0,1fr)_minmax(16rem,0.72fr)] md:items-end md:gap-12">
+    <header className="grid gap-9 border-b border-white/10 pb-12 md:grid-cols-[minmax(0,0.88fr)_minmax(19rem,1.12fr)] md:items-center md:gap-12 lg:gap-16">
       <div className="min-w-0">
         {eyebrow && (
           <div className="mb-4 flex items-center gap-3">
@@ -134,37 +134,38 @@ export function SubjectIdentity({
           </div>
         )}
 
-        <h1 className="font-display max-w-[15ch] text-5xl font-medium leading-[0.98] tracking-[-0.035em] text-white sm:text-6xl lg:text-7xl">
+        <h1 className="font-display max-w-[13ch] text-5xl font-medium leading-[0.94] tracking-[-0.045em] text-white sm:text-6xl lg:text-[5.25rem]">
           {title}
         </h1>
 
         {scientificName && (
-          <p className="mt-4 font-serif text-lg italic tracking-[0.01em] text-white/55 sm:text-xl">
+          <p className="mt-5 font-serif text-lg italic tracking-[0.01em] text-white/52 sm:text-xl">
             {scientificName}
           </p>
         )}
 
-        <p className="mt-7 max-w-2xl text-lg leading-8 text-white/68 sm:text-xl">
+        <p className="mt-7 max-w-[38rem] text-lg leading-8 text-white/72 sm:text-xl sm:leading-9">
           {lead}
         </p>
       </div>
 
       {image ? (
-        <figure>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-[1.25rem] border border-white/10 bg-black/20">
+        <figure className="md:pt-2">
+          <div className={`relative aspect-[5/4] overflow-hidden rounded-[1.7rem] border bg-black/20 shadow-[0_34px_90px_rgba(0,0,0,0.3)] ${a.softBorder}`}>
             <img
               src={image}
               alt={imageAlt}
-              className="h-full w-full object-cover opacity-90"
+              className="h-full w-full object-cover"
               style={{ objectPosition: imagePosition }}
             />
             <div
-              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#040908]/38 via-transparent to-transparent"
+              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#040908]/28 via-transparent to-white/[0.025]"
               aria-hidden="true"
             />
+            <span className={`pointer-events-none absolute left-5 top-5 h-px w-12 ${a.line}`} aria-hidden="true" />
           </div>
           {(imageCredit || imageLicense) && (
-            <figcaption className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 px-1 text-[10px] leading-4 text-white/48">
+            <figcaption className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 px-1 text-[10px] leading-4 text-white/42">
               {imageSourceHref ? (
                 <a
                   href={imageSourceHref}
@@ -263,9 +264,12 @@ export function ThreadLink({
   const inner = (
     <>
       <div className="min-w-0">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/48">
-          Follow the thread
-        </p>
+        <div className="flex items-center gap-2">
+          <span className={`h-px w-4 ${a.line}`} aria-hidden="true" />
+          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/42">
+            Follow the thread
+          </p>
+        </div>
         <p className="mt-2 font-display text-xl font-medium leading-snug text-white">
           {question}
         </p>
@@ -294,7 +298,7 @@ export function ThreadLink({
     </>
   );
 
-  const className = `group flex w-full items-center justify-between gap-6 rounded-[1.15rem] border px-5 py-5 text-left transition-[border-color,background-color] duration-150 sm:px-6 ${a.softBorder} ${disabled ? "cursor-default bg-white/[0.018]" : `${a.bg} hover:border-white/22 focus-visible:border-white/30 focus-visible:outline-none`}`;
+  const className = `group flex w-full items-center justify-between gap-6 border-t px-1 py-5 text-left transition-[border-color,color] duration-150 sm:py-6 ${disabled ? "cursor-default border-white/[0.07] opacity-70" : "border-white/10 hover:border-white/24 focus-visible:border-white/30 focus-visible:outline-none"}`;
 
   if (disabled) {
     return (
@@ -331,11 +335,14 @@ export function EvidenceReceipt({
   const a = ACCENT[accent];
 
   return (
-    <details className={`group rounded-[1rem] border bg-black/15 open:bg-black/22 ${a.softBorder}`}>
+    <details className={`group rounded-[1rem] border bg-black/12 open:bg-black/22 ${a.softBorder}`}>
       <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30">
         <span className="flex min-w-0 items-center gap-3">
-          <span className={`h-2 w-2 rounded-full ${a.line}`} aria-hidden="true" />
-          <span className="truncate text-sm font-medium text-white/72">View receipt</span>
+          <span className={`h-2 w-2 shrink-0 rounded-full ${a.line}`} aria-hidden="true" />
+          <span className="min-w-0">
+            <span className="block text-[9px] font-semibold uppercase tracking-[0.16em] text-white/35">Receipt</span>
+            <span className="mt-0.5 block truncate text-sm font-medium text-white/68">{sourceLabel}</span>
+          </span>
         </span>
         <span className="text-sm text-white/48 transition-transform duration-150 group-open:rotate-45" aria-hidden="true">
           +
