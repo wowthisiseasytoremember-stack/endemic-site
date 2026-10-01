@@ -141,13 +141,6 @@ export const DRAGON_PUFFER_EXEMPLAR: RabbitHoleSubjectModel = {
       state: "SUMMARY",
       href: "#unknowns",
     },
-    {
-      id: "pipeline",
-      question: "Does Dragon Puffer survive the real AquaTrack → anthology path?",
-      target: "Pao palembangensis present in AquaTrack + anthology candidate",
-      relationshipHint: "real end-to-end proof · 2026-10-01",
-      state: "SUMMARY",
-    },
   ],
   corrections: [
     {
