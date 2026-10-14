@@ -39,7 +39,7 @@ export default function FloraTrackPage() {
             <div className="lg:col-span-5 lg:pb-4">
               <Reveal delay={200}>
                 <p className="text-lg leading-relaxed text-white/70">
-                  See exactly which jungle your Anthurium comes from, who discovered it, and the precise light and humidity it needs to thrive. Prevent root rot by matching its native habitat.
+                  Follow the plant&apos;s paper trail: understand published native ranges, historical descriptions, and the light, humidity, and substrate context behind the species you grow.
                 </p>
                 <div className="mt-10 flex flex-wrap items-center gap-6">
                   <div className="w-56 h-16">
@@ -110,7 +110,7 @@ export default function FloraTrackPage() {
               <span className="text-white/40">Start matching.</span>
             </h2>
             <p className="mx-auto mt-8 max-w-2xl text-xl leading-relaxed text-white/60">
-              Yellowing leaves? Root rot? Most houseplant issues come from forcing a rainforest species into a desert environment. FloraTrack tells you exactly what they evolved to expect.
+              Yellowing leaves? Root rot? Many houseplant issues come from mismatched care. FloraTrack helps you understand the environmental context plants evolved to expect.
             </p>
           </Reveal>
         </div>
@@ -125,13 +125,13 @@ export default function FloraTrackPage() {
             <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
               <div>
                 <h2 className="font-display text-4xl font-medium text-white md:text-5xl">
-                  The truth about your Pink Princess.
+                  Follow the plant&apos;s paper trail.
                 </h2>
                 <p className="mt-6 text-lg leading-relaxed text-white/60">
-                  The houseplant market is full of patented cultivars, disputed origins, and renamed species. We map the entire paper trail—from the first mutation to the patent office.
+                  Names, authorship, lineage, patents, origins, and trade stories are different claims. Where qualifying evidence exists, Endemic shows the relationship and its source instead of collapsing them into one origin story.
                 </p>
                 <div className="mt-10 space-y-6 border-l-2 border-white/10 pl-6">
-                  <p className="text-lg text-white/80 transition-colors hover:text-[#2fae6b]">Is it actually a Thai Constellation, or just a sport?</p>
+                  <p className="text-lg text-white/80 transition-colors hover:text-[#2fae6b]">What lineage relationship does the accepted BioTrack release establish?</p>
                   <p className="text-lg text-white/80 transition-colors hover:text-[#2fae6b]">Who holds the patent for the Monstera Peru?</p>
                   <p className="text-lg text-white/80 transition-colors hover:text-[#2fae6b]">Why are there 12 different names for the same Epipremnum?</p>
                 </div>
@@ -147,16 +147,16 @@ export default function FloraTrackPage() {
                    </div>
                    <div className="mt-8 space-y-6">
                      <div className="flex justify-between items-baseline border-b border-white/5 pb-4">
-                       <span className="text-white/40">Origin</span>
-                       <span className="text-lg font-medium text-white">Mutation (Not Wild)</span>
+                       <span className="text-white/40">Accepted Lineage</span>
+                       <span className="text-sm font-medium text-white">EM0003 → Pink Princess</span>
                      </div>
                      <div className="flex justify-between items-baseline border-b border-white/5 pb-4">
-                       <span className="text-white/40">Patent Status</span>
-                       <span className="text-lg font-medium text-white">Expired / Disputed</span>
+                       <span className="text-white/40">Originator</span>
+                       <span className="text-sm font-medium text-white/60">Not established in v1</span>
                      </div>
                      <div className="flex justify-between items-baseline">
-                       <span className="text-white/40">Genetic Stability</span>
-                       <span className="text-lg font-medium text-[#e8a12c]">Unstable (Reverts)</span>
+                       <span className="text-white/40">Status</span>
+                       <span className="text-sm font-medium text-[#e8a12c]">Corpus gap / research</span>
                      </div>
                    </div>
                 </TiltCard>

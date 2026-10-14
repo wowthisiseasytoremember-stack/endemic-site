@@ -110,7 +110,7 @@ export default function AquaTrackPage() {
               <span className="text-white/40">Start measuring.</span>
             </h2>
             <p className="mx-auto mt-8 max-w-2xl text-xl leading-relaxed text-white/60">
-              Unexplained losses? Algae blooms? Most aquarium problems come from forcing blackwater fish into hard tap water. AquaTrack helps you recreate the exact parameters they evolved to expect.
+              Unexplained losses? Algae blooms? Wild fish come from specific ecological ranges. AquaTrack helps you understand the habitat and water parameters behind the species you keep.
             </p>
           </Reveal>
         </div>
@@ -128,7 +128,7 @@ export default function AquaTrackPage() {
                   The people behind the name
                 </h2>
                 <p className="mt-6 text-lg leading-relaxed text-white/60">
-                  Every species has a paper trail. Describers, namesakes, collectors, and later researchers can all play different roles, and those roles should stay separate when the evidence does.
+                  Scientific names can connect an organism to different people in different roles — describers, namesakes, collectors, breeders, and others. Endemic keeps those roles separate when the evidence does.
                 </p>
                 <div className="mt-10 space-y-6 border-l-2 border-white/10 pl-6">
                   <p className="text-lg text-white/80 transition-colors hover:text-[#7fe3ec]">Are your Neon Tetras actually from the Amazon?</p>
