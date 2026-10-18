@@ -1,0 +1,38 @@
+name: Refresh MDX dependency lockfile
+
+on:
+  push:
+    branches: [ "fix/next-mdx-remote-6" ]
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.21.0'
+          cache: npm
+      - name: Resolve the compatible version and refresh lock
+        run: npm install --package-lock-only --ignore-scripts next-mdx-remote@^6.0.0
+      - name: Verify clean install and production build
+        run: |
+          npm ci
+          npm run lint
+          npm run typecheck
+          npm run build
+      - name: Commit updated lockfile if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add package.json package-lock.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(lockfile): resolve next-mdx-remote 6 dependency graph"
+            git push origin HEAD:fix/next-mdx-remote-6
+          fi
