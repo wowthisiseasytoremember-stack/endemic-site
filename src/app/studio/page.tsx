@@ -67,7 +67,7 @@ export default function StudioPage() {
               Living things.<br /><span className="text-[#a1efc3]">Useful systems.</span>
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-[#e8f1eb]/75 md:text-xl">
-              Botanical research, evidence-aware data pipelines, product interfaces, and content production — built to make specialized knowledge easier to discover, teach, and use.
+              More than 2,500 fish and aquatic plant records underpin a growing set of research tools, product interfaces, and video workflows — designed to turn specialized knowledge into something people can use.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Link href="/prototype" className="inline-flex items-center justify-center rounded-full bg-[#d7f7df] px-6 py-3 text-sm font-semibold text-[#092019] transition hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
