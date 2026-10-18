@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { SHOWCASE_STATS } from "@/data/showcase-metrics";
+import { ecosystemFacts, corpusDisclosure } from "@/data/ecosystem-facts";
 
 export const metadata: Metadata = {
   title: "Behind Endemic | Botanical research, software & content systems",
@@ -67,7 +67,7 @@ export default function StudioPage() {
               Living things.<br /><span className="text-[#a1efc3]">Useful systems.</span>
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-[#e8f1eb]/75 md:text-xl">
-              More than 2,500 fish and aquatic plant records underpin a growing set of research tools, product interfaces, and video workflows — designed to turn specialized knowledge into something people can use.
+              More than 5,500 botanical, fish, and aquatic plant entries underpin a growing set of research tools, product interfaces, and video workflows — designed to turn specialized knowledge into something people can use.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Link href="/prototype" className="inline-flex items-center justify-center rounded-full bg-[#d7f7df] px-6 py-3 text-sm font-semibold text-[#092019] transition hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
@@ -93,17 +93,18 @@ export default function StudioPage() {
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#a1efc3]">Actual dataset snapshots</p>
             <h2 id="dataset-heading" className="mt-3 font-display text-3xl font-medium md:text-5xl">The research has substance.</h2>
           </div>
-          <p className="max-w-sm text-sm leading-relaxed text-white/50">These figures describe specific source datasets, not production-ready app coverage, accepted biological evidence, or a live species directory.</p>
+          <p className="max-w-sm text-sm leading-relaxed text-white/50">These rounded figures describe specific dataset inventories, not production-ready app coverage, accepted biological evidence, or a live species directory.</p>
         </div>
         <div className="mt-10 grid gap-px overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
-          {SHOWCASE_STATS.map((stat) => (
+          {ecosystemFacts.map((stat) => (
             <div key={stat.label} className="bg-[#0a1311] px-6 py-8 md:px-8 md:py-10">
-              <div className="font-display text-4xl font-medium tracking-tight text-[#dcfce6] md:text-5xl">{stat.value.toLocaleString("en-US")}</div>
+              <div className="font-display text-4xl font-medium tracking-tight text-[#dcfce6] md:text-5xl">{stat.value}</div>
               <div className="mt-3 text-sm font-semibold text-white/90">{stat.label}</div>
-              <div className="mt-2 text-xs leading-relaxed text-white/45">{stat.qualifier}</div>
+              <div className="mt-2 text-xs leading-relaxed text-white/45">{stat.detail}</div>
             </div>
           ))}
         </div>
+        <p className="mt-5 max-w-3xl text-xs leading-6 text-white/45">{corpusDisclosure}</p>
         <a href="/research-snapshot.json" className="mt-4 inline-flex text-xs text-[#a1efc3]/80 underline-offset-4 hover:underline">
           Inspect count definitions &amp; evidence snapshots ↗
         </a>
@@ -134,12 +135,12 @@ export default function StudioPage() {
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-24 md:grid-cols-12 md:py-32">
         <div className="md:col-span-5">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#a1efc3]">Applied to a plant studio</p>
-          <h2 className="mt-4 font-display text-4xl font-medium leading-tight md:text-5xl">One culture session. A week's worth of useful content.</h2>
+          <h2 className="mt-4 font-display text-4xl font-medium leading-tight md:text-5xl">One culture session. A week&apos;s worth of useful content.</h2>
           <p className="mt-6 text-base leading-8 text-white/60">
             Example workflow for a small botanical business. This is a proposed demonstration, not a claim that the work has already been delivered to a client or that I operate a tissue-culture lab.
           </p>
           <div className="mt-8 rounded-2xl border border-[#a1efc3]/20 bg-[#a1efc3]/[0.06] p-5 text-sm leading-7 text-white/70">
-            <strong className="text-[#d7f7df]">Possible outputs:</strong> a process reel, educational Shorts, species cards, photographed product variants, platform-specific captions, shop listing assets, and drafts ready for the owner's approval.
+            <strong className="text-[#d7f7df]">Possible outputs:</strong> a process reel, educational Shorts, species cards, photographed product variants, platform-specific captions, shop listing assets, and drafts ready for the owner&apos;s approval.
           </div>
         </div>
         <ol className="space-y-3 md:col-span-7">
