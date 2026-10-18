@@ -1,8 +1,10 @@
+import { SHOWCASE_STATS } from "@/data/showcase-metrics";
 import { Reveal } from "@/components/Reveal";
 import AtmosphereCanvas from "@/components/AtmosphereCanvas";
 import { TiltCard } from "@/components/TiltCard";
 import Link from "next/link";
 import Image from "next/image";
+import { ecosystemFacts, corpusDisclosure } from "@/data/ecosystem-facts";
 
 export const revalidate = 3600;
 
@@ -26,7 +28,7 @@ export default function EndemicPortal() {
                 Endemic
               </h1>
               <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/60 sm:text-lg">
-                Natural history for the fish and plants you keep.
+                2,500+ fish and aquatic plant records. Two connected research projects. One evolving ecosystem.
               </p>
             </div>
           </Reveal>
@@ -85,6 +87,62 @@ export default function EndemicPortal() {
           <div className="mt-10 hidden justify-center opacity-40 motion-safe:animate-bounce md:flex">
             <span className="text-sm tracking-widest uppercase">Scroll for more</span>
           </div>
+        </div>
+      </section>
+
+      {/* A dataset is a real asset, not a claim that the entire product is released. */}
+      <section className="relative z-10 border-y border-white/10 bg-[#07120e] px-6 py-14 md:py-20" aria-labelledby="data-heading">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#9beabf]">Behind the living atlas</p>
+              <h2 id="data-heading" className="mt-3 font-display text-3xl font-medium tracking-tight text-white md:text-5xl">Actual organisms. Actual data.</h2>
+            </div>
+            <Link href="/studio" className="w-fit text-sm font-semibold text-[#9beabf] hover:underline">Explore the research &amp; production work ↗</Link>
+          </div>
+          <div className="mt-10 grid grid-cols-2 gap-3 lg:grid-cols-4">
+            {SHOWCASE_STATS.map((stat) => (
+              <div key={stat.label} className="rounded-[1.5rem] border border-white/10 bg-white/[0.035] p-5 md:p-7">
+                <div className="font-display text-3xl font-medium tracking-tight text-[#d3f8df] sm:text-4xl">{stat.value.toLocaleString("en-US")}</div>
+                <p className="mt-3 text-sm font-semibold text-white/85">{stat.label}</p>
+                <p className="mt-2 text-xs leading-relaxed text-white/40">{stat.qualifier}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-xs leading-relaxed text-white/35">
+            Counts are dataset snapshots, not a claim of completed biological review or public app availability. <a className="underline underline-offset-4 hover:text-white" href="/research-snapshot.json">Read definitions.</a>
+          </p>
+        </div>
+      </section>
+
+      {/* DATA CORPUS — snapshot-scoped counts, not promises of live browseable pages */}
+      <section aria-labelledby="ecosystem-evidence" className="relative z-10 border-y border-white/10 bg-[#08120f] px-5 py-20 sm:px-8 md:py-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-8 lg:grid-cols-[1fr_1.35fr] lg:gap-16">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#8fd4b6]">Built on real datasets</p>
+              <h2 id="ecosystem-evidence" className="mt-5 font-display text-4xl font-medium leading-tight tracking-tight text-white sm:text-5xl">
+                Living things. <span className="italic text-[#8fd4b6]">Connected knowledge.</span>
+              </h2>
+              <p className="mt-6 max-w-lg text-base leading-7 text-white/65">
+                Behind the field notes and product previews sits a research corpus spanning botany, aquatic species,
+                cultivar records, and geographic distributions. Explore how the data becomes a useful story.
+              </p>
+              <Link href="/systems" className="mt-8 inline-flex items-center gap-3 rounded-full border border-[#8fd4b6]/30 bg-[#8fd4b6]/10 px-6 py-3 text-sm font-semibold text-[#baf1d7] transition-colors hover:bg-[#8fd4b6]/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8fd4b6]">
+                See how Endemic is built <span aria-hidden="true">↗</span>
+              </Link>
+            </div>
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+              {ecosystemFacts.map((fact) => (
+                <div key={fact.label} className="rounded-3xl border border-white/10 bg-white/[0.035] p-5 sm:p-7">
+                  <p className="font-display text-3xl font-medium tracking-tight text-white sm:text-4xl">{fact.value}</p>
+                  <p className="mt-3 text-sm font-medium leading-5 text-white/90">{fact.label}</p>
+                  <p className="mt-2 text-xs leading-5 text-white/45">{fact.detail}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <p className="mt-10 max-w-4xl text-xs leading-6 text-white/40">{corpusDisclosure}</p>
         </div>
       </section>
 

@@ -1,0 +1,71 @@
+{
+  "title": "Endemic public showcase research coverage snapshot",
+  "snapshot_date": "2026-10-17",
+  "meaning": "Rounded, sourced coverage inventories across FloraTrack and AquaTrack. Combined entries are not deduplicated unique accepted taxa, verified dossiers, or currently public app listings.",
+  "metrics": [
+    {
+      "key": "botanical_species",
+      "value": 3066,
+      "source_repository": "flora-track",
+      "source_path": "MASTER.md",
+      "source_field": "Species data row (last documented 2026-07-14)",
+      "interpretation": "Botanical species documented in FloraTrack database; 2,920 were POWO-enriched in that inventory."
+    },
+    {
+      "key": "combined_organism_entries",
+      "value": 5575,
+      "source_repository": "flora-track + aquatrack",
+      "source_path": "FloraTrack MASTER.md + AquaTrack data/species_traits_coverage.json + data/species_traits_plants.json",
+      "source_field": "3066 + 1669 + 840",
+      "interpretation": "Sum of documented botanical species, fish-record, and aquatic-plant-record snapshots. Not deduplicated unique species."
+    },
+    {
+      "key": "cultivar_provenance_records",
+      "value": 2593,
+      "source_repository": "flora-track",
+      "source_path": "MASTER.md",
+      "source_field": "Cultivar provenance",
+      "interpretation": "Distinct nursery and patent-related research records, not additional accepted species."
+    },
+    {
+      "key": "fish_records",
+      "value": 1669,
+      "source_repository": "aquatrack",
+      "source_path": "data/species_traits_coverage.json",
+      "source_field": "scientific_name.total",
+      "interpretation": "Rows reported in fish trait coverage"
+    },
+    {
+      "key": "aquatic_plant_records",
+      "value": 840,
+      "source_repository": "aquatrack",
+      "source_path": "data/species_traits_plants.json",
+      "source_field": "array.length",
+      "interpretation": "Normalized aquatic plant records"
+    },
+    {
+      "key": "species_with_geography",
+      "value": 1546,
+      "source_repository": "aquatrack",
+      "source_path": "data/species_geography_stats.json",
+      "source_field": "species_with_geography",
+      "interpretation": "Species matched to geography in that snapshot"
+    },
+    {
+      "key": "countries_represented",
+      "value": 154,
+      "source_repository": "aquatrack",
+      "source_path": "data/species_geography_stats.json",
+      "source_field": "total_countries",
+      "interpretation": "Number of countries in distribution snapshot"
+    }
+  ],
+  "editorial_notes": [
+    "Fish and plant counts are snapshots from a private source repository and are published here as a limited summary with user approval.",
+    "A record is not a complete, reviewed species profile.",
+    "Project previews and prototype pages are not app-store production releases.",
+    "Proposed tissue-culture studio workflow is demonstrative, not a past client engagement.",
+    "FloraTrack's botanical species and cultivar provenance counts come from its July 2026 database inventory; the live local SQLite database was not independently re-queried for this web release.",
+    "All figures are rounded down for display; individual source corpora have varying maturity."
+  ]
+}
