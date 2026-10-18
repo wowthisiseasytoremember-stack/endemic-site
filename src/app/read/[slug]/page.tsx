@@ -175,7 +175,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   return (
     <main className="min-h-screen bg-[#040908] text-white selection:bg-[#7fe3ec] selection:text-[#040908]">
       <ClientArticleContent {...articleData}>
-        <MDXRemote source={content} components={components} />
+        <MDXRemote source={content} components={components} options={{ blockJS: false }} />
       </ClientArticleContent>
     </main>
   );
