@@ -27,7 +27,7 @@ export default function EndemicPortal() {
                 Endemic
               </h1>
               <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/60 sm:text-lg">
-                Natural history for the fish and plants you keep.
+                2,500+ fish and aquatic plant records. Two connected research projects. One evolving ecosystem.
               </p>
             </div>
           </Reveal>
