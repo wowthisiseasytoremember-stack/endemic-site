@@ -1,3 +1,4 @@
+import { SHOWCASE_STATS } from "@/data/showcase-metrics";
 import { Reveal } from "@/components/Reveal";
 import AtmosphereCanvas from "@/components/AtmosphereCanvas";
 import { TiltCard } from "@/components/TiltCard";
@@ -85,6 +86,31 @@ export default function EndemicPortal() {
           <div className="mt-10 hidden justify-center opacity-40 motion-safe:animate-bounce md:flex">
             <span className="text-sm tracking-widest uppercase">Scroll for more</span>
           </div>
+        </div>
+      </section>
+
+      {/* A dataset is a real asset, not a claim that the entire product is released. */}
+      <section className="relative z-10 border-y border-white/10 bg-[#07120e] px-6 py-14 md:py-20" aria-labelledby="data-heading">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#9beabf]">Behind the living atlas</p>
+              <h2 id="data-heading" className="mt-3 font-display text-3xl font-medium tracking-tight text-white md:text-5xl">Actual organisms. Actual data.</h2>
+            </div>
+            <Link href="/studio" className="w-fit text-sm font-semibold text-[#9beabf] hover:underline">Explore the research &amp; production work ↗</Link>
+          </div>
+          <div className="mt-10 grid grid-cols-2 gap-3 lg:grid-cols-4">
+            {SHOWCASE_STATS.map((stat) => (
+              <div key={stat.label} className="rounded-[1.5rem] border border-white/10 bg-white/[0.035] p-5 md:p-7">
+                <div className="font-display text-3xl font-medium tracking-tight text-[#d3f8df] sm:text-4xl">{stat.value.toLocaleString("en-US")}</div>
+                <p className="mt-3 text-sm font-semibold text-white/85">{stat.label}</p>
+                <p className="mt-2 text-xs leading-relaxed text-white/40">{stat.qualifier}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-xs leading-relaxed text-white/35">
+            Counts are dataset snapshots, not a claim of completed biological review or public app availability. <a className="underline underline-offset-4 hover:text-white" href="/research-snapshot.json">Read definitions.</a>
+          </p>
         </div>
       </section>
 
