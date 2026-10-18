@@ -1,0 +1,45 @@
+{
+  "title": "Endemic public showcase research coverage snapshot",
+  "snapshot_date": "2026-10-17",
+  "meaning": "These are record counts from specific AquaTrack source files, not app publication, verification, provenance acceptance, or species with full dossiers.",
+  "metrics": [
+    {
+      "key": "fish_records",
+      "value": 1669,
+      "source_repository": "aquatrack",
+      "source_path": "data/species_traits_coverage.json",
+      "source_field": "scientific_name.total",
+      "interpretation": "Rows reported in fish trait coverage"
+    },
+    {
+      "key": "aquatic_plant_records",
+      "value": 840,
+      "source_repository": "aquatrack",
+      "source_path": "data/species_traits_plants.json",
+      "source_field": "array.length",
+      "interpretation": "Normalized aquatic plant records"
+    },
+    {
+      "key": "species_with_geography",
+      "value": 1546,
+      "source_repository": "aquatrack",
+      "source_path": "data/species_geography_stats.json",
+      "source_field": "species_with_geography",
+      "interpretation": "Species matched to geography in that snapshot"
+    },
+    {
+      "key": "countries_represented",
+      "value": 154,
+      "source_repository": "aquatrack",
+      "source_path": "data/species_geography_stats.json",
+      "source_field": "total_countries",
+      "interpretation": "Number of countries in distribution snapshot"
+    }
+  ],
+  "editorial_notes": [
+    "Fish and plant counts are snapshots from a private source repository and are published here as a limited summary with user approval.",
+    "A record is not a complete, reviewed species profile.",
+    "Project previews and prototype pages are not app-store production releases.",
+    "Proposed tissue-culture studio workflow is demonstrative, not a past client engagement."
+  ]
+}
