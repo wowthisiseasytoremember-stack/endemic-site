@@ -8,7 +8,7 @@ const PRIMARY_LINKS = [
   { href: "/aquatrack", label: "AquaTrack", accent: "aqua" },
   { href: "/floratrack", label: "FloraTrack", accent: "flora" },
   { href: "/read", label: "Field Notes", accent: "neutral" },
-  { href: "/systems", label: "Behind the Work", accent: "neutral" },
+  { href: "/studio", label: "Behind the Work", accent: "neutral" },
   { href: "/studio", label: "Behind the Work", accent: "flora" },
 ] as const;
 
