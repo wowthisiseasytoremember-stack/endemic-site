@@ -32,8 +32,8 @@ Next.js web platform for the **Endemic** ecosystem — showcases aquatic species
 - Active. Last commit 2026-08-15 (docs: monetization blueprint).
 
 ## Delegation Rules (enforce)
-- **Content generation** (blog articles, species copy): route to `deepseek-worker` for bulk/article generation.
-- **Database integration / data sync**: route to `deepseek-worker`; requires the data-sync prerequisite (species DB live) before content phases.
+- **Content generation** (blog articles, species copy): route to a cheaper, lower-powered worker agent for bulk/article generation.
+- **Database integration / data sync**: route to a cheaper, lower-powered worker agent; requires the data-sync prerequisite (species DB live) before content phases.
 - **Architecture / roadmap decisions**: human orchestration only.
 
 ## Roadmap Handoff Points
