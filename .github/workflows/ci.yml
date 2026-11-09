@@ -31,6 +31,9 @@ jobs:
     - name: Verify product-proof media manifest
       run: npm run data:product-proof-media:check
 
+    - name: Verify BioTrack candidate research boundary and source-safe importer
+      run: npm run data:biotrack:check
+
     - name: Lint
       run: npm run lint
       
