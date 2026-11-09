@@ -10,6 +10,8 @@ import {
   UnknownCard,
 } from "./RabbitHolePrimitives";
 import { RabbitHoleReveal } from "./RabbitHoleMotion";
+import { ResearchCandidatePanel } from "./ResearchCandidatePanel";
+import type { getResearchCandidate } from "@/data/biotrack/candidateResearch";
 import type { ProductReceipt, RabbitHoleSubjectModel } from "./RabbitHoleTypes";
 
 const PAGE_GLOW = {
@@ -64,7 +66,13 @@ function Receipt({
   );
 }
 
-export function RabbitHoleSubjectView({ model }: { model: RabbitHoleSubjectModel }) {
+export function RabbitHoleSubjectView({
+  model,
+  researchCandidate,
+}: {
+  model: RabbitHoleSubjectModel;
+  researchCandidate?: ReturnType<typeof getResearchCandidate>;
+}) {
   const accent = model.accent ?? "neutral";
 
   return (
@@ -96,6 +104,10 @@ export function RabbitHoleSubjectView({ model }: { model: RabbitHoleSubjectModel
             imagePosition={model.imagePosition}
           />
         </RabbitHoleReveal>
+
+        {researchCandidate && (
+          <ResearchCandidatePanel entry={researchCandidate.entry} source={researchCandidate.source} />
+        )}
 
         {model.researching ? (
           <section className="mt-16 md:mt-20">
