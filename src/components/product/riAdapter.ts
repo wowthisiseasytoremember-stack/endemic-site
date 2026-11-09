@@ -3,7 +3,6 @@ import type {
   ProductDocument,
   ProductInterestingItem,
   ProductReceipt,
-  ProductRelationship,
   ProductThread,
   ProductTrailItem,
   ProductUnknown,
@@ -46,6 +45,11 @@ export interface ResearchIntelligenceSubjectConfig {
   threads?: ProductThread[];
 }
 
+/**
+ * An Endemic *reader*, not a taxonomy engine. Only accepted, receipt-linked
+ * BioTrack findings may become feature cards; candidate research remains
+ * separate (see ResearchCandidatePanel). Missing/HOLD provenance fails closed.
+ */
 export function projectResearchIntelligenceToRabbitHole(
   packet: ResearchIntelligencePacketInput,
   config: ResearchIntelligenceSubjectConfig
@@ -61,147 +65,114 @@ export function projectResearchIntelligenceToRabbitHole(
         imagePosition: undefined,
       };
 
-  const trail: ProductTrailItem[] = config.trail ?? [
-    { label: "Field Notes", context: "entry" },
-    { label: config.title, context: "subject" },
-  ];
-
-  const receiptsBySourceId = new Map<string, ProductReceipt>();
-  (packet.receipts || []).forEach((r, idx) => {
-    receiptsBySourceId.set(r.source_id, {
-      sourceLabel: r.source_id || "BioTrack accepted source",
-      relationship: r.role,
-      locator: r.locator_id,
-      releaseId: packet.biotrack_release,
-      note: r.note,
-    });
-  });
-
-  const interesting: ProductInterestingItem[] = [];
-
-  if (config.primaryInteresting) {
-    interesting.push(config.primaryInteresting);
-  }
-
-  const schultzReceipt = (packet.receipts || []).find((r) =>
-    r.note?.includes("Leonard P. Schultz")
-  );
-  const axelrodReceipt = (packet.receipts || []).find((r) =>
-    r.note?.includes("Herbert R. Axelrod")
-  );
-
-  const primaryReceipt: ProductReceipt = {
-    sourceLabel: "BioTrack accepted v1",
-    relationship: "described_by · 1956",
-    releaseId: packet.biotrack_release,
-    note:
-      axelrodReceipt?.note ||
-      "The accepted graph separately records Herbert R. Axelrod as the namesake.",
+  const identity = {
+    id: `ri-subject:${packet.subject_id}`,
+    trail: config.trail ?? [
+      { label: "Field Notes", context: "entry" },
+      { label: config.title, context: "subject" },
+    ],
+    eyebrow: config.eyebrow ?? "BioTrack field note",
+    title: config.title,
+    scientificName: config.scientificName || packet.subject,
+    lead: config.lead,
+    accent: config.accent ?? "neutral",
+    ...mediaProps,
   };
 
-  if (!config.primaryInteresting) {
-    interesting.push({
-    id: "biotrack-anchors",
-    kicker: "Two people, two different roles",
-    title: "The describer is not the namesake.",
-    relationship: {
-      subject: packet.subject,
-      predicate: "described by",
-      object: "Leonard P. Schultz",
-      year: 1956,
-      note: "Accepted BioTrack relationship",
-    },
-    receipt: primaryReceipt,
-    });
-  }
+  const validRelease =
+    packet.biotrack_release.trim().length > 0 &&
+    /^[a-f0-9]{64}$/i.test(packet.biotrack_graph_sha256) &&
+    packet.subject_id.trim().length > 0;
+  const accepted = validRelease && packet.decision !== "HOLD";
 
-  const supportedFindings = (packet.findings || []).filter(
-    (f) => f.status === "SUPPORTED"
+  const receipts: ProductReceipt[] = (packet.receipts ?? [])
+    .filter((receipt) => receipt.source_id && receipt.locator_id)
+    .map((receipt) => ({
+      sourceLabel: receipt.source_id,
+      relationship: receipt.role,
+      locator: receipt.locator_id,
+      releaseId: packet.biotrack_release,
+      note: receipt.note,
+    }));
+
+  const supported = (packet.findings ?? []).filter(
+    (finding) => finding.status === "SUPPORTED" && finding.text.trim()
   );
-  if (supportedFindings.length > 0 && interesting.length < 2) {
-    interesting.push({
-      id: "verified-findings",
-      kicker: "BioTrack Research Intelligence finding",
-      title: "Verified taxonomic relationships in accepted release.",
-      body: supportedFindings.map((f) => f.text).join(" "),
-      receipt: {
-        sourceLabel: "BioTrack release graph",
-        releaseId: packet.biotrack_release,
-        locator: `SHA: ${packet.biotrack_graph_sha256.slice(0, 16)}...`,
+  const unresolved = (packet.findings ?? []).filter(
+    (finding) =>
+      ["CORPUS_GAP", "CONFLICTING", "NARROW"].includes(finding.status) &&
+      finding.text.trim()
+  );
+
+  // This branch must come first: even a caller-supplied editorial highlight
+  // cannot turn HOLD or unprovenanced data into an accepted BioTrack feature.
+  if (!accepted || (!config.primaryInteresting && (!supported.length || !receipts.length))) {
+    return {
+      ...identity,
+      researching: {
+        title: "This research record is not approved for publication.",
+        body:
+          packet.decision === "HOLD"
+            ? "BioTrack has placed this research packet on hold. No findings from it are presented as accepted evidence."
+            : "The accepted-release gate requires a release ID, a graph checksum, and a source-linked finding. This record does not currently meet that requirement.",
+        nextEvidence: packet.next_receipts?.length
+          ? packet.next_receipts
+          : ["An accepted BioTrack release and independently traceable source receipts."],
       },
-    });
+    };
   }
 
-  const corpusGapFindings = (packet.findings || []).filter(
-    (f) => f.status === "CORPUS_GAP"
-  );
+  const interesting: ProductInterestingItem[] = config.primaryInteresting
+    ? [config.primaryInteresting]
+    : [
+        {
+          id: "biotrack-source-backed-finding",
+          kicker: "Accepted BioTrack Research Intelligence",
+          title: supported[0].text,
+          body: supported.slice(1).map((finding) => finding.text).join(" ") || undefined,
+          receipt: receipts[0],
+        },
+      ];
 
   const threads: ProductThread[] = config.threads
     ? [...config.threads]
     : [
         {
-          id: "accepted-relationships",
-          question: "What relationships are accepted in BioTrack?",
-          target: "Leonard P. Schultz / Herbert R. Axelrod",
-          relationshipHint: "described_by & named_for (1956)",
+          id: "accepted-evidence",
+          question: "What does this BioTrack release actually establish?",
+          target: packet.subject,
+          relationshipHint: "Accepted, source-linked findings",
           state: "SUMMARY",
-          href: "#documents",
+          href: "#interesting",
         },
+        ...unresolved.map((finding, index): ProductThread => ({
+          id: `research-gap-${index + 1}`,
+          question: finding.text,
+          target: finding.status === "CONFLICTING" ? "conflicting sources" : "open research question",
+          relationshipHint: "Requires further review",
+          state: "RESEARCHING",
+        })),
       ];
 
-  if (!config.threads && corpusGapFindings.length > 0) {
-    corpusGapFindings.forEach((gap, idx) => {
-      threads.push({
-        id: `corpus-gap-${idx + 1}`,
-        question: `Is this established: "${gap.text}"?`,
-        target: "corpus gap",
-        relationshipHint: "not established in accepted release",
-        state: "RESEARCHING",
-      });
-    });
-  } else if (!config.threads) {
-    threads.push({
-      id: "further-research",
-      question: "What additional source receipts are being collected?",
-      target: "targeted research",
-      relationshipHint: "in progress",
-      state: "RESEARCHING",
-    });
-  }
-
   const unknowns: ProductUnknown[] = [];
-  if (packet.warnings && packet.warnings.length > 0) {
+  if ((packet.warnings ?? []).length || unresolved.length) {
     unknowns.push({
-      id: "scope-warnings",
-      question: "What details are deliberately withheld from this release?",
-      currentAnswer: packet.warnings.join(" "),
-      whatWouldResolve: packet.next_receipts || [],
-      status: "CORPUS_GAP",
-    });
-  } else if (corpusGapFindings.length > 0) {
-    unknowns.push({
-      id: "corpus-gap-unknown",
-      question: "What remains unverified in this release?",
-      currentAnswer: corpusGapFindings.map((g) => g.text).join(" "),
-      whatWouldResolve: packet.next_receipts || [],
+      id: "review-boundaries",
+      question: "What remains unresolved in this accepted release?",
+      currentAnswer: [
+        ...(packet.warnings ?? []),
+        ...unresolved.map((finding) => finding.text),
+      ].join(" "),
+      whatWouldResolve: packet.next_receipts ?? [],
       status: "CORPUS_GAP",
     });
   }
 
-  const model: RabbitHoleSubjectModel = {
-    id: `ri-subject:${packet.subject_id}`,
-    trail,
-    eyebrow: config.eyebrow || "AquaTrack field note",
-    title: config.title,
-    scientificName: config.scientificName || packet.subject,
-    lead: config.lead,
-    accent: config.accent || "aqua",
-    ...(mediaProps as any),
+  return {
+    ...identity,
     interesting: interesting as [ProductInterestingItem, ...ProductInterestingItem[]],
     threads: threads as [ProductThread, ...ProductThread[]],
-    unknowns: unknowns.length > 0 ? unknowns : undefined,
-    documents: config.documents || [],
+    unknowns: unknowns.length ? unknowns : undefined,
+    documents: config.documents ?? [],
   };
-
-  return model;
 }

@@ -9,6 +9,7 @@
     "typecheck": "tsc --noEmit",
     "data:publication": "node scripts/compile-publication-data.mjs",
     "data:publication:check": "node scripts/compile-publication-data.mjs --check",
+    "data:biotrack:check": "node scripts/import-biotrack-research.mjs --check && node --test scripts/test-biotrack-research.mjs",
     "data:product-proof-media:check": "node scripts/validate-product-proof-media.mjs"
   },
   "dependencies": {

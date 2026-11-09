@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { RabbitHoleSubjectView } from "@/components/product";
 import { PINK_PRINCESS_RI_V1 } from "@/components/product/pinkPrincessRiData";
 import { projectResearchIntelligenceToRabbitHole } from "@/components/product/riAdapter";
+import { getResearchCandidate } from "@/data/biotrack/candidateResearch";
 
 export const metadata: Metadata = {
   title: "Pink Princess — Endemic Prototype",
@@ -81,5 +82,5 @@ const pinkPrincessModel = projectResearchIntelligenceToRabbitHole(
 );
 
 export default function PinkPrincessPrototypePage() {
-  return <RabbitHoleSubjectView model={pinkPrincessModel} />;
+  return <RabbitHoleSubjectView model={pinkPrincessModel} researchCandidate={getResearchCandidate("cultivar:pink-princess")} />;
 }
