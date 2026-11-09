@@ -74,6 +74,12 @@ export function RabbitHoleSubjectView({
   researchCandidate?: ReturnType<typeof getResearchCandidate>;
 }) {
   const accent = model.accent ?? "neutral";
+  // Source candidate IDs and display names must both match this exact page.
+  // This prevents a miswired page from showing another organism's specimens.
+  const matchedCandidate = model.scientificName &&
+    researchCandidate?.entry.scientific_name === model.scientificName
+    ? researchCandidate
+    : null;
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#040908] text-white">
@@ -105,8 +111,8 @@ export function RabbitHoleSubjectView({
           />
         </RabbitHoleReveal>
 
-        {researchCandidate && (
-          <ResearchCandidatePanel entry={researchCandidate.entry} source={researchCandidate.source} />
+        {matchedCandidate && (
+          <ResearchCandidatePanel entry={matchedCandidate.entry} source={matchedCandidate.source} />
         )}
 
         {model.researching ? (
