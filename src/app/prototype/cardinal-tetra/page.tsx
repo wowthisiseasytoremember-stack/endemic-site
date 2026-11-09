@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { RabbitHoleSubjectView } from "@/components/product";
 import { CARDINAL_TETRA_RI_V1 } from "@/components/product/cardinalRiData";
 import { projectResearchIntelligenceToRabbitHole } from "@/components/product/riAdapter";
+import { getResearchCandidate } from "@/data/biotrack/candidateResearch";
 
 export const metadata: Metadata = {
   title: "Cardinal Tetra — Endemic Prototype",
@@ -41,5 +42,5 @@ const cardinalModel = projectResearchIntelligenceToRabbitHole(
 );
 
 export default function CardinalPrototypePage() {
-  return <RabbitHoleSubjectView model={cardinalModel} />;
+  return <RabbitHoleSubjectView model={cardinalModel} researchCandidate={getResearchCandidate("aqua:cardinal-tetra")} />;
 }
