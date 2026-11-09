@@ -1,0 +1,152 @@
+{
+  "schema": "endemic.biotrack.candidate_research.v1",
+  "release_state": "PRIVATE_RESEARCH_CANDIDATE_ONLY",
+  "source": {
+    "tested_commit": "3b90a3695114c782c6b92a0393c9d15e6ce3a31a",
+    "run_url": "https://github.com/wowthisiseasytoremember-stack/aquascrape/actions/runs/42535399060",
+    "artifact_id": 13638892118,
+    "captured_on": "2026-11-08",
+    "repo": "wowthisiseasytoremember-stack/aquascrape"
+  },
+  "totals": {
+    "subjects": 10,
+    "taxon_candidates": 8,
+    "specimen_candidates": 20,
+    "review_required": 2,
+    "partially_advanced": 7
+  },
+  "subjects": [
+    {
+      "subject_id": "aqua:amazon-puffer",
+      "scientific_name": "Colomesus asellus",
+      "status": "taxon_candidate",
+      "gbif_key": "2407613",
+      "taxon_source_sha256": "6d4e8e1191b0d587b5d1fd1e3d1ccff96b8d6764f705b3326b40311c2998b646",
+      "specimen_candidate_count": 3,
+      "gap_changes": [
+        {
+          "gap": "people_specimen_expedition_history",
+          "before": "unknown_unsearched",
+          "after": "known_partial_source_backed"
+        }
+      ]
+    },
+    {
+      "subject_id": "aqua:redeye-puffer",
+      "scientific_name": "Carinotetraodon lorteti",
+      "status": "taxon_candidate",
+      "gbif_key": "2407809",
+      "taxon_source_sha256": "6928196e4a126d7092ef733d10dbd5508dec9125b69c52a81bd4a18958922352",
+      "specimen_candidate_count": 3,
+      "gap_changes": [
+        {
+          "gap": "people_specimen_expedition_history",
+          "before": "unknown_unsearched",
+          "after": "known_partial_source_backed"
+        }
+      ]
+    },
+    {
+      "subject_id": "aqua:denison-barb",
+      "scientific_name": "Sahyadria denisonii",
+      "status": "taxon_candidate",
+      "gbif_key": "8395052",
+      "taxon_source_sha256": "b0eb5568ffe0a5ae279601576fdcec1a5a53bb08d50d65d6b82382d8a19ee4ac",
+      "specimen_candidate_count": 0,
+      "gap_changes": []
+    },
+    {
+      "subject_id": "aqua:cardinal-tetra",
+      "scientific_name": "Paracheirodon axelrodi",
+      "status": "taxon_candidate",
+      "gbif_key": "2353911",
+      "taxon_source_sha256": "348605865f60b9427238b75c47d90dca771a0661e8f78790dcf46f9173b6604a",
+      "specimen_candidate_count": 3,
+      "gap_changes": [
+        {
+          "gap": "people_specimen_expedition_history",
+          "before": "unknown_unsearched",
+          "after": "known_partial_source_backed"
+        }
+      ]
+    },
+    {
+      "subject_id": "aqua:dragon-puffer",
+      "scientific_name": "Pao palembangensis",
+      "status": "taxon_candidate",
+      "gbif_key": "8413659",
+      "taxon_source_sha256": "5773e3c9a73d25c8821f569054f30626e57b358896e366d545a6b56216fc3c56",
+      "specimen_candidate_count": 2,
+      "gap_changes": [
+        {
+          "gap": "people_specimen_expedition_history",
+          "before": "unknown_unsearched",
+          "after": "known_partial_source_backed"
+        }
+      ]
+    },
+    {
+      "subject_id": "flora:monstera-deliciosa",
+      "scientific_name": "Monstera deliciosa",
+      "status": "taxon_candidate",
+      "gbif_key": "2868241",
+      "taxon_source_sha256": "0fe4a42af20104e2a1ba77374d787056b868fdc0cd4509166110a0d6e9df75e6",
+      "specimen_candidate_count": 3,
+      "gap_changes": [
+        {
+          "gap": "people_specimen_expedition_history",
+          "before": "unknown_unsearched",
+          "after": "known_partial_source_backed"
+        }
+      ]
+    },
+    {
+      "subject_id": "flora:philodendron-erubescens",
+      "scientific_name": "Philodendron erubescens",
+      "status": "taxon_candidate",
+      "gbif_key": "2871297",
+      "taxon_source_sha256": "ff6e6638bc90e31635ffd3ece2ca1d8424aceb0d99358e24bf7b2c5684ab984e",
+      "specimen_candidate_count": 3,
+      "gap_changes": [
+        {
+          "gap": "people_specimen_expedition_history",
+          "before": "unknown_unsearched",
+          "after": "known_partial_source_backed"
+        }
+      ]
+    },
+    {
+      "subject_id": "flora:cryptocoryne-wendtii",
+      "scientific_name": "Cryptocoryne wendtii",
+      "status": "taxon_candidate",
+      "gbif_key": "2869214",
+      "taxon_source_sha256": "d5bd924af3f37c5a2138c4c13c333c9fd516028d98216dfe05dbee65f5ff7978",
+      "specimen_candidate_count": 3,
+      "gap_changes": [
+        {
+          "gap": "people_specimen_expedition_history",
+          "before": "unknown_unsearched",
+          "after": "known_partial_source_backed"
+        }
+      ]
+    },
+    {
+      "subject_id": "cultivar:pink-princess",
+      "scientific_name": "Philodendron erubescens 'Pink Princess'",
+      "status": "review_required",
+      "gbif_key": null,
+      "taxon_source_sha256": null,
+      "specimen_candidate_count": 0,
+      "gap_changes": []
+    },
+    {
+      "subject_id": "cultivar:thai-constellation",
+      "scientific_name": "Monstera deliciosa 'Thai Constellation'",
+      "status": "review_required",
+      "gbif_key": null,
+      "taxon_source_sha256": null,
+      "specimen_candidate_count": 0,
+      "gap_changes": []
+    }
+  ]
+}
