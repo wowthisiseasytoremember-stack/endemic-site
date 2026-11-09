@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { RabbitHoleSubjectView } from "@/components/product";
 import { DRAGON_PUFFER_EXEMPLAR } from "@/data/product-proof/dragon-puffer-exemplar";
+import { getResearchCandidate } from "@/data/biotrack/candidateResearch";
 
 export const metadata: Metadata = {
   title: "Dragon Puffer — Endemic Exemplar",
@@ -15,5 +16,5 @@ export const metadata: Metadata = {
 };
 
 export default function DragonPufferPrototypePage() {
-  return <RabbitHoleSubjectView model={DRAGON_PUFFER_EXEMPLAR} />;
+  return <RabbitHoleSubjectView model={DRAGON_PUFFER_EXEMPLAR} researchCandidate={getResearchCandidate("aqua:dragon-puffer")} />;
 }
