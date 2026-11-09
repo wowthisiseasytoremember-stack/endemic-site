@@ -136,11 +136,29 @@ export function projectBundle(bundle, source) {
       ? speciesFacts.length === 1 && r.match_type === "EXACT"
       : currentFacts.length === 0, "Unsupported taxon fact or false cultivar match");
     check(specimenFacts.length === (r.specimen_facts ?? 0), "Specimen count mismatch");
+    if (status === "taxon_candidate") {
+      const fact = speciesFacts[0];
+      check(String(fact.values?.gbif_usage_key ?? "") === String(r.gbif_key ?? ""),
+        "Reported GBIF taxon key differs from its actual source-backed fact");
+      check(fact.evidence.raw_sha256 === r.source_sha256,
+        "Reported source hash differs from the taxon fact's original source");
+      check(String(fact.values?.canonical_name ?? "").trim().toLowerCase() ===
+        r.scientific_name.trim().toLowerCase(),
+        "Original taxonomy fact names a different organism");
+    }
+    const keys = new Set();
+    for (const fact of specimenFacts) {
+      check(typeof fact.fact_key === "string" && !keys.has(fact.fact_key),
+        "Duplicate or unkeyed specimen fact");
+      keys.add(fact.fact_key);
+    }
     const changes = Object.entries(current.gaps).flatMap(([gap, value]) => {
       const previous = old.gaps[gap];
       if (previous === value) return [];
       check(previous === "unknown_unsearched" && value === "known_partial_source_backed",
         "Unexpected dossier transition");
+      check(currentFacts.some((fact) => fact.gap_id === gap),
+        "A dossier cannot advance without source-backed evidence for that gap");
       return [{ gap, before: previous, after: value }];
     });
     return {
