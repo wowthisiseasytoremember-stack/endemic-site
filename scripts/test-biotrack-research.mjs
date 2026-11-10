@@ -42,8 +42,21 @@ function specimenBundle() {
       { subject_id: "aqua:amazon-puffer", raw_sha256: specimenHash },
     ],
     facts: [
-      { subject_id: "aqua:amazon-puffer", fact_type: "taxonomy_authority_match", evidence: { role: "external_structured", raw_sha256: taxonHash } },
-      { subject_id: "aqua:amazon-puffer", fact_type: "preserved_specimen_occurrence", evidence: { role: "external_structured", raw_sha256: specimenHash } },
+      {
+        subject_id: "aqua:amazon-puffer",
+        gap_id: "identity_taxonomy",
+        fact_type: "taxonomy_authority_match",
+        fact_key: "taxonomy:2407613",
+        values: { gbif_usage_key: "2407613", canonical_name: "Colomesus asellus" },
+        evidence: { role: "external_structured", raw_sha256: taxonHash },
+      },
+      {
+        subject_id: "aqua:amazon-puffer",
+        gap_id: "people_specimen_expedition_history",
+        fact_key: "preserved_specimen:1",
+        fact_type: "preserved_specimen_occurrence",
+        evidence: { role: "external_structured", raw_sha256: specimenHash },
+      },
     ],
     rawBySha: new Map([[taxonHash, taxonBytes], [specimenHash, specimenBytes]]),
   };
@@ -121,4 +134,31 @@ test("one source cannot silently count as multiple specimens", () => {
   const bundle = specimenBundle();
   bundle.acquisition.results[0].specimen_facts = 5;
   assert.throws(() => projectBundle(bundle, source), /Specimen count mismatch/);
+});
+
+test("tampered GBIF key, canonical name, source hash and orphaned gap advancement fail closed", () => {
+  const incorrectKey = specimenBundle();
+  incorrectKey.acquisition.results[0].gbif_key = "1";
+  assert.throws(() => projectBundle(incorrectKey, source), /Reported GBIF taxon key/);
+
+  const incorrectName = specimenBundle();
+  incorrectName.facts[0].values.canonical_name = "Pao palembangensis";
+  assert.throws(() => projectBundle(incorrectName, source), /different organism/);
+
+  const incorrectHash = specimenBundle();
+  incorrectHash.acquisition.results[0].source_sha256 = "f".repeat(64);
+  assert.throws(() => projectBundle(incorrectHash, source), /Reported source hash/);
+
+  const missingGapEvidence = specimenBundle();
+  missingGapEvidence.facts[1].gap_id = "identity_taxonomy";
+  assert.throws(() => projectBundle(missingGapEvidence, source), /without source-backed evidence/);
+});
+
+test("duplicate specimen records never inflate research coverage", () => {
+  const bundle = specimenBundle();
+  bundle.acquisition.results[0].specimen_facts = 2;
+  bundle.acquisition.verified_specimen_facts = 2;
+  bundle.acquisition.exact_fact_rows = 3;
+  bundle.facts.push(structuredClone(bundle.facts[1]));
+  assert.throws(() => projectBundle(bundle, source), /Duplicate or unkeyed specimen fact/);
 });
